@@ -1,4 +1,4 @@
-;(function(){
+
 	var emitter = {
 		events: {},
 		trigger (event, data) {
@@ -40,9 +40,9 @@
 		setTimeout("document.querySelector('div.indicator').classList.add('none')",500);
 	});
 
-	window.IndexSidebar = function IndexSidebar(options) {
+	function IndexSidebar(options) {
 		this.init(options);
-	};
+	}
 	IndexSidebar.prototype = {
 		constructor: IndexSidebar,
 		init (options) {
@@ -137,5 +137,6 @@
 			this.touchStart.x = this.touchStart.y = this.startElem = null;
 			emitter.trigger('fingerOff')
 		}
-	}
-})();
+	};
+
+module.exports = IndexSidebar;
