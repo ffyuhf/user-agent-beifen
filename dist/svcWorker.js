@@ -1,6 +1,6 @@
 var data = [
-  ["I","./index.html",21051014],
-  ["P","./bundle.js",21051014],
+  ["I","./index.html",21051016],
+  ["P","./bundle.js",21051017],
   ["B","./基础_良良.js",21050817],
   ["A","./UA_良良.js",21031416],
   ["C","./电脑_良良.js",21031415],
@@ -8,7 +8,7 @@ var data = [
   ["S","./爬虫_良良.js",21031415],
   ["T","./indexSidebar.js",2],
   ["O","../favicon.ico",2],
-  ["D","./",21051014],
+  ["D","./",21051016],
 ];
 
 self.addEventListener('install', function(event) {

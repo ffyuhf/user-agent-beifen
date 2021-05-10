@@ -1,4 +1,3 @@
-
 	var emitter = {
 		events: {},
 		trigger (event, data) {
@@ -17,19 +16,19 @@
 		var indicator = document.querySelector('div.indicator');
 		if (data) {
 			var content = data.innerHTML;
-			indicator.classList.remove("none");
+			indicator.classList.remove(uaData.styles.none);
 			indicator.innerHTML = content;
 			indicator.style.opacity = '1';
 			indicator.style.top = data.getBoundingClientRect().top + 'px';
 		} else {
 			indicator.style.opacity = '0';
-			setTimeout("document.querySelector('div.indicator').classList.add('none')",500);
+			setTimeout("document.querySelector('div.indicator').classList.add(uaData.styles.none)",500);
 		}
 	});
 	emitter.subscribe('fingerLand', (elem) => {
 		if (elem) {
 			if (elem.innerHTML.length == 1) {
-				var content = elem.innerHTML, scrolledElem = document.querySelector(`div#app_container > div[id="i${content}"]`);
+				var content = elem.innerHTML, scrolledElem = document.querySelector(`div#${uaData.styles.app_container} > div[id="i${content}"]`);
 				scrolledElem.scrollIntoView();
 			}
 		}
@@ -37,7 +36,7 @@
 	emitter.subscribe('fingerOff', () => {
 		var indicator = document.querySelector('div.indicator');
 		indicator.style.opacity = '0';
-		setTimeout("document.querySelector('div.indicator').classList.add('none')",500);
+		setTimeout("document.querySelector('div.indicator').classList.add(uaData.styles.none)",500);
 	});
 
 	function IndexSidebar(options) {
@@ -64,9 +63,9 @@
 			})
 			var indicator = document.createElement('div');
 			indicator.classList.add('indicator');
-			indicator.classList.add('none')
+			indicator.classList.add(uaData.styles.none)
 			sidebarNode.appendChild(indicator)
-			sidebarNode.classList.add('sideBar');
+			sidebarNode.classList.add(uaData.styles.sideBar);
 			options.mounted.appendChild(sidebarNode);
 			this.unitHeight = sidebarNode.firstElementChild.getBoundingClientRect().height;
 			this.nodeList = sidebarNode.childNodes;

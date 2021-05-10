@@ -17,7 +17,7 @@ const uaData = {
 	styleKey:"userAgentStyle",
 	版本:{
 		描述:"5.1 Beta 4",
-		详细:21050821,
+		详细:21051017,
 	},
 	设置:{
 		基础默认:1,
@@ -32,7 +32,7 @@ document.querySelectorAll('p,div,input,span,button,label,textarea,select').forEa
 	(n.htmlFor) && (uaData.styles[n.htmlFor]) && (n.htmlFor = uaData.styles[n.htmlFor]);
 	n.classList.forEach( c => uaData.styles[c] && n.classList.replace(c,uaData.styles[c]));
 });
-if(uaData.touch) { var IndexSidebar = require('./indexSidebar'); }
+if(uaData.touch) { window.IndexSidebar = require('./indexSidebar'); }
 var uaCodeF = require('./uaCode');
 window.uaCode = uaCodeF();
 window.加入 = require('./add');
