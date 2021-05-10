@@ -1,6 +1,9 @@
 # UserAgentSharePage
 
 ## 介绍
+
+**这里是 WebPack 5 迁移试验分支**
+
 这是一个用于自动拼接/管理从 APP 中提取出来的 UserAgent 字符串 (简称 UA) 的工具页面 。  
 生成的 UA 可用于浏览器 ，使得目标服务器认为是 APP 访问的 ，从而提供更干净的页面 。  
 > 2021-03-17 新版本 5.1 ，旧版本在[这里](https://lemon399.gitee.io/user-agent-share-page/index.old.html)
