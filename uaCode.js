@@ -1113,4 +1113,4 @@ function uaCode() {
 				toast: toast
 			}
 		}
-module.exports = uaCode;
+module.exports = uaCode();

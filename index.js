@@ -33,8 +33,7 @@ document.querySelectorAll('p,div,input,span,button,label,textarea,select').forEa
 	n.classList.forEach( c => uaData.styles[c] && n.classList.replace(c,uaData.styles[c]));
 });
 if(uaData.touch) { window.IndexSidebar = require('./indexSidebar'); }
-var uaCodeF = require('./uaCode');
-window.uaCode = uaCodeF();
+window.uaCode = require('./uaCode');
 window.加入 = require('./add');
 var getTheme = require('./gettheme');
 getTheme();
