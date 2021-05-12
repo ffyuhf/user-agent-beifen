@@ -607,7 +607,7 @@ function uaCode() {
 			}
 			
 			function aform_Clear() {
-				$(true,'#addtable input[type="text"]').forEach( i => {
+				$(true,'#addtable input:not([type])').forEach( i => {
 					i.value = "";
 					i.style.removeProperty('border-color');
 				});
@@ -625,7 +625,7 @@ function uaCode() {
 			
 			function aform_Check(type) {
 				let a = true;
-				$(true,`#${type}t input[type="text"]`).forEach( i => {
+				$(true,`#${type}t input:not([type])`).forEach( i => {
 					i.style.removeProperty('border-color');
 					if (getComputedStyle(i).display!=="none" &&
 						getComputedStyle(i.parentNode).display!=="none" &&

@@ -478,7 +478,7 @@
 				   -moz-user-select: none;
 						user-select: none;
 			}
-			.win .close,.win .prev,.win .topbutton {
+			.win .titbtn {
 				background-color: var(--theme-color-close);
 				color: var(--theme-color-close-text);
 				font-size: 1em;
