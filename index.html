@@ -20,7 +20,9 @@
 				--theme-color-j: lightgray;		 /* 加载屏幕 空筛选 文字颜色 */
 				--theme-color-close: red;
 				--theme-color-close-text: white;
-				--theme-color-prev: orange;
+				--theme-color-prev: blueviolet;
+				--theme-color-top: #2b75c4;
+				--theme-color-top-enable: dodgerblue;
 				--input-check-ready: lightgray;
 				--input-check-ok: green;
 				--input-check-err: orange;
@@ -49,7 +51,9 @@
 					--theme-color-j: #728195;
 					--theme-color-close: red;
 					--theme-color-close-text: white;
-					--theme-color-prev: #2b75c4;
+					--theme-color-prev: blueviolet;
+					--theme-color-top: #2b75c4;
+					--theme-color-top-enable: dodgerblue;
 					--input-check-ready: #345077;
 					--input-check-ok: green;
 					--input-check-err: orange;
@@ -112,6 +116,7 @@
 		<div id="ua" class="none win">
 			<div class="titlebar">
 				<div class="title">UA 窗口</div>
+				<button type="button" class="topbutton">置顶</button>
 				<button type="button" class="close">关闭</button>
 			</div>
 			<label for="useragent" class="invilab">UA 编辑框</label>
@@ -125,6 +130,7 @@
 		<div id="tagclass" class="none win">
 			<div class="titlebar">
 				<div class="title">标签筛选</div>
+				<button type="button" class="topbutton">置顶</button>
 				<button type="button" class="close">关闭</button>
 			</div>
 			<div id="classBox"></div>
@@ -136,6 +142,7 @@
 		<div id="prvui" class="none win">
 			<div class="titlebar">
 				<div class="title">编辑预览</div>
+				<button type="button" class="topbutton">置顶</button>
 				<button type="button" class="close">关闭</button>
 			</div>
 			<p id="nullprvw">空 *w*</p>
@@ -145,6 +152,7 @@
 			<div class="titlebar">
 				<div class="title">添加项目</div>
 				<button type="button" class="prev">预览</button>
+				<button type="button" class="topbutton">置顶</button>
 				<button type="button" class="close">关闭</button>
 			</div>
 			<div id="addtype">

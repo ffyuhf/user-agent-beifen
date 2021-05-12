@@ -440,6 +440,13 @@ function uaCode() {
 				}
 			}
 			
+			function topwin(e) {
+				let btn = e.target, win = btn.parentNode.parentNode;
+				_(win,(win.classList.contains(uaData.styles.topwin)),uaData.styles.topwin);
+				btn.style.backgroundColor = (win.classList.contains(uaData.styles.topwin)) ?
+					__('theme-color-top-enable') : __('theme-color-top');
+			}
+			
 			function filterExec(item,nclass) {
 				let found;
 				lab.forEach( ele => {
@@ -1108,6 +1115,7 @@ function uaCode() {
 				ee($(false,'#btnSlst'),'click',fltAppUASelected.bind(this));
 				ee($(false,'#btnGen'),'click',genUA);
 				$(true,'.close').forEach( c => ee(c,'click',e => { e.target.parentNode.parentNode.classList.add(uaData.styles.none)}));
+				$(true,'.topbutton').forEach( c => ee(c,'click',topwin.bind(this)));
 				ee($(false,'.prev'),'click',openWin.bind(this,'#prvui'));
 				ee($(false,'#useragent'),'input',issuesCheck);
 				ee($(false,'#btnClUA'),'click',()=>{$(false,'#useragent').value = '';issuesCheck();});

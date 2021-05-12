@@ -478,7 +478,7 @@
 				   -moz-user-select: none;
 						user-select: none;
 			}
-			.win .close,.win .prev {
+			.win .close,.win .prev,.win .topbutton {
 				background-color: var(--theme-color-close);
 				color: var(--theme-color-close-text);
 				font-size: 1em;
@@ -490,6 +490,9 @@
 			}
 			.win .prev {
 				background-color: var(--theme-color-prev);
+			}
+			.win .topbutton {
+				background-color: var(--theme-color-top);
 			}
 			@keyframes load_finish {
 				0% {
@@ -645,6 +648,9 @@
 			}
 			#prvui {
 				padding-bottom: 0;
+			}
+			.topwin {
+				z-index: 9 !important;
 			}
 			@media only screen and (min-width: 360px) {
 				#baseopt,#modeopt {
