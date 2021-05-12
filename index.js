@@ -16,8 +16,8 @@ const uaData = {
 	storKey:"userAgentData",
 	styleKey:"userAgentStyle",
 	版本:{
-		描述:"5.1 Beta 4",
-		详细:21051017,
+		描述:"5.1 Beta 5",
+		详细:21051216,
 	},
 	设置:{
 		基础默认:1,

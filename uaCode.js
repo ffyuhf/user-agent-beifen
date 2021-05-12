@@ -1035,6 +1035,67 @@ function uaCode() {
 				caches.keys().then( vers => { $(false,"#swlen").innerHTML = vers.length });
 			}
 			
+			function previewUpdate() {
+				let view = $(false,"#addprvw"), show,
+					type = aform_tType($_("atype").value),
+					spanGen = function(text,cls){
+						let span = document.createElement('span');
+						_(span,!1,cls);
+						span.innerText = text;
+						return span;
+					};
+				(view.childElementCount!==0) && (view.innerHTML='');
+				if (type==='a') {
+					let pre, base, suf;
+					if ($_("apre").value==='both') {
+						pre = $(false,"#acont2a").value;
+						suf = $(false,"#acont2b").value;
+					} else {
+						($_("apre").value==='true') ?
+							pre = $(false,"#acont1").value :
+							suf = $(false,"#acont1").value;
+					}
+					pre = ($_("afol").value!=='true' && pre) ? pre + ' ' : pre;
+					suf = ($_("afol").value!=='true' && suf) ? ' ' + suf : suf;
+					if ($(false,"#atbs").checked) {
+						base = uaData.base.tbs.content;
+					} else if ($(false,"#ashort").checked) {
+						base = uaData.base.short.content;
+					} else if ($(false,"#apc").checked || $(false,"#aspider").checked) {
+						base = '';
+					} else {
+						base = uaData.base.std.content;
+					}
+					(pre) && view.appendChild(spanGen(pre,'keycont'));
+					view.appendChild(spanGen(base,'basecont'));
+					(suf) && view.appendChild(spanGen(suf,'keycont'));
+				} else {
+					view.appendChild(spanGen($(false,"#qcont1").value+' ','qapplat'));
+					view.appendChild(spanGen($(false,"#qcont3").value+' ','qapappl'));
+					view.innerHTML += '({"packageName":"';
+					view.appendChild(spanGen($(false,"#qcont2").value,'qapfrom'));
+					view.innerHTML += '","type":"url","extra":{"scene":"recommend"}})';
+				}
+				if((aform_tType($_("atype").value)==='a' &&
+					$_("apre").value==='both' &&
+					$(false,"#acont2a").value==='' &&
+					$(false,"#acont2b").value==='') || (
+					aform_tType($_("atype").value)==='a' &&
+					$_("apre").value!=='both' &&
+					$(false,"#acont1").value==='') || (
+					aform_tType($_("atype").value)==='q' &&
+					$(false,"#qcont1").value==='' &&
+					$(false,"#qcont2").value==='' &&
+					$(false,"#qcont3").value==='') ||
+					aform_tType($_("atype").value)==='t') {
+						show = false;
+					} else {
+						show = true;
+					}
+				_(view,show);
+				_($(false,"#nullprvw"),!show);
+			}
+			
 			function addEvent() {
 				function ee(el,ev,fn) { el.addEventListener(ev,fn); }
 				$(true,'#modebox label').forEach( e => ee(e,'keydown', spaceChecked));
@@ -1047,6 +1108,7 @@ function uaCode() {
 				ee($(false,'#btnSlst'),'click',fltAppUASelected.bind(this));
 				ee($(false,'#btnGen'),'click',genUA);
 				$(true,'.close').forEach( c => ee(c,'click',e => { e.target.parentNode.parentNode.classList.add(uaData.styles.none)}));
+				ee($(false,'.prev'),'click',openWin.bind(this,'#prvui'));
 				ee($(false,'#useragent'),'input',issuesCheck);
 				ee($(false,'#btnClUA'),'click',()=>{$(false,'#useragent').value = '';issuesCheck();});
 				ee($(false,'#btnCpUA'),'click',()=>{$(false,'#useragent').select();document.execCommand('copy');});
@@ -1054,12 +1116,15 @@ function uaCode() {
 				ee($(false,'#btnTgRv'),'click',()=>{$(true,'#classBox input').forEach( b => { b.checked = (!b.checked); tagClick(b.parentNode.id,true);});});
 				$(true,'#addtype label').forEach( e => ee(e,'keydown', spaceChecked));
 				$(true,'#addtype input').forEach( e => ee(e,'change', aform_switchCard));
+				$(true,'#addtype input').forEach( e => ee(e,'change', previewUpdate));
 				$(true,'.key').forEach( e => ee(e,'input',aform_KeyCheck.bind(this,false)));
 				$(true,'.msel').forEach( e => ee(e,'change',aform_Modify));
+				$(true,'#aappt .msel,#qappt .msel').forEach( e => ee(e,'change',previewUpdate));
 				$(true,'#apre label').forEach( e => ee(e,'keydown', spaceChecked));
 				$(true,'#apre input').forEach( e => ee(e,'change', aform_switchBoth));
 				$(true,'#afol label').forEach( e => ee(e,'keydown', spaceChecked));
-				$(true,'#ttext,#tbgc,#tfgc').forEach( e => ee(e,'change', aform_updateFlagPreview));
+				ee($(false,'#ttext'),'input', aform_updateFlagPreview);
+				$(true,'#tbgc,#tfgc').forEach( e => ee(e,'change', aform_updateFlagPreview));
 				ee($(false,'#aok'),'click',aform_Add);
 				ee($(false,'#aclear'),'click',aform_Clear);
 				ee($(false,'#anew'),'click',aform_switchModify);
@@ -1075,15 +1140,18 @@ function uaCode() {
 				ee($(false,'#swreg'),'click',swOpr);
 				ee($(false,'#swclr'),'click',()=>{ caches.keys().then( vers => vers.map( i => caches.delete(i) )); cacheScan()});
 				ee($(false,'#loaddiv'),'animationend',e=>_(e.target,false));
+				$(true,'#acont1,#acont2a,#acont2b,#qcont1,#qcont2,#qcont3').forEach( e => ee(e,'input',previewUpdate));
+				$(true,'#apre input,#afol input').forEach( e => ee(e,'change', previewUpdate));
+				$(true,'#atbs,#ashort,#apc,#aspider').forEach( e => ee(e,'change',previewUpdate));
 			}
 			
 			function init(){
 				$(false,'#loadstr').innerHTML = '正在构建 ...';
-				addEvent();
 				lsb_initOption();
 				makeItem();
 				makeFlaginBox();
 				aform_makeFlaginBox();
+				addEvent();
 				makeBaseRadio();
 				dndWin();
 				$(false,'#loadstr').innerHTML = '正在初始化 ...';

@@ -20,12 +20,16 @@
 				--theme-color-j: lightgray;		 /* 加载屏幕 空筛选 文字颜色 */
 				--theme-color-close: red;
 				--theme-color-close-text: white;
+				--theme-color-prev: orange;
 				--input-check-ready: lightgray;
 				--input-check-ok: green;
 				--input-check-err: orange;
 				--input-check-null: red;
 				--data-need-save: orange;
 				--tag-filtered: #00ad46;
+				--prvw-key: tomato;
+				--prvw-plat: darkviolet;
+				--prvw-from: green;
 				--shadow-big: 0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 5px 2px rgba(0,0,0,0.12);
 				--shadow-small: 0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 3px 1px rgba(0,0,0,0.12);
 			}
@@ -45,12 +49,16 @@
 					--theme-color-j: #728195;
 					--theme-color-close: red;
 					--theme-color-close-text: white;
+					--theme-color-prev: #2b75c4;
 					--input-check-ready: #345077;
 					--input-check-ok: green;
 					--input-check-err: orange;
 					--input-check-null: red;
 					--data-need-save: darksalmon;
 					--tag-filtered: #99ddbb;
+					--prvw-key: yellow;
+					--prvw-plat: pink;
+					--prvw-from: lime;
 					--shadow-big: 0 0 5px 3px rgba(50,80,120,0.5);
 					--shadow-small: none;
 				}
@@ -125,9 +133,18 @@
 				<button type="button" id="btnTgRv">反选</button>
 			</div>
 		</div>
+		<div id="prvui" class="none win">
+			<div class="titlebar">
+				<div class="title">编辑预览</div>
+				<button type="button" class="close">关闭</button>
+			</div>
+			<p id="nullprvw">空 *w*</p>
+			<div id="addprvw" class="none"></div>
+		</div>
 		<div id="addui" class="none win">
 			<div class="titlebar">
 				<div class="title">添加项目</div>
+				<button type="button" class="prev">预览</button>
 				<button type="button" class="close">关闭</button>
 			</div>
 			<div id="addtype">

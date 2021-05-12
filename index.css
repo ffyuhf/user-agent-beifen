@@ -320,9 +320,14 @@
 				margin: auto;
 				width: 9em;
 				text-align: center;
-			}
-			#nulltext {
 				line-height: calc(1.5em * 7.25);
+			}
+			#nullprvw {
+				font-size: 2em;
+				line-height: 4em;
+				color: var(--theme-color-j);
+				margin: auto;
+				text-align: center;
 			}
 			.flag {
 				font-size: .75em;
@@ -473,7 +478,7 @@
 				   -moz-user-select: none;
 						user-select: none;
 			}
-			.win .close {
+			.win .close,.win .prev {
 				background-color: var(--theme-color-close);
 				color: var(--theme-color-close-text);
 				font-size: 1em;
@@ -482,6 +487,9 @@
 				margin: 0;
 				width: 5em;
 				box-shadow: none;
+			}
+			.win .prev {
+				background-color: var(--theme-color-prev);
 			}
 			@keyframes load_finish {
 				0% {
@@ -520,7 +528,8 @@
 			}
 			#tclsbox {
 				float: right;
-				margin: 2px 0;
+				margin: 3px 0;
+				font-weight: bold;
 			}
 			#ttexd {
 				display: flex;
@@ -565,6 +574,8 @@
 			#stordata {
 				width: -webkit-fill-available;
 				width: -moz-available;
+				height: 80px;
+				margin: 0 4px;
 			}
 			#issues {
 				margin: 0 3px;
@@ -611,6 +622,30 @@
 			fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 				color: var(--theme-color-a);
 			}
+			#addprvw {
+				height: max-content;
+				padding: 5px;
+				font-size: .9em;
+				font-family: monospace;
+				color: var(--theme-color-a);
+				background: var(--theme-color-h);
+				word-break: break-all;
+			}
+			.basecont {
+				color: var(--theme-color-a);
+			}
+			.keycont,.qapappl {
+				color: var(--prvw-key);
+			}
+			.qapplat {
+				color: var(--prvw-plat);
+			}
+			.qapfrom {
+				color: var(--prvw-from);
+			}
+			#prvui {
+				padding-bottom: 0;
+			}
 			@media only screen and (min-width: 360px) {
 				#baseopt,#modeopt {
 					padding: 3px 6px;
@@ -630,12 +665,14 @@
 				#tagclass {
 					width: 65%;
 				}
+				#prvui {
+					width: 80%;
+					top: 40%;
+					left: 8.5%;
+				}
 				#addui, #tagclass {
 					top:10px;
 					left:10px;
-				}
-				#stordata {
-					height: 80px;
 				}
 				fieldset {
 					min-width: 16.5em;
@@ -682,6 +719,11 @@
 				#addui {
 					left: 40%;
 					top: 1em;
+				}
+				#prvui {
+					left: 35%;
+					top: 18em;
+					width: 24em;
 				}
 				fieldset {
 					min-width: 21.75em;
