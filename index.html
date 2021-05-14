@@ -8,66 +8,67 @@
 		<title>Useragent 生成</title>
 		<style id="myLight">
 			:root {
-				--theme-color-a: #2b75c4;
-				--theme-color-b: white;
-				--theme-color-c: white;			 /* 反色前景色 */
-				--theme-color-d: transparent;	 /* 选框 文本框 背景色 */
-				--theme-color-e: lightgray;		 /* 选框 边框颜色 */
-				--theme-color-f: white;			 /* 页面背景色 */
-				--theme-color-g: yellow;		 /* 链接聚焦颜色 */
-				--theme-color-h: #e6f4ff;		 /* 选框 聚焦 背景色 */
-				--theme-color-i: #3688d0;		 /* 按钮 聚焦 背景色 */
-				--theme-color-j: lightgray;		 /* 加载屏幕 空筛选 文字颜色 */
-				--theme-color-close: red;
-				--theme-color-close-text: white;
-				--theme-color-prev: blueviolet;
-				--theme-color-top: #2b75c4;
-				--theme-color-top-enable: dodgerblue;
-				--input-check-ready: lightgray;
-				--input-check-ok: green;
-				--input-check-err: orange;
-				--input-check-null: red;
-				--data-need-save: orange;
-				--tag-filtered: #00ad46;
-				--prvw-key: tomato;
-				--prvw-plat: darkviolet;
-				--prvw-from: green;
-				--shadow-big: 0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 5px 2px rgba(0,0,0,0.12);
-				--shadow-small: 0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 3px 1px rgba(0,0,0,0.12);
+				--theme-color-a:#2b75c4;
+				--theme-color-b:white;
+				--theme-color-c:white;			 /* 反色前景色 */
+				--theme-color-d:transparent;	 /* 选框 文本框 背景色 */
+				--theme-color-e:lightgray;		 /* 选框 边框颜色 */
+				--theme-color-f:white;			 /* 页面背景色 */
+				--theme-color-g:yellow;		 /* 链接聚焦颜色 */
+				--theme-color-h:#e6f4ff;		 /* 选框 聚焦 背景色 */
+				--theme-color-i:#3688d0;		 /* 按钮 聚焦 背景色 */
+				--theme-color-j:lightgray;		 /* 加载屏幕 空筛选 文字颜色 */
+				--theme-color-close:red;
+				--theme-color-close-text:white;
+				--theme-color-prev:blueviolet;
+				--theme-color-top:#2b75c4;
+				--theme-color-top-enable:dodgerblue;
+				--input-check-ready:lightgray;
+				--input-check-ok:green;
+				--input-check-err:orange;
+				--input-check-null:red;
+				--data-need-save:orange;
+				--tag-filtered:#00ad46;
+				--prvw-key:tomato;
+				--prvw-plat:darkviolet;
+				--prvw-from:green;
+				--shadow-big:0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 5px 2px rgba(0,0,0,0.12);
+				--shadow-small:0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 3px 1px rgba(0,0,0,0.12);
 			}
 		</style>
 		<style id="myDark">
-			@media (prefers-color-scheme: dark) {
+			@media (prefers-color-scheme:dark) {
 				:root {
-					--theme-color-a: lightskyblue;
-					--theme-color-b: #2e3952;
-					--theme-color-c: #2b75c4;
-					--theme-color-d: #345077;
-					--theme-color-e: transparent;
-					--theme-color-f: #202327;
-					--theme-color-g: yellow;
-					--theme-color-h: #3e5f8e;
-					--theme-color-i: #6cc3f9;
-					--theme-color-j: #728195;
-					--theme-color-close: red;
-					--theme-color-close-text: white;
-					--theme-color-prev: blueviolet;
-					--theme-color-top: #2b75c4;
-					--theme-color-top-enable: dodgerblue;
-					--input-check-ready: #345077;
-					--input-check-ok: green;
-					--input-check-err: orange;
-					--input-check-null: red;
-					--data-need-save: darksalmon;
-					--tag-filtered: #99ddbb;
-					--prvw-key: yellow;
-					--prvw-plat: pink;
-					--prvw-from: lime;
-					--shadow-big: 0 0 5px 3px rgba(50,80,120,0.5);
-					--shadow-small: none;
+					--theme-color-a:lightskyblue;
+					--theme-color-b:#2e3952;
+					--theme-color-c:#2b75c4;
+					--theme-color-d:#345077;
+					--theme-color-e:transparent;
+					--theme-color-f:#202327;
+					--theme-color-g:yellow;
+					--theme-color-h:#3e5f8e;
+					--theme-color-i:#6cc3f9;
+					--theme-color-j:#728195;
+					--theme-color-close:red;
+					--theme-color-close-text:white;
+					--theme-color-prev:blueviolet;
+					--theme-color-top:#2b75c4;
+					--theme-color-top-enable:dodgerblue;
+					--input-check-ready:#345077;
+					--input-check-ok:green;
+					--input-check-err:orange;
+					--input-check-null:red;
+					--data-need-save:darksalmon;
+					--tag-filtered:#99ddbb;
+					--prvw-key:yellow;
+					--prvw-plat:pink;
+					--prvw-from:lime;
+					--shadow-big:0 0 5px 3px rgba(50,80,120,0.5);
+					--shadow-small:none;
 				}
 			}
 		</style>
+		<style>body{font-size:16px;background-color:var(--theme-color-f);}body>div{margin:0 .5em;}.none{display:none;}#loaddiv{width:100%;height:100%;position:absolute;top:0;left:0;z-index:9;background-color:var(--theme-color-b);opacity:100%;margin:0;}#loadstr,#browstr{max-width:80%;margin:0 auto;margin-top:1em;font-size:1.5em;font-weight:bold;text-align:center;color:var(--theme-color-j);}#browstr{margin-top:.5em;font-size:1.25em;}</style>
 	</head>
 	<body>
 		<p id="version"></p>
