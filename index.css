@@ -292,13 +292,14 @@
 			}
 			button {
 				background-color:var(--theme-color-a);
-				border:1px solid transparent;
+				border:none;
 				color:var(--theme-color-c);
 				font-size:.75em;
 				font-weight:bold;
 				padding:3px;
 				width:100%;
-			}
+                margin:0;
+            }
 			button:focus {
 				background-color: var(--theme-color-i);
 			}
@@ -421,9 +422,9 @@
 				font-weight: bold;
 				font-size: .9em;
 				width: 80%;
-				-webkit-appearance: none;
-				   -moz-appearance: none;
-						appearance: none;
+				-webkit-appearance: menulist;
+				   -moz-appearance: menulist;
+						appearance: menulist;
 				border: none;
 				box-shadow:var(--shadow-big);
 			}
