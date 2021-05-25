@@ -203,6 +203,9 @@
 				margin: 3px 4px;
 				box-shadow:var(--shadow-small);
 			}
+			.savebtn .btnGrp {
+				margin: 0;
+			}
 			#action {
 				margin: 3px .5em;
 			}
@@ -652,7 +655,7 @@
 			.topwin {
 				z-index: 9 !important;
 			}
-			@media only screen and (min-width: 360px) {
+			@media only screen and (orientation: portrait) {
 				#baseopt,#modeopt {
 					padding: 3px 6px;
 				}
@@ -693,7 +696,7 @@
 					padding: 0 5px;
 				}
 			}
-			@media only screen and (min-width: 600px) {
+			@media only screen and (orientation: landscape) {
 				body {
 					width: 500px;
 					margin: 2px auto;
