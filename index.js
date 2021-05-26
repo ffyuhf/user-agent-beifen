@@ -1,3 +1,4 @@
+import styles from "./index.css";
 const uaData = {
 	base:{},
 	apps:{},
@@ -15,30 +16,32 @@ const uaData = {
 	},
 	storKey:"userAgentData",
 	styleKey:"userAgentStyle",
+	styles:styles,
 	版本:{
 		描述:"5.1 Beta 5",
-		详细:21052615,
+		详细:21052616,
 	},
 	设置:{
 		基础默认:1,
 		数字记号:"#",
 	}
-};
+},
+getTheme = require('./gettheme'),
+dark = require('./dark'),
+swView = require('./swview');
+
 window.uaData = uaData;
-import styles from "./index.css";
-uaData.styles = styles;
+if(uaData.touch) { window.IndexSidebar = require('./indexSidebar'); }
+window.uaCode = require('./uaCode');
+window.加入 = require('./add');
+
 document.querySelectorAll('p,div,input,span,button,label,textarea,select').forEach( n => {
 	(n.id) && (uaData.styles[n.id]) && (n.id = uaData.styles[n.id]);
 	(n.htmlFor) && (uaData.styles[n.htmlFor]) && (n.htmlFor = uaData.styles[n.htmlFor]);
 	n.classList.forEach( c => uaData.styles[c] && n.classList.replace(c,uaData.styles[c]));
 });
-if(uaData.touch) { window.IndexSidebar = require('./indexSidebar'); }
-window.uaCode = require('./uaCode');
-window.加入 = require('./add');
-var getTheme = require('./gettheme');
-getTheme();
-var dark = require('./dark');
-dark();
+
+getTheme(); dark();
 uaCode.sel(false,'#toast').addEventListener('animationend',e => {
 	e.target.onclick = null;
 	e.target.classList.remove(styles.toasting);
@@ -51,5 +54,4 @@ uaCode.sel(false,'#toast').addEventListener('animationend',e => {
 "爬虫_良良.js",
 ]);
 uaData.load = require('./loader');
-var swView = require('./swview');
 swView();
