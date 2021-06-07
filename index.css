@@ -298,8 +298,8 @@ button {
 	font-weight:bold;
 	padding:3px;
 	width:100%;
-                margin:0;
-            }
+	margin:0;
+}
 button:focus {
 	background-color: var(--theme-color-i);
 }
