@@ -86,8 +86,8 @@ jdjxapp: {
 	名称: "京喜",
 	前置: "是",
 	无缝: "是",
-	标签: ["TBS"],
-	内容: "jdpingou;android;3.16.0;appBuild/14448;"
+	标签: [],
+   内容: "jdpingou;android;4.9.2;appBuild/16910;partner/jingdong;;session/216"
 },
 ppgx: {
 	名称: "皮皮搞笑",
@@ -787,7 +787,7 @@ kuan: {
 	前置: "不是",
 	无缝: "不是",
 	标签: [],
-	内容: " (#Build; GOOGLE; Google Pixel 3 XL; QPP5.190530.014; 10) +CoolMarket/11.0.3-beta1-2103041-universal"
+   内容: " (#Build; GOOGLE; Google Pixel 3 XL; QPP5.190530.014; 10) +CoolMarket/11.2.3-2106021-universal"
 },
 kuanvn: {
 	名称: "酷安 VN",
@@ -1984,7 +1984,7 @@ wxapp: {
 	前置: "不是",
 	无缝: "不是",
 	标签: ["腾讯"],
-	内容: "MMWEBID/4268 MicroMessenger/8.0.1.1841(0x2800015A) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64"
+   内容: "MMWEBID/4268 MicroMessenger/8.0.6.1900(0x28000637) Process/toolsmp WeChat/arm64 Weixin NetType/WIFI Language/zh_CN ABI/arm64"
 },
 jiandanss: {
 	名称: "简单搜索",
@@ -2105,6 +2105,13 @@ tblite: {
 	标签: ["阿里"],
 	内容: "AliApp(TB/4.12.1) TTID/212200@htao_android_4.12.1 1080X1920"
 },
+tbapp: {
+	名称: "淘宝",
+   前置: "不是",
+   无缝: "不是",
+   标签: ["阿里"],
+   内容: "AliApp(TB/10.1.0) UCBS/2.11.1.1 TTID/10001401@taobao_android_10.1.0 1080X1920 UT4Aplus/0.2.16"
+},
 bdApp: {
 	名称: "百度 APP",
 	前置: "不是",
@@ -2118,6 +2125,13 @@ bdOpt: {
 	无缝: "不是",
 	标签: ["百度"],
 	内容: "Mozilla/5.0 (Android;) AppleWebKit/605.1.15 (KHTML, like Gecko) Safari/604.1 mission baiduboxapp/3.2.5.10 SearchCraft/3.7.0"
+},
+bdOpt2: {
+	名称: "百度优化方案(2)",
+	前置: "不是",
+	无缝: "不是",
+	标签: ["百度"],
+	内容: "Mozilla/5.0 (Android;lite baiduboxapp) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile Safari/604.1 pro baiduboxapp/3.2.5.10 SearchCraft/3.7.0"
 },
 whatsapp: {
 	名称: "WhatsApp",
@@ -2138,6 +2152,13 @@ zhifubao: {
 	前置: "不是",
 	无缝: "不是",
 	标签: ["阿里"],
-	内容: "AlipayDefined(nt:WIFI,ws:360|0|3.0,ac:sp) AliApp(AP/10.2.15.9500) AlipayClient/10.2.15.9500"
+	内容: "AlipayDefined(nt:WIFI,ws:360|0|3.0,ac:sp) AliApp(AP/10.2.23.7100) AlipayClient/10.2.23.7100"
+},
+meituan: {
+	名称: "美团",
+	前置: "不是",
+	无缝: "不是",
+	标签: [],
+	内容: " TitansX/11.39.13 KNB/1.2.0 android/9 mt/com.sankuai.meituan/11.9.403 App/10120/11.9.403 MeituanGroup/11.9.403 EH/8.1.0"
 },
 });

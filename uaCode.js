@@ -86,7 +86,7 @@ function uaCode() {
 				} else if (window.mdhtml) {
 					window.mdhtml.mdts(text);
 				} else {
-					const toast = $(false,"#toast");
+					const toast = $(false,"#toastdiv");
 					toast.innerHTML = text;
 					toast.className = uaData.styles.toasting;
 				}
@@ -163,7 +163,7 @@ function uaCode() {
 			
 			function makeIssue(issue,head) {
 				let p = document.createElement('p');
-				p.className = uaData.styles.issue;
+				p.className = uaData.styles.issueItem;
 				p.id = (head) ? uaData.styles.issueHead : '';
 				p.innerHTML = issue;
 				return p;
@@ -175,8 +175,11 @@ function uaCode() {
 					issue = [
 								[ // #1 百度 页面 确认框
 									( ua.includes('baiduboxapp/') && (
-									/Android[^\s\)]* +[^\)]*\)+?/u.test(ua) || ( ver = /baiduboxapp\/\d*/.exec(ua)[0].replace('baiduboxapp/',''),
-									ver === '' || ver >= 4 ))),
+									(/\(.*Android.*\)/.test(ua) &&
+									/Android[^\)]*\)+?/.exec(ua)[0].includes(' ') &&
+									!/Android[^\s]+;?[^\s]+[\w]+.*\)+?/u.test(ua)) ||
+									(!/ (lite|info|pro|mission) baiduboxapp/.test(ua) &&
+									/baiduboxapp\/\d*/.test(ua)))),
 									'此 UA 可能会导致 百度部分页面 加载时弹出 确认/取消 对话框'
 								],[ // #2 城通 下载按钮 失效
 									ua.includes('baidu'),
@@ -193,6 +196,9 @@ function uaCode() {
 								],[ // #6 淘宝 windvine 确认框
 									( ua.includes('Android') && /WindVane\/\d+\.\d+\.\d+/.test(ua) && ( ver = /WindVane\/\d+/.exec(ua)[0].replace('WindVane/',''), ver >= 1 )),
 									'此 UA 可能会导致 淘宝部分页面 加载时弹出 确认/取消 对话框'
+								],[ // #7 知乎电脑版
+									!ua.includes('Mobile'),
+									'此 UA 可能会导致 知乎 显示电脑版页面'
 								]
 							];
 				let count = 0, hasHead = false;
@@ -1108,7 +1114,7 @@ function uaCode() {
 				$(true,'#modebox label').forEach( e => ee(e,'keydown', spaceChecked));
 				ee($(false,'#openClass'),'click',openWin.bind(this,'#tagclass'));
 				ee($(false,'#openUA'),'click',openWin.bind(this,'#ua'));
-				ee($(false,'#search'),'input', fltAppUA.bind(this));
+				ee($(false,'#searchInput'),'input', fltAppUA.bind(this));
 				ee($(false,'#btnHelp'),'click',()=>{window.location.href='https://gitee.com/lemon399/user-agent-share-page/blob/master/README.md'});
 				ee($(false,'#btnCSel'),'click',()=>{$_('app').forEach( check => { check.checked = false; })});
 				ee($(false,'#openNew'),'click',openWin.bind(this,'#addui'));
@@ -1166,7 +1172,7 @@ function uaCode() {
 				$(false,"#Raapp").checked = true;
 				$(false,"#stordata").value = '';
 				aform_Clear();
-				$(false,"#search").value = '';
+				$(false,"#searchInput").value = '';
 				$(false,"#version").innerHTML = `版本:${uaData.版本.描述}_${uaData.版本.详细} 总数:${Object.keys(uaData.apps).length}`;
 				if (window.location.host.match('gitee.io')) {
 					$(false,"#version").innerHTML += ' <i>由 Gitee 提供代码和网页托管服务</i>';

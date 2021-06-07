@@ -19,7 +19,7 @@ const uaData = {
 	styles:styles,
 	版本:{
 		描述:"5.1 Beta 5",
-		详细:21052616,
+		详细:21060715,
 	},
 	设置:{
 		基础默认:1,
@@ -42,7 +42,7 @@ document.querySelectorAll('p,div,input,span,button,label,textarea,select').forEa
 });
 
 getTheme(); dark();
-uaCode.sel(false,'#toast').addEventListener('animationend',e => {
+uaCode.sel(false,'#toastdiv').addEventListener('animationend',e => {
 	e.target.onclick = null;
 	e.target.classList.remove(styles.toasting);
 });
