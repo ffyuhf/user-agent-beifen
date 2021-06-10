@@ -96,6 +96,7 @@ noscript {
 	padding: 0 4px;
 	margin: 0 2px;
 	box-shadow: var(--shadow-small);
+	transition: opacity .5s;
 }
 #appdiv .flag {
 	margin: 1.5px 0 1.5px 3px;
@@ -299,6 +300,7 @@ button {
 	padding:3px;
 	width:100%;
 	margin:0;
+	transition: background-color .5s;
 }
 button:focus {
 	background-color: var(--theme-color-i);
@@ -427,20 +429,6 @@ user-select: none;
 	border: none;
 	box-shadow:var(--shadow-big);
 }
-@keyframes toast {
-	0% {
-		opacity: 0%;
-	}
-	35% {
-		opacity: 100%;
-	}
-	85% {
-		opacity: 100%;
-	}
-	100% {
-		opacity: 0%;
-	}
-}
 #toastdiv {
 	position: absolute;
 	left: 0;
@@ -460,10 +448,8 @@ user-select: none;
 	box-shadow: 0 0 5px var(--theme-color-c);
 	text-align: center;
 	z-index: 10;
-}
-.toasting {
-	display: block !important;
-	animation: toast 3s;
+	opacity: 0%;
+	transition: opacity .5s;
 }
 .titlebar {
 	width: 100%;
@@ -490,23 +476,13 @@ user-select: none;
 	margin: 0;
 	width: 5em;
 	box-shadow: none;
+	transition: background-color .5s;
 }
 .win .prev {
 	background-color: var(--theme-color-prev);
 }
 .win .topbutton {
 	background-color: var(--theme-color-top);
-}
-@keyframes load_finish {
-	0% {
-		opacity: 100%;
-	}
-	100% {
-		opacity: 0%;
-	}
-}
-.finish {
-	animation: load_finish 1s;
 }
 #loaddiv {
 	width: 100%;
@@ -518,6 +494,7 @@ user-select: none;
 	background-color: var(--theme-color-b);
 	opacity: 100%;
 	margin: 0;
+	transition: opacity .5s;
 }
 #loadstr,#browstr {
 	max-width: 80%;
@@ -616,11 +593,13 @@ fieldset {
 	width: 92%;
 	border-radius: 5px;
 	padding: 5px;
+	transition: border-color .5s;
 }
 fieldset legend, #swopt legend, #swopt p {
 	color: var(--theme-color-j);
 	font-size: 12px;
 	font-weight: bold;
+	transition: color .5s;
 }
 fieldset:focus-within, #swopt.inst fieldset {
 	border: 2px solid var(--theme-color-a);

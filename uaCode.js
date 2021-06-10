@@ -66,7 +66,7 @@ function uaCode() {
 		}
 	}
 	
-	function toast(text) {
+	function toast(text, time = 3) {
 		if (window.mbrowser && window.mbrowser.showToast) {
 			window.mbrowser.showToast(text);
 		} else if (window.via && window.via.toast) {
@@ -76,7 +76,7 @@ function uaCode() {
 		} else if (window.H5EXT) {
 			window.H5EXT.cmd(99,text);
 		} else if (window.meta) {
-			window.meta.toast(text,3,null);
+			window.meta.toast(text,time,null);
 		} else if (window.mx_browser_obj && window.mx_browser_obj.showtip) {
 			window.mx_browser_obj.showtip(text);
 		} else if (window.JSInterface && window.JSInterface.syslog) {
@@ -86,9 +86,15 @@ function uaCode() {
 		} else if (window.mdhtml) {
 			window.mdhtml.mdts(text);
 		} else {
-			const toast = $(false,"#toastdiv");
+			const toast = $(false,"#toastdiv"),
+			toast1 = function(){ toast.style.opacity = "100%"; },
+			toast2 = function(){ toast.style.opacity = "0%"; },
+			toast3 = function(){ toast.style.display = "none"; };
 			toast.innerHTML = text;
-			toast.className = uaData.styles.toasting;
+			toast.style.display = "block";
+			setTimeout(toast1,50);
+			setTimeout(toast2,(time - 0.5) * 1000);
+			setTimeout(toast3,time * 1000);
 		}
 	}
 	
@@ -197,7 +203,7 @@ function uaCode() {
 							( ua.includes('Android') && /WindVane\/\d+\.\d+\.\d+/.test(ua) && ( ver = /WindVane\/\d+/.exec(ua)[0].replace('WindVane/',''), ver >= 1 )),
 							'此 UA 可能会导致 淘宝部分页面 加载时弹出 确认/取消 对话框'
 						],[ // #7 知乎电脑版
-							!ua.includes('Mobile'),
+							( ua.includes('Android') && !ua.includes('Mobile') ),
 							'此 UA 可能会导致 知乎 显示电脑版页面'
 						]
 					];
@@ -1153,13 +1159,13 @@ function uaCode() {
 		ee($(false,'#styclr'),'click',()=>{window.localStorage.removeItem(uaData.styleKey);toast('清空啦，刷新后恢复默认主题')});
 		ee($(false,'#swreg'),'click',swOpr);
 		ee($(false,'#swclr'),'click',()=>{ caches.keys().then( vers => vers.map( i => caches.delete(i) )); cacheScan()});
-		ee($(false,'#loaddiv'),'animationend',e=>_(e.target,false));
 		$(true,'#acont1,#acont2a,#acont2b,#qcont1,#qcont2,#qcont3').forEach( e => ee(e,'input',previewUpdate));
 		$(true,'#apre input,#afol input').forEach( e => ee(e,'change', previewUpdate));
 		$(true,'#atbs,#ashort,#apc,#aspider').forEach( e => ee(e,'change',previewUpdate));
 	}
 	
 	function init(){
+		let finish = function(){_($(false,"#loaddiv"),false)};
 		$(false,'#loadstr').innerHTML = '正在构建 ...';
 		lsb_initOption();
 		makeItem();
@@ -1181,7 +1187,8 @@ function uaCode() {
 			}
 		}
 		$(false,'#loadstr').innerHTML = '加载完成';
-		_($(false,"#loaddiv"),false,"finish");
+		$(false,"#loaddiv").style.opacity = '0%';
+		setTimeout(finish,1000);
 		lab = $(true,"#app_container label"),
 		cas = $(true,"#app_container .CaseHead"),
 		lah = $(true,"#app_container > label,.CaseHead"),

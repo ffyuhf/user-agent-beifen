@@ -19,7 +19,7 @@ const uaData = {
 	styles:styles,
 	版本:{
 		描述:"5.1 Beta 5",
-		详细:21060715,
+		详细:21061017,
 	},
 	设置:{
 		基础默认:1,
@@ -42,10 +42,6 @@ document.querySelectorAll('p,div,input,span,button,label,textarea,select').forEa
 });
 
 getTheme(); dark();
-uaCode.sel(false,'#toastdiv').addEventListener('animationend',e => {
-	e.target.onclick = null;
-	e.target.classList.remove(styles.toasting);
-});
 加入("数据",[
 "基础_良良.js",
 "UA_良良.js",
