@@ -2,6 +2,7 @@
 	outline: none;
 }
 body {
+	font-family: -apple-system, Tahoma, sans;
 	font-size: 16px;
 	background-color: var(--theme-color-f);
 }
@@ -187,10 +188,10 @@ div.sideBar > div:last-of-type {
 	line-height: 1.5em;
 	text-align: center;
 	transform: translate3d(-1.5em, 0, 0);
-	font-size:2em;
-	opacity:0;
+	font-size: 2em;
+	opacity: 0;
 	transition: opacity .3s ease, top .1s linear;
-	border-radius:100%;
+	border-radius: 100%;
 }
 #app_container {
 	overflow-y: scroll;
@@ -202,10 +203,14 @@ div.sideBar > div:last-of-type {
 	display: flex;
 	justify-content: space-between;
 	margin: 3px 4px;
-	box-shadow:var(--shadow-small);
+	box-shadow: var(--shadow-small);
 }
-.savebtn .btnGrp {
+.savebtn .btnGrp,
+#modeopt .btnGrp {
 	margin: 0;
+}
+#modeopt .btnGrp {
+	box-shadow: none;
 }
 #action {
 	margin: 3px .5em;
@@ -275,6 +280,7 @@ input {
 	font-family: monospace;
 	padding: 0 6px;
 	display: block;
+	font-size: .75em;
 }
 input:focus {
 	border-color: var(--theme-color-a);
@@ -294,6 +300,7 @@ input:focus {
 button {
 	background-color:var(--theme-color-a);
 	border:none;
+	border-radius:0;
 	color:var(--theme-color-c);
 	font-size:.75em;
 	font-weight:bold;
@@ -340,7 +347,7 @@ button:focus {
 	padding: 1px 5px;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
-user-select: none;
+		user-select: none;
 }
 #addtype {
 	text-align: center;
@@ -635,19 +642,13 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 	z-index: 9 !important;
 }
 @media only screen and (max-width: 330px) {
-	#baseopt,#modeopt {
-		padding: 3px 1px;
-	}
 	#modeopt button {
-		padding: 3px 2px;
+		padding: 3px;
 	}
 }
 @media only screen and (min-width: 331px) and (max-width: 640px) {
-	#baseopt,#modeopt {
-		padding: 3px 6px;
-	}
 	#modeopt button {
-		padding: 3px;
+		padding: 3px 4px;
 	}
 }
 @media only screen and (max-width: 640px) {
@@ -698,7 +699,7 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 		padding-left: 5px;
 	}
 	#modeopt button {
-		padding: 3px .5em;
+		padding: 5px .5em;
 	}
 	textarea {
 		height: 10em;
