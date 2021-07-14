@@ -1,4 +1,4 @@
-import norm from 'normalize.css';
+import 'normalize.css';
 import styles from "./index.css";
 const uaData = {
 	base:{},
@@ -20,7 +20,7 @@ const uaData = {
 	styles:styles,
 	版本:{
 		描述:"5.1 Beta 5",
-		详细:21071415,
+		详细:21071416,
 	},
 	设置:{
 		基础默认:1,
