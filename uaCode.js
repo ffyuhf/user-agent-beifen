@@ -187,6 +187,13 @@ function uaCode() {
 							(!/ (lite|info|pro|mission) baiduboxapp/.test(ua) &&
 							/baiduboxapp\/\d*/.test(ua)))),
 							'此 UA 可能会导致 百度部分页面 加载时弹出 确认/取消 对话框'
+						],[ // #1+ 百度 APP
+							ua.includes('baiduboxapp/'),
+							'任何使用百度 APP 的 UA，<br>都有可能出现以下情况: <br>\n\
+							1. 新闻 / 资讯里的 百家号 文章 无法打开<br>\n\
+							2. " Ta 在百度 " 里的动态无法打开<br>\n\
+							3. 搜索结果中，笔记 频道内容为空<br>\n\
+							4. 搜索结果可能会变得非常少'
 						],[ // #2 城通 下载按钮 失效
 							ua.includes('baidu'),
 							'此 UA 可能会导致大部分 城通网盘 下载按钮 失效'
@@ -619,18 +626,12 @@ function uaCode() {
 	}
 	
 	function aform_Clear() {
-		$(true,'#addtable input:not([type])').forEach( i => {
-			i.value = "";
+		$(true,'#addtable input:not([type]), #tkds').forEach( i => {
 			i.style.removeProperty('border-color');
 		});
-		$(false,'#tkds').style.removeProperty('border-color');
 		$(true,".classBox input").forEach( c => { c.checked = false; });
 		$(true,".classBox .flag").forEach( f => { f.style.opacity = .5; });
-		$(true,".classPart label").forEach( t => { _(t,false); });
-		$(true,'#apref,#afolf').forEach( r => { r.checked = true; });
-		$(true,'.msel').forEach( s => { s.value = ""; });
-		$(false,'#tbgc').value = '#000000';
-		$(false,'#tfgc').value = '#ffffff';
+		$(true,'#addtable form').forEach( f => f.reset() );
 		aform_updateFlagPreview();
 		aform_switchBoth();
 	}
@@ -1115,6 +1116,14 @@ function uaCode() {
 		_($(false,"#nullprvw"),!show);
 	}
 	
+	function injSty(ad,dark) {
+		if (ad.nodeName==='STYLE') {
+			ad.innerHTML = dark;
+		} else if (ad.nodeName==='LINK' && ad.rel==="stylesheet") {
+			ad.href = 'data:text/css;base64,' + btoa(dark);
+		}
+	}
+	
 	function addEvent() {
 		function ee(el,ev,fn) { el.addEventListener(ev,fn); }
 		$(true,'#modebox label').forEach( e => ee(e,'keydown', spaceChecked));
@@ -1166,6 +1175,7 @@ function uaCode() {
 	
 	function init(){
 		let finish = function(){_($(false,"#loaddiv"),false)};
+		if (uaData.设置.基础默认 > Object.keys(uaData.base).length) uaData.设置.基础默认 = 1;
 		$(false,'#loadstr').innerHTML = '正在构建 ...';
 		lsb_initOption();
 		makeItem();
@@ -1199,7 +1209,8 @@ function uaCode() {
 	return {
 		init: init,
 		sel: $,
-		toast: toast
+		toast: toast,
+		inj: injSty
 	}
 }
 module.exports = uaCode();

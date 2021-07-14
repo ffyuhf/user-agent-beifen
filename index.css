@@ -94,15 +94,15 @@ noscript {
 }
 #classBox .flag,
 .classBox .flag {
-	padding: 0 4px;
-	margin: 0 2px;
+	padding: 2px 4px;
+	margin: 2px;
 	box-shadow: var(--shadow-small);
 	transition: opacity .5s;
 }
 #appdiv .flag {
 	margin: 1.5px 0 1.5px 3px;
 	box-shadow: var(--shadow-small);
-	line-height: 1.5em;
+	line-height: 1.25em;
 }
 #classBox input,
 .classBox input {
@@ -155,17 +155,17 @@ noscript {
 	display: inline-flex;
 }
 #appdiv label {
-	margin: 1px 2px 1px .5em;
+	margin: 1px .25em 2px .5em;
 	display: flex;
 	color: var(--theme-color-a);
-	align-items: flex-end;
+	align-items: center;
 }
 .CaseHead {
-	font-size: .75em;
+	font-size: 13px;
 	font-weight: bold;
 	background: var(--theme-color-a);
 	color: var(--theme-color-c);
-	padding-left: 5px;
+    padding: 2px 0 2px 5px;
 }
 .sideBar {
 	width: 15px;
@@ -194,7 +194,7 @@ div.sideBar > div:last-of-type {
 	border-radius: 100%;
 }
 #app_container {
-	overflow-y: scroll;
+	overflow-y: auto;
 	height: calc(1.5em * 14.5);
 	width: 100%;
 }
@@ -240,7 +240,7 @@ label:focus .new_style {
 	transform:scale(.8);
 }
 .new_check.new_style {
-	margin: 2px 3px 2px auto;
+	margin: 3px 3px 0 auto;
 	border-radius:0;
 	display:inline-block;
 }
@@ -278,9 +278,9 @@ input {
 	color: var(--theme-color-a);
 	caret-color: var(--theme-color-a);
 	font-family: monospace;
-	padding: 0 6px;
 	display: block;
 	font-size: .75em;
+    line-height: 1em;
 }
 input:focus {
 	border-color: var(--theme-color-a);
@@ -304,7 +304,7 @@ button {
 	color:var(--theme-color-c);
 	font-size:.75em;
 	font-weight:bold;
-	padding:3px;
+	padding:.5em;
 	width:100%;
 	margin:0;
 	transition: background-color .5s;
@@ -325,7 +325,7 @@ button:focus {
 	font-size: .5em;
 	color: var(--theme-color-a);
 	text-align: right;
-	margin: 2px 1em;
+	margin: 5px 1em;
 }
 #nulltext {
 	font-size: 2em;
@@ -358,12 +358,13 @@ button:focus {
 #addsave > *,
 #setlayer > *,
 #classBox,
-#useragent {
+#useragent,
+#issues {
 	margin: 3px 4px;
 }
 .classPart > *,
 #swopt > * {
-	margin: 3px 0;
+	margin: 4px 0;
 }
 .atab > label,
 #addsave > label,
@@ -378,8 +379,9 @@ button:focus {
 }
 #addtype > label b {
 	border-radius: 2px;
-	font-size: 12px;
-	padding: 2px .5em;
+    font-size: 12px;
+    line-height: 12px;
+	padding: 5px .5em;
 	margin: 5px 0;
 }
 #addtype > label:focus b {
@@ -398,8 +400,8 @@ button:focus {
 .atab div p,
 #addsave div p {
 	width: 20%;
-	min-width:5em;
-	margin: 2px .25em;
+	min-width: 5em;
+	margin: .25em;
 	font-size: .9em;
 	color: var(--theme-color-a);
 }
@@ -467,8 +469,9 @@ button:focus {
 	font-weight: bold;
 }
 .titleText {
-	padding: 3px 7px;
 	width: 100%;
+	padding: 0 .5em;
+    line-height: 25px;
 	background-color: transparent;
 	-webkit-user-select: none;
 	   -moz-user-select: none;
@@ -518,7 +521,7 @@ button:focus {
 }
 #tclsbox {
 	float: right;
-	margin: 3px 0;
+	margin: 2px 0;
 	font-weight: bold;
 }
 #ttexd {
@@ -540,6 +543,7 @@ button:focus {
 	border: none;
 	width: 80%;
 	height: 100%;
+    font-size: 12px;
 	box-shadow: none;
 	color: var(--theme-color-a);
 	font-family: monospace;
@@ -551,7 +555,7 @@ button:focus {
 	background: var(--theme-color-b);
 	border: none;
 	border-bottom: 1px solid var(--input-check-ready);
-	padding: 2px 6px;
+	padding: 2px 6px 2px 3px;
 }
 #tkds:focus-within {
 	border-color: var(--theme-color-a);
@@ -560,6 +564,10 @@ button:focus {
 	display: block;
 	overflow: hidden;
 	height: 100%;
+}
+input[type="color"] {
+	padding: 0;
+	border: 1px solid;
 }
 #stordata {
 	width: -webkit-fill-available;
@@ -571,7 +579,7 @@ button:focus {
 	margin: 0 3px;
 	background-color: var(--theme-color-a);
 	color: var(--theme-color-c);
-	overflow-y: scroll;
+	overflow-y: auto;
 	max-height: 8em;
 }
 .issueItem {
@@ -585,7 +593,7 @@ button:focus {
 }
 #issueHead {
 	border: none;
-	padding: 0 5px;
+	padding: 2px 5px;
 	font-size: .75em;
 	font-weight: normal;
 }
@@ -618,6 +626,7 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 	height: max-content;
 	padding: 5px;
 	font-size: .9em;
+	line-height: 1.5em;
 	font-family: monospace;
 	color: var(--theme-color-a);
 	background: var(--theme-color-h);
@@ -658,7 +667,7 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 	}
 	#ua {
 		width: 80%;
-		top: 40%;
+		top: 30%;
 		left: 8.5%;
 	}
 	#tagclass {
@@ -679,7 +688,7 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 	.atab > label input,
 	#addsave > label input,
 	.classPart > label input {
-		min-width: 14em;
+		min-width: 12rem;
 	}
 	.msel {
 		min-width: 13.5em;
@@ -730,7 +739,7 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 	.atab > label input,
 	#addsave > label input,
 	.classPart > label input {
-		min-width: 17em;
+		min-width: 13rem;
 	}
 	.msel {
 		min-width: 19.5em;

@@ -39,6 +39,27 @@ module.exports = {
 					
 				]
 			},
+            {
+              test: /\/normalize.css$/,
+			  use: [
+				{
+					loader:'style-loader',
+					options:{
+						insert:'head',
+					}
+				},
+				{
+					loader:'css-loader',
+					options: {
+						modules: true,
+						importLoaders: 1
+					}
+				},
+				{
+					loader: 'postcss-loader'
+				}
+			  ]
+			},
 		]
 	},
 	plugins:[

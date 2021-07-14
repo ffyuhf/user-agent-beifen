@@ -1,3 +1,4 @@
+import norm from 'normalize.css';
 import styles from "./index.css";
 const uaData = {
 	base:{},
@@ -19,13 +20,15 @@ const uaData = {
 	styles:styles,
 	版本:{
 		描述:"5.1 Beta 5",
-		详细:21061217,
+		详细:21071415,
 	},
 	设置:{
 		基础默认:1,
 		数字记号:"#",
+        暗色主题:2,
 	}
 },
+getPara = require('./para'),
 getTheme = require('./gettheme'),
 dark = require('./dark'),
 swView = require('./swview');
@@ -35,13 +38,13 @@ if(uaData.touch) { window.IndexSidebar = require('./indexSidebar'); }
 window.uaCode = require('./uaCode');
 window.加入 = require('./add');
 
-document.querySelectorAll('p,div,input,span,button,label,textarea,select').forEach( n => {
+document.querySelectorAll('p,div,input,span,button,label,textarea,select,form').forEach( n => {
 	(n.id) && (uaData.styles[n.id]) && (n.id = uaData.styles[n.id]);
 	(n.htmlFor) && (uaData.styles[n.htmlFor]) && (n.htmlFor = uaData.styles[n.htmlFor]);
 	n.classList.forEach( c => uaData.styles[c] && n.classList.replace(c,uaData.styles[c]));
 });
 
-getTheme(); dark();
+getPara(); getTheme(); dark();
 加入("数据",[
 "基础_良良.js",
 "UA_良良.js",

@@ -68,6 +68,7 @@
 				}
 			}
 		</style>
+		<style id="myImportant"></style>
 		<style>body{font-size:16px;background-color:var(--theme-color-f);}body>div{margin:0 .5em;}.none{display:none;}#loaddiv{width:100%;height:100%;position:absolute;top:0;left:0;z-index:9;background-color:var(--theme-color-b);opacity:100%;margin:0;}#loadstr,#browstr{max-width:80%;margin:0 auto;margin-top:1em;font-size:1.5em;font-weight:bold;text-align:center;color:var(--theme-color-j);}#browstr{margin-top:.5em;font-size:1.25em;}</style>
 	</head>
 	<body>
@@ -172,7 +173,7 @@
 			</div>
 			<div id="addlayer">
 				<div id="addtable">
-					<div id="aappt" class="atab">
+					<form id="aappt" class="atab">
 						<label id="akeyl"><b>标识</b>
 							<input id="akey" type="text" name="aapp" class="key" placeholder="首字母对应名称拼音首字母"/>
 						</label>
@@ -227,8 +228,8 @@
 								</label>
 							</div>
 						</div>
-					</div>
-					<div id="qappt" class="atab none">
+					</form>
+					<form id="qappt" class="atab none">
 						<label id="qkeyl"><b>标识</b>
 							<input id="qkey" type="text" name="qapp" class="key" placeholder="首字母对应名称拼音首字母"/>
 						</label>
@@ -257,8 +258,8 @@
 								</label>
 							</div>
 						</div>
-					</div>
-					<div id="atagt" class="atab none">
+					</form>
+					<form id="atagt" class="atab none">
 						<label id="tkeyl"><b>标识</b>
 							<input id="tkey" type="text" name="atag" class="key" placeholder="数字和英文字母"/>
 						</label>
@@ -277,12 +278,12 @@
 							</div>
 						</div>
 						<label><b>背景</b>
-							<input id="tbgc" type="color" name="atag"/>
+							<input id="tbgc" type="color" name="atag" value="#000000"/>
 						</label>
 						<label><b>文字</b>
-							<input id="tfgc" type="color" name="atag"/>
+							<input id="tfgc" type="color" name="atag" value="#ffffff"/>
 						</label>
-					</div>
+					</form>
 				</div>
 				<div id="addbtn" class="btnGrp">
 					<button type="button" id="aok">加入</button>
