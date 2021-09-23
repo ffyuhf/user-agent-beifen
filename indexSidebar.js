@@ -13,7 +13,7 @@ var emitter = {
 	}
 };
 emitter.subscribe('fingerLand', (data) => {
-	var indicator = document.querySelector('div.indicator');
+	var indicator = document.querySelector('.indicator');
 	if (data) {
 		var content = data.innerHTML;
 		indicator.classList.remove(uaData.styles.none);
@@ -22,21 +22,21 @@ emitter.subscribe('fingerLand', (data) => {
 		indicator.style.top = data.getBoundingClientRect().top + 'px';
 	} else {
 		indicator.style.opacity = '0';
-		setTimeout("document.querySelector('div.indicator').classList.add(uaData.styles.none)",500);
+		setTimeout("document.querySelector('.indicator').classList.add(uaData.styles.none)",500);
 	}
 });
 emitter.subscribe('fingerLand', (elem) => {
 	if (elem) {
 		if (elem.innerHTML.length == 1) {
-			var content = elem.innerHTML, scrolledElem = document.querySelector(`div#${uaData.styles.app_container} > div[id="i${content}"]`);
+			var content = elem.innerHTML, scrolledElem = document.querySelector(`#${uaData.styles.app_container} > div[id="i${content}"]`);
 			scrolledElem.scrollIntoView();
 		}
 	}
 });
 emitter.subscribe('fingerOff', () => {
-	var indicator = document.querySelector('div.indicator');
+	var indicator = document.querySelector('.indicator');
 	indicator.style.opacity = '0';
-	setTimeout("document.querySelector('div.indicator').classList.add(uaData.styles.none)",500);
+	setTimeout("document.querySelector('.indicator').classList.add(uaData.styles.none)",500);
 });
 
 function IndexSidebar(options) {

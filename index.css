@@ -1,10 +1,20 @@
+@-webkit-keyframes toastani {
+	0% { opacity: 0%; }
+	20% { opacity: 100%; }
+	80% { opacity: 100%; }
+	100% { opacity: 0%; }
+}
+@keyframes toastani {
+	0% { opacity: 0%; }
+	20% { opacity: 100%; }
+	80% { opacity: 100%; }
+	100% { opacity: 0%; }
+}
 :focus {
 	outline: none;
 }
 body {
 	font-family: -apple-system, Tahoma, sans;
-	font-size: 16px;
-	background-color: var(--theme-color-f);
 }
 textarea {
 	background-color: var(--theme-color-d);
@@ -26,9 +36,6 @@ textarea:focus {
 }
 #setlayer textarea:focus {
 	border-color: none;
-}
-body > div {
-	margin: 0 .5em;
 }
 .none,
 .sel_none,
@@ -71,12 +78,12 @@ noscript {
 }
 #options {
 	margin-bottom: 4px;
-	box-shadow: var(--shadow-big);
+	border: 1px solid var(--theme-color-a);
 }
 #appdiv {
 	margin-bottom: 8px;
 	background: var(--theme-color-b);
-	box-shadow: var(--shadow-big);
+	border: 1px solid var(--theme-color-a);
 }
 .win {
 	font-size: 1em;
@@ -97,6 +104,7 @@ noscript {
 	padding: 2px 4px;
 	margin: 2px;
 	box-shadow: var(--shadow-small);
+	opacity: 0.5;
 	transition: opacity .5s;
 }
 #appdiv .flag {
@@ -108,6 +116,10 @@ noscript {
 .classBox input {
 	display: none;
 }
+#classBox input:checked + .flag,
+.classBox input:checked + .flag {
+	opacity: 1;
+}
 .setHead {
 	background: var(--theme-color-a);
 	color: var(--theme-color-c);
@@ -116,7 +128,8 @@ noscript {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 8.5em;
+	width: 6em;
+	flex-shrink: 0;
 }
 #ajump {
 	display: flex;
@@ -140,6 +153,8 @@ noscript {
 	grid-template-columns: repeat(4, max-content);
 	grid-template-rows: repeat(2, -webkit-max-content);
 	grid-template-rows: repeat(2, max-content);
+	column-gap: 5px;
+	grid-column-gap: 5px;
 }
 #modeopt {
 	display: flex;
@@ -147,6 +162,13 @@ noscript {
 }
 #modeopt > div {
 	display: flex;
+}
+#modeopt > div:first-child {
+	display: grid;
+	grid-template-columns: repeat(2, max-content);
+	column-gap: 5px;
+	grid-column-gap: 5px;
+	align-content: center;
 }
 #options label,
 #classBox label,
@@ -203,14 +225,11 @@ div.sideBar > div:last-of-type {
 	display: flex;
 	justify-content: space-between;
 	margin: 3px 4px;
-	box-shadow: var(--shadow-small);
 }
 .savebtn .btnGrp,
 #modeopt .btnGrp {
 	margin: 0;
-}
-#modeopt .btnGrp {
-	box-shadow: none;
+	padding: 0;
 }
 #action {
 	margin: 3px .5em;
@@ -304,10 +323,10 @@ button {
 	color:var(--theme-color-c);
 	font-size:.75em;
 	font-weight:bold;
-	padding:.5em;
+	line-height: 0;
+	padding:1.1em .5em;
 	width:100%;
 	margin:0;
-	transition: background-color .5s;
 }
 button:focus {
 	background-color: var(--theme-color-i);
@@ -351,7 +370,7 @@ button:focus {
 }
 #addtype {
 	text-align: center;
-	margin: auto;
+	margin: 5px auto;
 	font-size: .9em;
 }
 .atab > *,
@@ -377,16 +396,24 @@ button:focus {
 	vertical-align: middle;
 	color: var(--theme-color-a);
 }
+#baseopt label b,
+#modeopt label b,
 #addtype > label b {
 	border-radius: 2px;
     font-size: 12px;
     line-height: 12px;
 	padding: 5px .5em;
-	margin: 5px 0;
+	width: 100%;
+	text-align: center;
+	height: max-content;
 }
+#baseopt label:focus b,
+#modeopt label:focus b,
 #addtype > label:focus b {
 	background: var(--theme-color-h);
 }
+#baseopt label input:checked + b,
+#modeopt label input:checked + b,
 #addtype > label input:checked + b {
 	color: var(--theme-color-c);
 	background: var(--theme-color-a);
@@ -457,8 +484,6 @@ button:focus {
 	box-shadow: 0 0 5px var(--theme-color-c);
 	text-align: center;
 	z-index: 10;
-	opacity: 0%;
-	transition: opacity .5s;
 }
 .titlebar {
 	width: 100%;
@@ -494,35 +519,11 @@ button:focus {
 .win .topbutton {
 	background-color: var(--theme-color-top);
 }
-#loaddiv {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 9;
-	background-color: var(--theme-color-b);
-	opacity: 100%;
-	margin: 0;
-	transition: opacity .5s;
-}
-#loadstr,#browstr {
-	max-width: 80%;
-	margin: 0 auto;
-	margin-top: 1em;
-	font-size: 1.5em;
-	font-weight: bold;
-	text-align: center;
-	color: var(--theme-color-j);
-}
-#browstr {
-	margin-top: .5em;
-	font-size: 1.25em;
-}
 #tclsbox {
 	float: right;
 	margin: 2px 0;
 	font-weight: bold;
+	line-height: 1.5em;
 }
 #ttexd {
 	display: flex;
@@ -567,7 +568,7 @@ button:focus {
 }
 input[type="color"] {
 	padding: 0;
-	border: 1px solid;
+	border: none;
 }
 #stordata {
 	width: -webkit-fill-available;
@@ -576,20 +577,20 @@ input[type="color"] {
 	margin: 0 4px;
 }
 #issues {
-	margin: 0 3px;
 	background-color: var(--theme-color-a);
 	color: var(--theme-color-c);
 	overflow-y: auto;
 	max-height: 8em;
+}
+hr {
+	border: 1px solid var(--theme-color-c);
+	margin: 0 .75em;
 }
 .issueItem {
 	margin: 2px .5em;
 	padding: 5px;
 	font-size: .85em;
 	font-weight: bold;
-	border: solid var(--theme-color-c);
-	border-width: 0;
-	border-top-width: 1px;
 }
 #issueHead {
 	border: none;
@@ -616,10 +617,13 @@ fieldset legend, #swopt legend, #swopt p {
 	font-weight: bold;
 	transition: color .5s;
 }
-fieldset:focus-within, #swopt.inst fieldset {
+fieldset:focus-within,
+#swopt.inst fieldset {
 	border: 2px solid var(--theme-color-a);
 }
-fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
+fieldset:focus-within legend,
+#swopt.inst legend,
+#swopt.inst p {
 	color: var(--theme-color-a);
 }
 #addprvw {
@@ -650,9 +654,30 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 .topwin {
 	z-index: 9 !important;
 }
+.circle {
+	width: 1.25em;
+	height: 1.25em;
+	background: var(--theme-color-a);
+	border-radius: 100%;
+	padding: 0 !important;
+}
+#btnDark {
+	margin: .25em .5em;
+}
+#mask {
+	background: var(--theme-color-b);
+	transform: translate(30%,-100%);
+}
+#btnDark.dark #mask {
+	transform: translate(25%,-15%);
+}
 @media only screen and (max-width: 330px) {
 	#modeopt button {
 		padding: 3px;
+	}
+	#addui {
+		top: 10px;
+		left: 0;
 	}
 }
 @media only screen and (min-width: 331px) and (max-width: 640px) {
@@ -664,6 +689,12 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 	textarea {
 		height: 146px;
 		width: 94%;
+	}
+	#baseopt {
+		padding: 5px;
+	}
+	#modeopt div {
+		padding: 0 5px;
 	}
 	#ua {
 		width: 80%;
@@ -701,14 +732,11 @@ fieldset:focus-within legend, #swopt.inst legend, #swopt.inst p {
 		margin: 2px auto;
 	}
 	#baseopt {
-		padding: 5px;
+		padding: 5px .5em;
 		line-height: 19px;
 	}
-	#modeopt {
-		padding-left: 5px;
-	}
-	#modeopt button {
-		padding: 5px .5em;
+	#modeopt div {
+		padding: 0 .5em;
 	}
 	textarea {
 		height: 10em;

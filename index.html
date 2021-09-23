@@ -18,7 +18,7 @@
 				--theme-color-h:#e6f4ff;		 /* 选框 聚焦 背景色 */
 				--theme-color-i:#3688d0;		 /* 按钮 聚焦 背景色 */
 				--theme-color-j:lightgray;		 /* 加载屏幕 空筛选 文字颜色 */
-				--theme-color-close:red;
+				--theme-color-close:crimson;
 				--theme-color-close-text:white;
 				--theme-color-prev:blueviolet;
 				--theme-color-top:#2b75c4;
@@ -33,7 +33,8 @@
 				--prvw-plat:darkviolet;
 				--prvw-from:green;
 				--shadow-big:0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 5px 2px rgba(0,0,0,0.12);
-				--shadow-small:0 2px 2px 0 rgba(0,0,0,0.14), 0 2px 3px 1px rgba(0,0,0,0.12);
+				--shadow-small: 0px 1px 2px 1px lightgray;
+				--color-scheme: light;
 			}
 		</style>
 		<style id="myDark">
@@ -49,7 +50,7 @@
 					--theme-color-h:#3e5f8e;
 					--theme-color-i:#6cc3f9;
 					--theme-color-j:#728195;
-					--theme-color-close:red;
+					--theme-color-close:crimson;
 					--theme-color-close-text:white;
 					--theme-color-prev:blueviolet;
 					--theme-color-top:#2b75c4;
@@ -65,11 +66,12 @@
 					--prvw-from:lime;
 					--shadow-big:0 0 5px 3px rgba(50,80,120,0.5);
 					--shadow-small:none;
+					--color-scheme: dark;
 				}
 			}
 		</style>
 		<style id="myImportant"></style>
-		<style>body{font-size:16px;background-color:var(--theme-color-f);}body>div{margin:0 .5em;}.none{display:none;}#loaddiv{width:100%;height:100%;position:absolute;top:0;left:0;z-index:9;background-color:var(--theme-color-b);opacity:100%;margin:0;}#loadstr,#browstr{max-width:80%;margin:0 auto;margin-top:1em;font-size:1.5em;font-weight:bold;text-align:center;color:var(--theme-color-j);}#browstr{margin-top:.5em;font-size:1.25em;}</style>
+		<style>body{font-size:16px;background-color:var(--theme-color-f);color-scheme:var(--color-scheme);}body>div{margin:0 .5em;}.none{display:none;}#loaddiv{width:100%;height:100%;position:absolute;top:0;left:0;z-index:9;background-color:var(--theme-color-b);opacity:100%;margin:0;transition:opacity .5s;}#loadstr,#browstr{max-width:80%;margin:0 auto;margin-top:1em;font-size:1.5em;font-weight:bold;text-align:center;color:var(--theme-color-j);}#browstr{margin-top:.5em;font-size:1.25em;width:15em;}</style>
 	</head>
 	<body>
 		<p id="version"></p>
@@ -84,14 +86,17 @@
 					<div>
 						<label for="gen" tabindex="0">
 							<input id="gen" type="radio" name="mode" value="gen" class="orig_box" checked="checked"/>
-							<span class="new_style new_radio"></span>生成
+							<b>生成</b>
 						</label>
 						<label for="add" tabindex="0">
 							<input id="add" type="radio" name="mode" value="add" class="orig_box"/>
-							<span class="new_style new_radio"></span>追加
+							<b>追加</b>
 						</label>
 					</div>
 					<div class="btnGrp">
+						<div id='btnDark' class="circle">
+							<div id='mask' class="circle"></div>
+						</div>
 						<button type="button" id="openClass">标签筛选</button>
 						<button type="button" id="openUA">打开窗口</button>
 					</div>
@@ -103,9 +108,9 @@
 			<input id="searchInput" name="search" type="text" placeholder="在此输入搜索 APP ..."/>
 		</div>
 		<div id="appdiv">
-			<div id="app_container">
+			<form id="app_container">
 				<p id="nulltext" class="none">什么都没找到 T_T</p>
-			</div>
+			</form>
 			<p id="ajump" class="none"></p>
 		</div>
 		<div id="action" class="btnGrp">
@@ -346,7 +351,11 @@
 				Firefox 52<br/>
 				Safari 11<br/>
 				Opera 47<br/>
-				不支持 Internet Explorer !
+				不支持 Internet Explorer !<br/><br/>
+				当前浏览器的 UA:<br/>
+				<code>
+                  <script>document.write(navigator.userAgent)</script>
+                </code>
 			</p>
 		</div>
 		<noscript><b>亲，打开 JavaScript 才能工作哟！</b></noscript>

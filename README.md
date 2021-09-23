@@ -27,9 +27,9 @@
 以上，还望大家帮助测试 ，多提意见和建议 ，多谢 。
 
 > 目前，对于 Android 10 以下的夜间模式，适配了以下浏览器。  
->> Via / X / 荟萃 / 雨见 / Pure / Milk / 米侠  
-   Alook / Mint / 鲨鱼 / B / UC Turbo / 夸克  
-   神奇 / π / e 浏览器 / UC  
+>> Via / X / 荟萃 / 雨见 / Milk / 米侠 / Alook  
+   Mint / 鲨鱼 / B ≼ 0.1.7 / UC Turbo / 夸克 / 神奇 / π  
+   e 浏览器 / UC / Pure ≼ 2.3.7  
 
 > 无法适配以下浏览器，因为其夜间模式可能是内核层面的，检测不到注入。  
 >> Oppo / 华为 / 三星 / 360 / 极速 / 搜狗 / 搜狗极速  
@@ -40,6 +40,22 @@
 > 无法适配 Soul 浏览器，其原理是 APP 层面将 白色 和 亮灰 反色。  
 > 无法适配 Lit 浏览器，其原理可能是 APP 层面加黑白滤镜。  
 > 无法适配 M 浏览器，其原理可能是 APP 层面将背景改为黑色。  
+> Pure 浏览器 2.3.7 以后更改了夜间模式的方法，无法适配。  
+> B 浏览器从 0.1.8 开始重构，目前的版本夜间模式只支持 Android 10 以上系统。  
+
+> Lim 浏览器禁用了 localStorage ，导致无法正常使用。
+( 除非把添加窗口的功能全部禁用 ，目前不打算这么做 )
+
+> 鲨鱼浏览器在打开时会弹出 1 个错误，不会影响使用。  
+错误信息不详细，无法确定发生位置，如下:  
+>> 07-17 11:42:24.065  9461  9461 I chromium: \[INFO:CONSOLE(371)\] "Uncaught RangeError: Maximum call stack size exceeded", source: https://lemon399.gitee.io/user-agent-share-page/ (371)
+
+> 欢欢浏览器在打开时会弹出 1 个错误，不会影响使用。  
+错误来自注入的脚本。无法修复。详细信息:  
+>> Uncaught ReferenceError: disableNightMode is not defined  
+    at \<anonymous\>:1:1  
+\
+disableNightMode()
 
 > Milk 浏览器在打开时会弹出 1 个错误，不会影响使用。  
 错误来自注入的脚本。无法修复。详细信息:  
@@ -90,7 +106,8 @@ APP 列表右侧是导航条，
 
 ### 窗口相关
 
-除了 **文本框** **输入框** **检查区** 以外，拖动任何部分都可以移动窗口。  
+鼠标: 除了 **文本框** **输入框** **下拉框** 以外，拖动任何部分都可以移动窗口。  
+触摸: 除了 **文本框** **输入框** **检查区** 以外，拖动任何部分都可以移动窗口。  
 点击窗口任意部分可提升窗口。
 
 > 一些带 **下滑刷新** 功能的浏览器会对窗口移动造成影响，目前无法修复。
@@ -213,8 +230,9 @@ APP 的显示名称 。
 | --prvw-key | 编辑预览: 关键字颜色，<br>快应用 应用字段 颜色 |
 | --prvw-plat | 编辑预览: 快应用 平台字段 颜色 |
 | --prvw-from | 编辑预览: 快应用 来自字段 颜色 |
-| --shadow-big | [**box-shadow 格式**](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow) 区块，窗口，下拉框 阴影参数 |
-| --shadow-small | [**box-shadow 格式**](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow) 标签，按钮组 阴影参数 |
+| --shadow-big | [**box-shadow 格式**](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow) 窗口 阴影参数 |
+| --shadow-small | [**box-shadow 格式**](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow) 标签 阴影参数 |
+| --color-scheme | 浏览器原生控件主题 (滚动条，取色按钮)，最好不改 |
 
 > 主题数据不会校验，如果输入格式错误，导致颜色错乱的，**后果自负**
 

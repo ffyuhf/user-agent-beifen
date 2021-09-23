@@ -1,7 +1,10 @@
 function injectDark(){
-	let dark = (uaData.设置.暗色主题===0) ?
-	Object.values(document.getElementById('myLight').sheet.cssRules)[0].cssText :
-	Object.values(document.getElementById('myDark').sheet.cssRules)[0].cssRules[0].cssText, night = [
+	let  dark = Object.values(uaCode.sel(!1,'#myDark').sheet.cssRules)[0].cssRules[0].cssText,
+	light = Object.values(uaCode.sel(!1,'#myLight').sheet.cssRules)[0].cssText,
+	force = (uaData.设置.暗色主题===0) ? light : dark,
+	btnDark = uaCode.sel(!1,'#btnDark'),
+	impSty = uaCode.sel(!1,'#myImportant'),
+	night = [
 		"via_inject_css_night",
 		"metaNight",
         "yjbrowser_night_mode_style",
@@ -20,18 +23,66 @@ function injectDark(){
 		for (let mu of mus) {
 			if (mu.addedNodes.length>0) {
 				mu.addedNodes.forEach( ad => {
-					if (night.includes(ad.id)) uaCode.injSty(ad,dark);
+					if (night.includes(ad.id)) {
+						uaCode.injSty(ad,force);
+						uaData.dark = true;
+						uaCode.dark();
+					}
+				})
+			}
+			if (mu.removedNodes.length>0) {
+				mu.removedNodes.forEach( ad => {
+					if (night.includes(ad.id)) {
+						if (uaData.设置.暗色主题===2) {
+							impSty.innerHTML = '';
+						}
+						uaData.dark = uaData.osdark.matches;
+						uaCode.dark();
+					}
 				})
 			}
 		}
 	}), opt = { childList: true, subtree: false };
 
-	night.forEach( id => {
-		let ad = document.getElementById(id);
-		if (ad) uaCode.injSty(ad,dark);
-	});
+	function patchStyle(css) {
+		night.forEach( id => {
+			let ad = document.getElementById(id);
+			if (ad) {
+				uaCode.injSty(ad,dark);
+				uaCode.dark();
+			}
+		});
+	}
 
-	if (uaData.设置.暗色主题<2) document.querySelector('#myImportant').innerHTML = dark;
+	btnDark.onclick = () => {
+		impSty.innerHTML = (uaData.dark) ? light : dark;
+		patchStyle((uaData.dark) ? light : dark);
+		uaData.dark = !uaData.dark;
+		uaCode.dark();
+	}
+
+	uaData.osdark.onchange = e => {
+		if (uaData.设置.暗色主题===2) impSty.innerHTML = '';
+		uaData.dark = e.matches;
+		uaCode.dark();
+	}
+
+	if (uaData.设置.暗色主题<2) {
+		patchStyle(force);
+		impSty.innerHTML = dark;
+	}
+
+	switch (uaData.设置.暗色主题) {
+		case 0:
+			uaData.dark = false;
+			break;
+		case 1:
+			uaData.dark = true;
+			break;
+		default:
+			uaData.dark = uaData.osdark.matches;
+	}
+	uaCode.dark();
 
 	observer.observe(document.documentElement,opt);
 	observer.observe(document.head,opt);

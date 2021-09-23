@@ -17,10 +17,12 @@ const uaData = {
 	},
 	storKey:"userAgentData",
 	styleKey:"userAgentStyle",
+	dark:false,
+	osdark:window.matchMedia("(prefers-color-scheme: dark)"),
 	styles:styles,
 	版本:{
-		描述:"5.1 Beta 5",
-		详细:21071416,
+		描述:"5.1 Beta 7",
+		详细:21092318,
 	},
 	设置:{
 		基础默认:1,

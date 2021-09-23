@@ -86,15 +86,8 @@ function uaCode() {
 		} else if (window.mdhtml) {
 			window.mdhtml.mdts(text);
 		} else {
-			const toast = $(false,"#toastdiv"),
-			toast1 = function(){ toast.style.opacity = "100%"; },
-			toast2 = function(){ toast.style.opacity = "0%"; },
-			toast3 = function(){ toast.style.display = "none"; };
-			toast.innerHTML = text;
-			toast.style.display = "block";
-			setTimeout(toast1,50);
-			setTimeout(toast2,(time - 0.5) * 1000);
-			setTimeout(toast3,time * 1000);
+			$(false,"#toastdiv").innerHTML = text;
+			$(false,"#toastdiv").style.cssText = `display: block;animation: ${uaData.styles.toastani} ${time}s ease;-webkit-animation: ${uaData.styles.toastani} ${time}s ease;`;
 		}
 	}
 	
@@ -223,6 +216,7 @@ function uaCode() {
 					ibox.appendChild(makeIssue('',true));
 					hasHead = true;
 				}
+				ibox.appendChild(document.createElement('hr'));
 				ibox.appendChild(makeIssue(i[1],false));
 			}
 		});
@@ -231,13 +225,13 @@ function uaCode() {
 		}
 	}
 	
-	function makeFlagDiv(clas,box,chinese,opa) {
+	function makeFlagDiv(clas,box,chinese) {
 		const flag = document.createElement("b");
 		flag.className = uaData.styles.flag;
 		flag.innerHTML = tagConv(clas,chinese,true);
 		clas = tagConv(clas,chinese,false);
 		if (!box) { _(flag,false,`T${clas}`); }
-		flag.style.cssText = `background-color:${uaData.flag[clas][1]};color:${uaData.flag[clas][2]};opacity:${opa}`;
+		flag.style.cssText = `background-color:${uaData.flag[clas][1]};color:${uaData.flag[clas][2]}`;
 		return flag;
 	}
 	
@@ -276,7 +270,7 @@ function uaCode() {
 			uaData.apps[app].class.forEach( cls => {
 				if (cls.slice(0,1)==="_" || uaData.tagfind.has(cls)) {
 					count += 1;
-					lab.appendChild(makeFlagDiv(cls,false,true,1));
+					lab.appendChild(makeFlagDiv(cls,false,true));
 					cls = tagConv(cls,true,false);
 					pushTagText(cls,app);
 					_(lab,false,cls);
@@ -311,7 +305,6 @@ function uaCode() {
 				tabIndex: 0,
 				innerHTML: uaData.apps[app].text
 			});
-			lab.addEventListener('keydown', spaceChecked);
 			uaData.count[app] = parseClassinItem(lab,app);
 			Object.assign(box, {
 				type: "checkbox",
@@ -348,7 +341,6 @@ function uaCode() {
 				box = document.createElement("input");
 			lab.id = `L${flag}`;
 			lab.tabIndex = 0;
-			lab.addEventListener('keydown', spaceChecked);
 			Object.assign(box, {
 				type: "checkbox",
 				name: "flag",
@@ -356,35 +348,33 @@ function uaCode() {
 				value: flag,
 				checked: true
 			});
-			box.addEventListener('change', e => tagClick(e.target.parentNode.id,true));
+			box.addEventListener('change', e => tagClick(e.target.parentNode.id));
 			lab.appendChild(box);
-			lab.appendChild(makeFlagDiv(flag,true,false,1));
+			lab.appendChild(makeFlagDiv(flag,true,false));
 			$(false,"#classBox").appendChild(lab);
 		});
 	}
 	
 	function makeBaseRadio() {
-		Object.keys(uaData.base).forEach( base => {
+		Object.keys(uaData.base).forEach( (base,i) => {
 			const lab = document.createElement("label"),
-				box = document.createElement("input");
+				box = document.createElement("input"),
+				bob = document.createElement("b");
 			lab.for = base;
 			lab.tabIndex = 0;
-			lab.addEventListener('keydown', spaceChecked);
 			Object.assign(box, {
 				type: "radio",
 				name: "base",
 				id: base,
 				value: base,
 				className: uaData.styles.orig_box,
-				tabIndex: -1
+				tabIndex: -1,
+				checked: (uaData.设置.基础默认==i+1)
 			});
+			bob.innerHTML = uaData.base[base].text;
 			lab.appendChild(box);
-			lab.appendChild(newBox("radio"));
-			lab.innerHTML += uaData.base[base].text;
+			lab.appendChild(bob);
 			$(false,"#baseopt").appendChild(lab);
-			if ($(true,"#baseopt label").length===uaData.设置.基础默认) {
-				$(false,`#${base}`).checked = true;
-			}
 		});
 	}
 	
@@ -436,8 +426,10 @@ function uaCode() {
 					(e.clientY - win.offsetTop)
 					];
 					winActiv(win);
-					document.onmousemove = e => {
-						if(e.target.nodeName!=="TEXTAREA"&&e.target.type!=="text") {
+					if(e.target.nodeName!=="TEXTAREA" &&
+					e.target.type!=="text" &&
+					e.target.nodeName!=="SELECT") {
+						document.onmousemove = e => {
 							win.style.left = (e.clientX - pos[0]) + 'px';
 							win.style.top = (e.clientY - pos[1]) + 'px';
 						}
@@ -529,14 +521,11 @@ function uaCode() {
 		filterExec(item,"tag_none");
 	}
 	
-	function tagClick(id,flt) {
+	function tagClick(id) {
 		const box = $(false,`#${id} input`),
 			flag = $(false,`#${id} .flag`);
-		flag.style.opacity = (box.checked) ? 1 : .5;
-		if (flt) {
-			fltAppUATag(id.slice(1),box.checked);
-			$(false,'#openClass').style.backgroundColor = ($(true,'#classBox input:not(:checked)').length===0) ? '' : __('tag-filtered');
-		}
+		fltAppUATag(id.slice(1),box.checked);
+		$(false,'#openClass').style.backgroundColor = ($(true,'#classBox input:not(:checked)').length===0) ? '' : __('tag-filtered');
 	}
 	
 	/* "添加" 窗口表单 相关 */
@@ -590,7 +579,6 @@ function uaCode() {
 						box = document.createElement("input");
 					lab.id = `${getUpperHead(sbox.id)}${flag}`;
 					lab.tabIndex = 0;
-					lab.addEventListener('keydown', spaceChecked);
 					Object.assign(box, {
 						type: "checkbox",
 						name: "sflag",
@@ -600,16 +588,11 @@ function uaCode() {
 					});
 					if (flag==="third") {
 						box.addEventListener('change', e => {
-							tagClick(e.target.parentNode.id,false);
 							_($(false,`#${sbox.id}l`),box.checked);
-						});
-					} else {
-						box.addEventListener('change', e => {
-							tagClick(e.target.parentNode.id,false);
 						});
 					}
 					lab.appendChild(box);
-					lab.appendChild(makeFlagDiv(flag,true,false,0.5));
+					lab.appendChild(makeFlagDiv(flag,true,false));
 					sbox.appendChild(lab);
 				}
 			});
@@ -629,8 +612,8 @@ function uaCode() {
 		$(true,'#addtable input:not([type]), #tkds').forEach( i => {
 			i.style.removeProperty('border-color');
 		});
-		$(true,".classBox input").forEach( c => { c.checked = false; });
-		$(true,".classBox .flag").forEach( f => { f.style.opacity = .5; });
+		_($(false,`#aclsboxl`),false);
+		_($(false,`#qclsboxl`),false);
 		$(true,'#addtable form').forEach( f => f.reset() );
 		aform_updateFlagPreview();
 		aform_switchBoth();
@@ -816,25 +799,17 @@ function uaCode() {
 				break;
 		}
 
-		function tagSelect(id) {
-			let box = $(false,`#${id} input`),
-				flag = $(false,`#${id} .flag`);
-			box.checked = true;
-			flag.style.opacity = 1;
-		}
-		
 		function clsSet(obj,type) {
 			$(true,`#${type}clsbox input`).forEach( c => { c.checked = false; });
-			$(true,`#${type}clsbox .flag`).forEach( f => { f.style.opacity = .5; });
 			_($(false,`#${type}clsboxl`),false);
 			obj.class.forEach( cls => {
 				if (cls!=="qapp") {
 					if (cls.slice(0,1)==="_") {
-						tagSelect(`${type.toUpperCase()}third`);
+						$(false,`#${type.toUpperCase()}third input`).checked = true;
 						_($(false,`#${type}clsboxl`),true);
 						$(false,`#${type}thirdt`).value = cls.slice(1);
 					} else {
-						tagSelect(`${type.toUpperCase()}${cls}`);
+						$(false,`#${type.toUpperCase()}${cls} input`).checked = true;
 					}
 				}
 			});
@@ -1120,18 +1095,22 @@ function uaCode() {
 		if (ad.nodeName==='STYLE') {
 			ad.innerHTML = dark;
 		} else if (ad.nodeName==='LINK' && ad.rel==="stylesheet") {
-			ad.href = 'data:text/css;base64,' + btoa(dark);
+			ad.href = (dark='') ? '#' : 'data:text/css;base64,' + btoa(dark);
 		}
+	}
+	
+	function updBtnDark() {
+		_($(!1,'#btnDark'),!uaData.dark,'dark');
 	}
 	
 	function addEvent() {
 		function ee(el,ev,fn) { el.addEventListener(ev,fn); }
-		$(true,'#modebox label').forEach( e => ee(e,'keydown', spaceChecked));
+		$(true,'[type="radio"],[type="checkbox"]').forEach( e => ee(e.parentNode,'keydown', spaceChecked));
 		ee($(false,'#openClass'),'click',openWin.bind(this,'#tagclass'));
 		ee($(false,'#openUA'),'click',openWin.bind(this,'#ua'));
 		ee($(false,'#searchInput'),'input', fltAppUA.bind(this));
 		ee($(false,'#btnHelp'),'click',()=>{window.location.href='https://gitee.com/lemon399/user-agent-share-page/blob/master/README.md'});
-		ee($(false,'#btnCSel'),'click',()=>{$_('app').forEach( check => { check.checked = false; })});
+		ee($(false,'#btnCSel'),'click',()=>{$(!1,'#app_container').reset()});
 		ee($(false,'#openNew'),'click',openWin.bind(this,'#addui'));
 		ee($(false,'#btnSlst'),'click',fltAppUASelected.bind(this));
 		ee($(false,'#btnGen'),'click',genUA);
@@ -1141,17 +1120,14 @@ function uaCode() {
 		ee($(false,'#useragent'),'input',issuesCheck);
 		ee($(false,'#btnClUA'),'click',()=>{$(false,'#useragent').value = '';issuesCheck();});
 		ee($(false,'#btnCpUA'),'click',()=>{$(false,'#useragent').select();document.execCommand('copy');});
-		ee($(false,'#btnTgAl'),'click',()=>{$(true,'#classBox input:not(:checked)').forEach( b => { b.checked = true; tagClick(b.parentNode.id,true);});});
-		ee($(false,'#btnTgRv'),'click',()=>{$(true,'#classBox input').forEach( b => { b.checked = (!b.checked); tagClick(b.parentNode.id,true);});});
-		$(true,'#addtype label').forEach( e => ee(e,'keydown', spaceChecked));
+		ee($(false,'#btnTgAl'),'click',()=>{$(true,'#classBox input:not(:checked)').forEach( b => { b.checked = true; tagClick(b.parentNode.id);});});
+		ee($(false,'#btnTgRv'),'click',()=>{$(true,'#classBox input').forEach( b => { b.checked = (!b.checked); tagClick(b.parentNode.id);});});
 		$(true,'#addtype input').forEach( e => ee(e,'change', aform_switchCard));
 		$(true,'#addtype input').forEach( e => ee(e,'change', previewUpdate));
 		$(true,'.key').forEach( e => ee(e,'input',aform_KeyCheck.bind(this,false)));
 		$(true,'.msel').forEach( e => ee(e,'change',aform_Modify));
 		$(true,'#aappt .msel,#qappt .msel').forEach( e => ee(e,'change',previewUpdate));
-		$(true,'#apre label').forEach( e => ee(e,'keydown', spaceChecked));
 		$(true,'#apre input').forEach( e => ee(e,'change', aform_switchBoth));
-		$(true,'#afol label').forEach( e => ee(e,'keydown', spaceChecked));
 		ee($(false,'#ttext'),'input', aform_updateFlagPreview);
 		$(true,'#tbgc,#tfgc').forEach( e => ee(e,'change', aform_updateFlagPreview));
 		ee($(false,'#aok'),'click',aform_Add);
@@ -1171,6 +1147,8 @@ function uaCode() {
 		$(true,'#acont1,#acont2a,#acont2b,#qcont1,#qcont2,#qcont3').forEach( e => ee(e,'input',previewUpdate));
 		$(true,'#apre input,#afol input').forEach( e => ee(e,'change', previewUpdate));
 		$(true,'#atbs,#ashort,#apc,#aspider').forEach( e => ee(e,'change',previewUpdate));
+		ee($(false,'#toastdiv'),'animationend',e=>{e.target.style.display = "none";});
+		ee($(false,'#toastdiv'),'webkitAnimationEnd',e=>{e.target.style.display = "none";});
 	}
 	
 	function init(){
@@ -1181,8 +1159,8 @@ function uaCode() {
 		makeItem();
 		makeFlaginBox();
 		aform_makeFlaginBox();
-		addEvent();
 		makeBaseRadio();
+		addEvent();
 		dndWin();
 		$(false,'#loadstr').innerHTML = '正在初始化 ...';
 		$(false,"#Raapp").checked = true;
@@ -1192,9 +1170,6 @@ function uaCode() {
 		$(false,"#version").innerHTML = `版本:${uaData.版本.描述}_${uaData.版本.详细} 总数:${Object.keys(uaData.apps).length}`;
 		if (window.location.host.match('gitee.io')) {
 			$(false,"#version").innerHTML += ' <i>由 Gitee 提供代码和网页托管服务</i>';
-			$(false,"#version").onclick = () => {
-				window.location.href='https://gitee.com/lemon399/user-agent-share-page';
-			}
 		}
 		$(false,'#loadstr').innerHTML = '加载完成';
 		$(false,"#loaddiv").style.opacity = '0%';
@@ -1210,7 +1185,8 @@ function uaCode() {
 		init: init,
 		sel: $,
 		toast: toast,
-		inj: injSty
+		inj: injSty,
+        dark: updBtnDark
 	}
 }
 module.exports = uaCode();
