@@ -21,8 +21,8 @@ const uaData = {
 	osdark:window.matchMedia("(prefers-color-scheme: dark)"),
 	styles:styles,
 	版本:{
-		描述:"5.1 Beta 7",
-		详细:21092318,
+		描述:"5.1 Beta 8",
+		详细:21100610,
 	},
 	设置:{
 		基础默认:1,

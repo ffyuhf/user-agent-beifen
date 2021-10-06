@@ -671,6 +671,21 @@ fieldset:focus-within legend,
 #btnDark.dark #mask {
 	transform: translate(25%,-15%);
 }
+#outside {
+	position: absolute;
+	left: -110%;
+	top: -110%;
+}
+#dragger {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: max-content;
+	padding: .25em;
+	border-radius: .25em;
+	color: var(--theme-color-c);
+	background: var(--theme-color-a);
+}
 @media only screen and (max-width: 330px) {
 	#modeopt button {
 		padding: 3px;

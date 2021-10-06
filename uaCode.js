@@ -26,7 +26,7 @@ function uaCode() {
 	}
 	
 	function __(prop) {
-		return getComputedStyle(document.documentElement).getPropertyValue('--' + prop);
+      return getComputedStyle(document.all[0]).getPropertyValue('--' + prop);
 	}
 	
 	function getUpperHead(word) {
@@ -100,6 +100,51 @@ function uaCode() {
 			default:
 				return;
 		}
+	}
+	
+	function insertUA() {
+		const e = window.event, win = $(false,"#ua"),
+			value = e.dataTransfer.getData('text'),
+			appo = uaData.apps[value];
+		let result = ['',''], baseUA = $(false,"textarea").value,
+		    space = (baseUA.slice(-1)==' ');
+		e.preventDefault();
+		if (typeof appo.content === "object") {
+			if (appo.content.qBasic) {
+				appo.content = `${appo.content.qBasic} ${appo.content.qString} (${JSON.stringify({
+					packageName: appo.content.qFrom,
+					type: "url",
+					extra: {
+						scene: "recommend"
+					}
+				})})`;
+			}
+		}
+		if (appo.prefix) {
+			if (appo.followed) {
+				result[0] = appo.content;
+			} else {
+				result[0] = `${appo.content} `;
+			}
+		} else if (appo.content instanceof Array) {
+			if (appo.followed) {
+				result[0] = appo.content[0] ;
+				result[1] = appo.content[1];
+			} else {
+				result[0] = `${appo.content[0]} `;
+				result[1] = `${appo.content[1]} `;
+			}
+		} else {
+			if (appo.followed) {
+				result[1] = appo.content;
+			} else {
+				result[1] = `${appo.content} `;
+			}
+		}
+		if (appo.followed && !appo.prefix && space) baseUA = baseUA.slice(0,-1);
+		$(false,"textarea").value = result[0] + baseUA + result[1];
+		issuesCheck();
+		winActiv(win);
 	}
 	
 	function genUA() {
@@ -299,12 +344,15 @@ function uaCode() {
 			uaData.text.set(app, uaData.apps[app].text);
 			const lab = document.createElement("label"),
 				box = document.createElement("input"),
+				text = document.createElement("span"),
 				first = getUpperHead(app);
 			Object.assign(lab, {
 				id: app,
 				tabIndex: 0,
-				innerHTML: uaData.apps[app].text
+				draggable: true
 			});
+			text.innerHTML = uaData.apps[app].text;
+			lab.appendChild(text);
 			uaData.count[app] = parseClassinItem(lab,app);
 			Object.assign(box, {
 				type: "checkbox",
@@ -320,11 +368,6 @@ function uaCode() {
 				ofirst = first;
 			}
 			cont.appendChild(lab);
-		});
-		cont.addEventListener('keydown',(e) => {
-			if (e.code==="Space") {
-				e.preventDefault();
-			}
 		});
 		if (uaData.touch) {
 			uaData.indexSidebar1 = new IndexSidebar({
@@ -1105,7 +1148,20 @@ function uaCode() {
 	
 	function addEvent() {
 		function ee(el,ev,fn) { el.addEventListener(ev,fn); }
-		$(true,'[type="radio"],[type="checkbox"]').forEach( e => ee(e.parentNode,'keydown', spaceChecked));
+		$(true,'[type="radio"],[type="checkbox"]').forEach( e => {
+			ee(e.parentNode,'keydown', spaceChecked);
+			ee(e.parentNode,'dragstart', e => {
+				e.dataTransfer.setData('text',e.target.id);
+				let dragger = $(!1,'#dragger');
+				dragger.innerHTML = e.target.querySelector('span').innerHTML;
+				// FIXME: Firefox 有偏移问题
+				if (e.dataTransfer.mozCursor) {
+					e.dataTransfer.setDragImage(dragger, -50, -100);
+				} else {
+					e.dataTransfer.setDragImage(dragger, 0, 0);
+				}
+			});
+		});
 		ee($(false,'#openClass'),'click',openWin.bind(this,'#tagclass'));
 		ee($(false,'#openUA'),'click',openWin.bind(this,'#ua'));
 		ee($(false,'#searchInput'),'input', fltAppUA.bind(this));
@@ -1149,6 +1205,8 @@ function uaCode() {
 		$(true,'#atbs,#ashort,#apc,#aspider').forEach( e => ee(e,'change',previewUpdate));
 		ee($(false,'#toastdiv'),'animationend',e=>{e.target.style.display = "none";});
 		ee($(false,'#toastdiv'),'webkitAnimationEnd',e=>{e.target.style.display = "none";});
+		ee($(false,"#app_container"),'keydown',e=>{if (e.code==="Space") e.preventDefault();});
+		ee($(false,"textarea"),'drop',insertUA.bind(this));
 	}
 	
 	function init(){
