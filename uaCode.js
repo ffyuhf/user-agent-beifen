@@ -471,7 +471,9 @@ function uaCode() {
 					winActiv(win);
 					if(e.target.nodeName!=="TEXTAREA" &&
 					e.target.type!=="text" &&
-					e.target.nodeName!=="SELECT") {
+					e.target.nodeName!=="SELECT" &&
+					e.target.className!=="flag"
+					) {
 						document.onmousemove = e => {
 							win.style.left = (e.clientX - pos[0]) + 'px';
 							win.style.top = (e.clientY - pos[1]) + 'px';
@@ -1170,7 +1172,13 @@ function uaCode() {
 		ee($(false,'#openNew'),'click',openWin.bind(this,'#addui'));
 		ee($(false,'#btnSlst'),'click',fltAppUASelected.bind(this));
 		ee($(false,'#btnGen'),'click',genUA);
-		$(true,'.close').forEach( c => ee(c,'click',e => { e.target.parentNode.parentNode.classList.add(uaData.styles.none)}));
+		$(true,'.close').forEach( c => ee(c,'click',e => {
+			e.target.parentNode.parentNode.classList.add(uaData.styles.none);
+			if (e.target.parentNode.parentNode.id==uaData.styles.addui &&
+				getComputedStyle($(!1,'#prvui')).display=='block') {
+				$(!1,'#prvui').classList.add('none');
+			};
+		}));
 		$(true,'.topbutton').forEach( c => ee(c,'click',topwin.bind(this)));
 		ee($(false,'.prev'),'click',openWin.bind(this,'#prvui'));
 		ee($(false,'#useragent'),'input',issuesCheck);

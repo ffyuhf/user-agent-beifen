@@ -165,10 +165,14 @@ noscript {
 }
 #modeopt > div:first-child {
 	display: grid;
+	grid-template-columns: repeat(2, -webkit-max-content);
 	grid-template-columns: repeat(2, max-content);
 	column-gap: 5px;
 	grid-column-gap: 5px;
 	align-content: center;
+}
+#modeopt button {
+	width: auto;
 }
 #options label,
 #classBox label,
@@ -188,6 +192,9 @@ noscript {
 	background: var(--theme-color-a);
 	color: var(--theme-color-c);
     padding: 2px 0 2px 5px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
 }
 .sideBar {
 	width: 15px;
@@ -405,6 +412,8 @@ button:focus {
 	padding: 5px .5em;
 	width: 100%;
 	text-align: center;
+	height: -webkit-max-content;
+	height: -moz-max-content;
 	height: max-content;
 }
 #baseopt label:focus b,
@@ -419,7 +428,8 @@ button:focus {
 	background: var(--theme-color-a);
 }
 .atab > div > label {
-	line-height: 1.35em;
+	line-height: 1.5em;
+	font-size: 0.9em;
 }
 .atab > label b,
 #addsave label b,
@@ -461,9 +471,9 @@ button:focus {
 	font-size: .9em;
 	width: 80%;
 	-webkit-appearance: menulist;
-	   -moz-appearance: none;
+	   -moz-appearance: menulist;
+	        appearance: menulist;
 	border: none;
-	box-shadow:var(--shadow-big);
 }
 #toastdiv {
 	position: absolute;
@@ -627,6 +637,8 @@ fieldset:focus-within legend,
 	color: var(--theme-color-a);
 }
 #addprvw {
+	height: -webkit-max-content;
+	height: -moz-max-content;
 	height: max-content;
 	padding: 5px;
 	font-size: .9em;
@@ -680,6 +692,8 @@ fieldset:focus-within legend,
 	position: absolute;
 	top: 0;
 	left: 0;
+	width: -webkit-max-content;
+	width: -moz-max-content;
 	width: max-content;
 	padding: .25em;
 	border-radius: .25em;
