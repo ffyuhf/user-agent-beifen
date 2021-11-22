@@ -375,6 +375,7 @@ function uaCode() {
 			});
 		} else {
 			_($(false,'#ajump'),true);
+			_(cont,!1,uaData.styles.fixed);
 		}
 	}
 	
@@ -473,11 +474,9 @@ function uaCode() {
 					e.target.type!=="text" &&
 					e.target.nodeName!=="SELECT" &&
 					e.target.className!=="flag"
-					) {
-						document.onmousemove = e => {
-							win.style.left = (e.clientX - pos[0]) + 'px';
-							win.style.top = (e.clientY - pos[1]) + 'px';
-						}
+					) document.onmousemove = e => {
+						win.style.left = (e.clientX - pos[0]) + 'px';
+						win.style.top = (e.clientY - pos[1]) + 'px';
 					};
 					document.removeEventListener('mouseup', unlock);
 					document.addEventListener('mouseup', unlock);
@@ -1175,9 +1174,7 @@ function uaCode() {
 		$(true,'.close').forEach( c => ee(c,'click',e => {
 			e.target.parentNode.parentNode.classList.add(uaData.styles.none);
 			if (e.target.parentNode.parentNode.id==uaData.styles.addui &&
-				getComputedStyle($(!1,'#prvui')).display=='block') {
-				$(!1,'#prvui').classList.add(uaData.styles.none);
-			};
+				getComputedStyle($(!1,'#prvui')).display=='block') $(!1,'#prvui').classList.add(uaData.styles.none);
 		}));
 		$(true,'.topbutton').forEach( c => ee(c,'click',topwin.bind(this)));
 		ee($(false,'.prev'),'click',openWin.bind(this,'#prvui'));

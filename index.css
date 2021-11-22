@@ -177,6 +177,8 @@ noscript {
 	background: var(--theme-color-a);
 	color: var(--theme-color-c);
     padding: 2px 0 2px 5px;
+}
+#app-container.fixed .case-head {
 	position: sticky;
 	top: 0;
 }
