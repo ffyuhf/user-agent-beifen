@@ -206,7 +206,7 @@ div.side-bar > div:last-of-type {
 	transition: opacity .3s ease, top .1s linear;
 	border-radius: 100%;
 }
-#appContainer {
+#app-container {
 	overflow-y: auto;
 	height: calc(1.5em * 14.5);
 	width: 100%;
