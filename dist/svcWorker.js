@@ -13,10 +13,8 @@ var data = [
 self.addEventListener('install', function(event) {
   event.waitUntil(
     data.map( d => {
-      caches.open(`${d[0]}_${d[2]}`).then( cache => {
-        return cache.add(d[1]);
-      });
-    })
+      caches.open(`${d[0]}_${d[2]}`).then( cache => cache.add(d[1]) );
+    });
   );
 });
 
@@ -30,9 +28,9 @@ self.addEventListener('activate', function(event) {
               return caches.delete(cacheName);
             }
           });
-        })
+        });
       );
-    })
+    });
   );
 });
 
@@ -40,9 +38,7 @@ self.addEventListener('fetch', function(event) {
   function cacheData(req,resp) {
     data.map ( d => {
       if ('.' + /\/+\w+\.+\w+$/.exec(req.url) == d[1]) {
-        caches.open(`${d[0]}_${d[2]}`).then( cache => {
-          cache.put(req,resp);
-        });
+        caches.open(`${d[0]}_${d[2]}`).then( cache => cache.put(req,resp) );
       }
     });
   }
@@ -52,8 +48,6 @@ self.addEventListener('fetch', function(event) {
 	  cacheData(event.request, response);
 	  return response.clone();
 	}
-    return fetch(event.request).then( response => {
-      return response;
-    });;
+    return fetch(event.request).then( response => response );
   }));
 });
