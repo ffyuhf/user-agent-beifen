@@ -271,7 +271,7 @@ function uaCode() {
 	}
 	
 	function makeFlagDiv(clas,box,chinese) {
-		const flag = document.createElement("b");
+		const flag = document.createElement("strong");
 		flag.className = uaData.styles.flag;
 		flag.innerHTML = tagConv(clas,chinese,true);
 		clas = tagConv(clas,chinese,false);
@@ -402,7 +402,7 @@ function uaCode() {
 		Object.keys(uaData.base).forEach( (base,i) => {
 			const lab = document.createElement("label"),
 				box = document.createElement("input"),
-				bob = document.createElement("b");
+				bob = document.createElement("strong");
 			lab.for = base;
 			lab.tabIndex = 0;
 			Object.assign(box, {
@@ -1140,7 +1140,7 @@ function uaCode() {
 		if (ad.nodeName==='STYLE') {
 			ad.innerHTML = dark;
 		} else if (ad.nodeName==='LINK' && ad.rel==="stylesheet") {
-			ad.href = (dark='') ? '#' : 'data:text/css;base64,' + btoa(dark);
+			ad.href = (dark=='') ? '#' : 'data:text/css;base64,' + btoa(dark);
 		}
 	}
 	

@@ -1,20 +1,20 @@
 @-webkit-keyframes toastani {
-	0% { opacity: 0%; }
-	20% { opacity: 100%; }
-	80% { opacity: 100%; }
-	100% { opacity: 0%; }
+	0% { opacity: 0; }
+	20% { opacity: 1; }
+	80% { opacity: 1; }
+	100% { opacity: 0; }
 }
 @keyframes toastani {
-	0% { opacity: 0%; }
-	20% { opacity: 100%; }
-	80% { opacity: 100%; }
-	100% { opacity: 0%; }
+	0% { opacity: 0; }
+	20% { opacity: 1; }
+	80% { opacity: 1; }
+	100% { opacity: 0; }
 }
 :focus {
 	outline: none;
 }
 body {
-	font-family: -apple-system, Tahoma, sans;
+	font-family: -apple-system,Tahoma,sans;
 }
 textarea {
 	background-color: var(--theme-color-d);
@@ -33,9 +33,6 @@ textarea {
 }
 textarea:focus {
 	border-color: var(--theme-color-a);
-}
-#setlayer textarea:focus {
-	border-color: none;
 }
 .none,
 .sel_none,
@@ -277,7 +274,7 @@ label:focus .new_style {
 .orig_box:checked + .new_style:after {
 	background-color:var(--theme-color-c);
 	border-radius:100%;
-	content:"";
+	content:'';
 	height:9px;
 	width:9px;
 	display: flex;
@@ -403,9 +400,9 @@ button:focus {
 	vertical-align: middle;
 	color: var(--theme-color-a);
 }
-#baseopt label b,
-#modeopt label b,
-#addtype > label b {
+#baseopt label strong,
+#modeopt label strong,
+#addtype > label strong {
 	border-radius: 2px;
     font-size: 12px;
     line-height: 12px;
@@ -416,14 +413,14 @@ button:focus {
 	height: -moz-max-content;
 	height: max-content;
 }
-#baseopt label:focus b,
-#modeopt label:focus b,
-#addtype > label:focus b {
+#baseopt label:focus strong,
+#modeopt label:focus strong,
+#addtype > label:focus strong {
 	background: var(--theme-color-h);
 }
-#baseopt label input:checked + b,
-#modeopt label input:checked + b,
-#addtype > label input:checked + b {
+#baseopt label input:checked + strong,
+#modeopt label input:checked + strong,
+#addtype > label input:checked + strong {
 	color: var(--theme-color-c);
 	background: var(--theme-color-a);
 }
@@ -431,9 +428,9 @@ button:focus {
 	line-height: 1.5em;
 	font-size: 0.9em;
 }
-.atab > label b,
-#addsave label b,
-.classPart > label b,
+.atab > label strong,
+#addsave label strong,
+.classPart > label strong,
 .atab div p,
 #addsave div p {
 	width: 20%;
@@ -442,7 +439,7 @@ button:focus {
 	font-size: .9em;
 	color: var(--theme-color-a);
 }
-.classPart > label b {
+.classPart > label strong {
 	margin: 0 .45em 0 calc(.25em - 3px);
 }
 .atab > label input,
@@ -545,7 +542,7 @@ button:focus {
 	min-width: 5em;
 	margin: 2px .25em;
 }
-#ttexl b {
+#ttexl strong {
 	font-size: 1em;
 	color: var(--theme-color-a);
 }
@@ -576,7 +573,7 @@ button:focus {
 	overflow: hidden;
 	height: 100%;
 }
-input[type="color"] {
+input[type=color] {
 	padding: 0;
 	border: none;
 }
