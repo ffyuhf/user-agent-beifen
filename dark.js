@@ -1,5 +1,5 @@
 function injectDark(){
-	let  dark = Object.values(uaCode.sel(!1,'#myDark').sheet.cssRules)[0].cssRules[0].cssText,
+	let dark = Object.values(uaCode.sel(!1,'#myDark').sheet.cssRules)[0].cssRules[0].cssText,
 	light = Object.values(uaCode.sel(!1,'#myLight').sheet.cssRules)[0].cssText,
 	force = (uaData.设置.暗色主题===0) ? light : dark,
 	btnDark = uaCode.sel(!1,'#btnDark'),

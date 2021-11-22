@@ -1,8 +1,11 @@
 var path = require('path'),
-styleLoader = [ { loader:'style-loader', options:{ insert:'head', } },
- { loader:'css-loader', options: { modules: true, importLoaders: 1 } },
- { loader: 'postcss-loader' }
- ],
+styleLoader = [
+	{ loader:'style-loader', options:{ insert:'head', } },
+	{ loader:'css-loader', options: { modules: {
+		exportLocalsConvention: "camelCase"
+	}, importLoaders: 1 } },
+	{ loader: 'postcss-loader' }
+],
 HtmlWebpackPlugin = require('html-webpack-plugin')/*,
 ESLintPlugin = require('eslint-webpack-plugin')*/;
 

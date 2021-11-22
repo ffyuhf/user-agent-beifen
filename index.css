@@ -8,7 +8,7 @@
 	outline: none;
 }
 body {
-	font-family: -apple-system,Tahoma,sans;
+	font-family: -apple-system,'Tahoma',sans-serif;
 }
 textarea {
 	background-color: var(--theme-color-d);
@@ -18,6 +18,7 @@ textarea {
 	border: 1px solid var(--theme-color-e);
 	padding: 5px;
 	display: block;
+	resize: none;
 }
 #setlayer textarea {
 	background-color: var(--theme-color-b);
@@ -29,8 +30,8 @@ textarea:focus {
 	border-color: var(--theme-color-a);
 }
 .none,
-.sel_none,
-.tag_none {
+.sel-none,
+.tag-none {
 	display: none !important;
 }
 p {
@@ -86,12 +87,11 @@ noscript {
 	padding-bottom: 2px;
 	box-shadow: var(--shadow-big);
 }
-#classBox,.classBox {
+.class-box {
 	padding: 3px;
 	border-radius: 10px;
 }
-#classBox .flag,
-.classBox .flag {
+.class-box .flag {
 	padding: 2px 4px;
 	margin: 2px;
 	box-shadow: var(--shadow-small);
@@ -103,15 +103,13 @@ noscript {
 	box-shadow: var(--shadow-small);
 	line-height: 1.25em;
 }
-#classBox input,
-.classBox input {
+.class-box input {
 	display: none;
 }
-#classBox input:checked + .flag,
-.classBox input:checked + .flag {
+.class-box input:checked + .flag {
 	opacity: 1;
 }
-.setHead {
+.set-head {
 	background: var(--theme-color-a);
 	color: var(--theme-color-c);
 	font-size: 12px;
@@ -163,8 +161,7 @@ noscript {
 	width: auto;
 }
 #options label,
-#classBox label,
-.classBox label,
+.class-box label,
 #tclsbox {
 	display: inline-flex;
 }
@@ -174,7 +171,7 @@ noscript {
 	color: var(--theme-color-a);
 	align-items: center;
 }
-.CaseHead {
+.case-head {
 	font-size: 13px;
 	font-weight: bold;
 	background: var(--theme-color-a);
@@ -183,20 +180,20 @@ noscript {
 	position: sticky;
 	top: 0;
 }
-.sideBar {
+.side-bar {
 	width: 15px;
 	padding: 3px;
 	font-weight: bold;
 	background: var(--theme-color-a);
 	color: var(--theme-color-c);
 }
-div.sideBar > div {
+div.side-bar > div {
 	text-align: center;
 	font-size: .5em;
 	height: 1.6em;
 	line-height: 1.6em;
 }
-div.sideBar > div:last-of-type {
+div.side-bar > div:last-of-type {
 	position: absolute;
 	background: var(--theme-color-a);
 	width: 1.5em;
@@ -209,32 +206,32 @@ div.sideBar > div:last-of-type {
 	transition: opacity .3s ease, top .1s linear;
 	border-radius: 100%;
 }
-#app_container {
+#appContainer {
 	overflow-y: auto;
 	height: calc(1.5em * 14.5);
 	width: 100%;
 }
-.btnGrp {
+.btn-grp {
 	text-align: center;
 	display: flex;
 	justify-content: space-between;
 	margin: 3px 4px;
 }
-.savebtn .btnGrp,
-#modeopt .btnGrp {
+.savebtn .btn-grp,
+#modeopt .btn-grp {
 	margin: 0;
 	padding: 0;
 }
 #action {
 	margin: 3px .5em;
 }
-.orig_box {
+.orig-box {
 	display: none;
 }
-label:focus .new_style {
+label:focus .new-style {
 	background-color: var(--theme-color-h);
 }
-.new_style {
+.new-style {
 	background-color:var(--theme-color-d);
 	border: 1px solid var(--theme-color-e);
 	border-radius:100%;
@@ -242,26 +239,26 @@ label:focus .new_style {
 	height:16px;
 	line-height:16px;
 }
-.new_radio.new_style {
+.new-radio.new-style {
 	margin: 4px;
 	display:flex;
 	width:13px;
 	height:13px;
 	line-height:13px;
 }
-.orig_box:checked + .new_style.new_radio:after {
+.orig-box:checked + .new-style.new-radio:after {
 	transform:scale(.8);
 }
-.new_check.new_style {
+.new-check.new-style {
 	margin: 3px 3px 0 auto;
 	border-radius:0;
 	display:inline-block;
 }
-.orig_box:checked + .new_style {
+.orig-box:checked + .new-style {
 	background-color: var(--theme-color-a);
 	border-color: var(--theme-color-a);
 }
-.orig_box:checked + .new_style:after {
+.orig-box:checked + .new-style:after {
 	background-color:var(--theme-color-c);
 	border-radius:100%;
 	content:'';
@@ -271,7 +268,7 @@ label:focus .new_style {
 	margin: auto;
 	align-self: center;
 }
-.orig_box:checked + .new_check.new_style::after {
+.orig-box:checked + .new-check.new-style::after {
 	border-color:var(--theme-color-c);
 	width: 5px;
 	height: 9px;
@@ -325,7 +322,7 @@ button:focus {
 	position: relative;
 	margin: 2px .5em;
 }
-#searchInput {
+#search-input {
 	width: 100%;
 	padding: 2px 0;
 	border: 1px solid transparent;
@@ -364,18 +361,18 @@ button:focus {
 .atab > *,
 #addsave > *,
 #setlayer > *,
-#classBox,
+#class-box,
 #useragent,
 #issues {
 	margin: 3px 4px;
 }
-.classPart > *,
+.class-part > *,
 #swopt > * {
 	margin: 4px 0;
 }
 .atab > label,
 #addsave > label,
-.classPart > label {
+.class-part > label {
 	display: flex;
 }
 #addtype > label,
@@ -412,7 +409,7 @@ button:focus {
 }
 .atab > label strong,
 #addsave label strong,
-.classPart > label strong,
+.class-part > label strong,
 .atab div p,
 #addsave div p {
 	width: 20%;
@@ -421,12 +418,12 @@ button:focus {
 	font-size: .9em;
 	color: var(--theme-color-a);
 }
-.classPart > label strong {
+.class-part > label strong {
 	margin: 0 .45em 0 calc(.25em - 3px);
 }
 .atab > label input,
 #addsave > label input,
-.classPart > label input {
+.class-part > label input {
 	width: 80%;
 }
 .atab div p,
@@ -437,7 +434,7 @@ button:focus {
 #addui {
 	width: min-content;
 }
-#openNew {
+#open-new {
 	padding: 0 5px !important;
 	font-size: 16px;
 }
@@ -476,7 +473,7 @@ button:focus {
 	font-size: .75em;
 	font-weight: bold;
 }
-.titleText {
+.title-text {
 	width: 100%;
 	padding: 0 .5em;
     line-height: 25px;
@@ -552,8 +549,7 @@ input[type=color] {
 	border: none;
 }
 #stordata {
-	width: -webkit-fill-available;
-	width: -moz-available;
+	width: stretch;
 	height: 80px;
 	margin: 0 4px;
 }
@@ -567,13 +563,13 @@ hr {
 	border: 1px solid var(--theme-color-c);
 	margin: 0 .75em;
 }
-.issueItem {
+.issue-item {
 	margin: 2px .5em;
 	padding: 5px;
 	font-size: .85em;
 	font-weight: bold;
 }
-#issueHead {
+#issue-head {
 	border: none;
 	padding: 2px 5px;
 	font-size: .75em;
@@ -642,14 +638,14 @@ fieldset:focus-within legend,
 	border-radius: 100%;
 	padding: 0 !important;
 }
-#btnDark {
+#btn-dark {
 	margin: .25em .5em;
 }
 #mask {
 	background: var(--theme-color-b);
 	transform: translate(30%,-100%);
 }
-#btnDark.dark #mask {
+#btn-dark.dark #mask {
 	transform: translate(25%,-15%);
 }
 #outside {
@@ -714,7 +710,7 @@ fieldset:focus-within legend,
 	}
 	.atab > label input,
 	#addsave > label input,
-	.classPart > label input {
+	.class-part > label input {
 		min-width: 12rem;
 	}
 	.msel {
@@ -762,7 +758,7 @@ fieldset:focus-within legend,
 	}
 	.atab > label input,
 	#addsave > label input,
-	.classPart > label input {
+	.class-part > label input {
 		min-width: 13rem;
 	}
 	.msel {

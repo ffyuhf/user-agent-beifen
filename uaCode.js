@@ -285,7 +285,7 @@ function uaCode() {
 		Object.assign(head,{
 			id: `i${first}`,
 			innerHTML: first,
-			className: uaData.styles.CaseHead
+			className: uaData.styles.caseHead
 		});
 		if(!uaData.touch) {
 			const jump = document.createElement("a");
@@ -334,12 +334,12 @@ function uaCode() {
 	
 	function newBox(type) {
 		const box = document.createElement("span");
-		box.className = `${uaData.styles.new_style} ${uaData.styles['new_'+type]}`;
+		box.className = `${uaData.styles.newStyle} ${uaData.styles['new-'+type]}`;
 		return box;
 	}
 	
 	function makeItem() {
-		let ofirst = "Z",cont = $(false,"#app_container");
+		let ofirst = "Z",cont = $(false,"#appContainer");
 		Object.keys(uaData.apps).sort().forEach( app => {
 			uaData.text.set(app, uaData.apps[app].text);
 			const lab = document.createElement("label"),
@@ -358,7 +358,7 @@ function uaCode() {
 				type: "checkbox",
 				name: "app",
 				value: app,
-				className: uaData.styles.orig_box,
+				className: uaData.styles.origBox,
 				tabIndex: -1
 			});
 			lab.appendChild(box);
@@ -410,7 +410,7 @@ function uaCode() {
 				name: "base",
 				id: base,
 				value: base,
-				className: uaData.styles.orig_box,
+				className: uaData.styles.origBox,
 				tabIndex: -1,
 				checked: (uaData.设置.基础默认==i+1)
 			});
@@ -543,10 +543,10 @@ function uaCode() {
 		if (btn.innerHTML==="列出已选") {
 			const item = [];
 			$_("app").forEach( ele => item.push(ele.value));
-			filterExec(item,"sel_none");
+			filterExec(item,"sel-none");
 			btn.innerHTML = "列出全部";
 		} else {
-			filterResume("sel_none");
+			filterResume("sel-none");
 			btn.innerHTML = "列出已选";
 		}
 	}
@@ -563,7 +563,7 @@ function uaCode() {
 			});
 		}
 		const item = Object.keys(uaData.count).filter(obj => uaData.count[obj]!==0);
-		filterExec(item,"tag_none");
+		filterExec(item,"tag-none");
 	}
 	
 	function tagClick(id) {
@@ -617,7 +617,7 @@ function uaCode() {
 	}
 	
 	function aform_makeFlaginBox() {
-		$(true,".classBox").forEach( sbox => {
+		$(true,"#addtable .classBox").forEach( sbox => {
 			Object.keys(uaData.flag).forEach( flag => {
 				if (flag!=="qapp" && flag!=="no_tag") {
 					const lab = document.createElement("label"),
@@ -1168,7 +1168,7 @@ function uaCode() {
 		ee($(false,'#openUA'),'click',openWin.bind(this,'#ua'));
 		ee($(false,'#searchInput'),'input', fltAppUA.bind(this));
 		ee($(false,'#btnHelp'),'click',()=>{window.location.href='https://gitee.com/lemon399/user-agent-share-page/blob/master/README.md'});
-		ee($(false,'#btnCSel'),'click',()=>{$(!1,'#app_container').reset()});
+		ee($(false,'#btnCSel'),'click',()=>{$(!1,'#appContainer').reset()});
 		ee($(false,'#openNew'),'click',openWin.bind(this,'#addui'));
 		ee($(false,'#btnSlst'),'click',fltAppUASelected.bind(this));
 		ee($(false,'#btnGen'),'click',genUA);
@@ -1176,7 +1176,7 @@ function uaCode() {
 			e.target.parentNode.parentNode.classList.add(uaData.styles.none);
 			if (e.target.parentNode.parentNode.id==uaData.styles.addui &&
 				getComputedStyle($(!1,'#prvui')).display=='block') {
-				$(!1,'#prvui').classList.add('none');
+				$(!1,'#prvui').classList.add(uaData.styles.none);
 			};
 		}));
 		$(true,'.topbutton').forEach( c => ee(c,'click',topwin.bind(this)));
@@ -1213,7 +1213,7 @@ function uaCode() {
 		$(true,'#atbs,#ashort,#apc,#aspider').forEach( e => ee(e,'change',previewUpdate));
 		ee($(false,'#toastdiv'),'animationend',e=>{e.target.style.display = "none";});
 		ee($(false,'#toastdiv'),'webkitAnimationEnd',e=>{e.target.style.display = "none";});
-		ee($(false,"#app_container"),'keydown',e=>{if (e.code==="Space") e.preventDefault();});
+		ee($(false,"#appContainer"),'keydown',e=>{if (e.code==="Space") e.preventDefault();});
 		ee($(false,"textarea"),'drop',insertUA.bind(this));
 	}
 	
@@ -1240,9 +1240,9 @@ function uaCode() {
 		$(false,'#loadstr').innerHTML = '加载完成';
 		$(false,"#loaddiv").style.opacity = '0%';
 		setTimeout(finish,1000);
-		lab = $(true,"#app_container label"),
-		cas = $(true,"#app_container .CaseHead"),
-		lah = $(true,"#app_container > label,.CaseHead"),
+		lab = $(true,"#appContainer label"),
+		cas = $(true,"#appContainer .caseHead"),
+		lah = $(true,"#appContainer > label,.caseHead"),
 		ntx = $(false,"#nulltext"),
 		loc = window.localStorage;
 	}

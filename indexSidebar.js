@@ -12,8 +12,14 @@ var emitter = {
 		this.events[event].push(fn);
 	}
 };
+function hide() {
+	let indicator = uaCode.sel(false,'.indicator'),
+		out = function() {indicator.classList.add(uaData.styles.none)};
+	indicator.style.opacity = '0';
+	setTimeout(out,500);
+}
 emitter.subscribe('fingerLand', (data) => {
-	var indicator = document.querySelector('.indicator');
+	var indicator = uaCode.sel(false,'.indicator');
 	if (data) {
 		var content = data.innerHTML;
 		indicator.classList.remove(uaData.styles.none);
@@ -21,23 +27,18 @@ emitter.subscribe('fingerLand', (data) => {
 		indicator.style.opacity = '1';
 		indicator.style.top = data.getBoundingClientRect().top + 'px';
 	} else {
-		indicator.style.opacity = '0';
-		setTimeout("document.querySelector('.indicator').classList.add(uaData.styles.none)",500);
+		hide();
 	}
 });
 emitter.subscribe('fingerLand', (elem) => {
 	if (elem) {
 		if (elem.innerHTML.length == 1) {
-			var content = elem.innerHTML, scrolledElem = document.querySelector(`#${uaData.styles.app_container} > div[id="i${content}"]`);
+			var content = elem.innerHTML, scrolledElem = document.querySelector(`#${uaData.styles.appContainer} > div[id="i${content}"]`);
 			scrolledElem.scrollIntoView();
 		}
 	}
 });
-emitter.subscribe('fingerOff', () => {
-	var indicator = document.querySelector('.indicator');
-	indicator.style.opacity = '0';
-	setTimeout("document.querySelector('.indicator').classList.add(uaData.styles.none)",500);
-});
+emitter.subscribe('fingerOff', hide);
 
 function IndexSidebar(options) {
 	this.init(options);
@@ -62,7 +63,7 @@ IndexSidebar.prototype = {
 			sidebarNode.appendChild(indexNode);
 		})
 		var indicator = document.createElement('div');
-		indicator.classList.add('indicator');
+		indicator.classList.add(uaData.styles.indicator);
 		indicator.classList.add(uaData.styles.none)
 		sidebarNode.appendChild(indicator)
 		sidebarNode.classList.add(uaData.styles.sideBar);

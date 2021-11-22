@@ -3,7 +3,7 @@ function swView(){
 		let opt = uaCode.sel(false,'#swopt'),
 			stat = uaCode.sel(false,'#swstat'),
 			btn = uaCode.sel(false,'#swreg');
-		opt.classList.remove('none');
+		opt.classList.remove(uaData.styles.none);
 		navigator.serviceWorker.getRegistrations().then( regs => {
 			if (regs.length===1) {
 				caches.keys().then( vers => {
@@ -21,10 +21,10 @@ function swView(){
 				} else if (regs[0].active) {
 					stat.innerHTML = '已安装';
 				}
-				opt.classList.add('inst');
+				opt.classList.add(uaData.styles.inst);
 				btn.innerHTML = '卸载服务';
 			} else {
-				opt.classList.remove('inst');
+				opt.classList.remove(uaData.styles.inst);
 				stat.innerHTML = '未安装';
 				btn.innerHTML = '安装服务';
 			}
