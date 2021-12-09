@@ -18,11 +18,9 @@ function uaCode() {
 	}
 	
 	function _(ele,del,nclass = "none") {
-		if (del) {
-			ele.classList.remove(uaData.styles[nclass] || nclass);
-		} else {
-			ele.classList.add(uaData.styles[nclass] || nclass);
-		}
+		return (del) ?
+        ele.classList.remove(uaData.styles[nclass] || nclass) :
+		ele.classList.add(uaData.styles[nclass] || nclass);
 	}
 	
 	function __(prop) {
@@ -91,7 +89,7 @@ function uaCode() {
 		}
 	}
 	
-	function spaceChecked(e = event) {
+	function spaceChecked(e) {
 		switch (e.code) {
 			case "Space":
 			case "Enter":
@@ -102,10 +100,9 @@ function uaCode() {
 		}
 	}
 	
-	function insertUA() {
-		const e = window.event, win = $(false,"#ua"),
-			value = e.dataTransfer.getData('text'),
-			appo = uaData.apps[value];
+	function insertUA(e) {
+		const win = $(false,"#ua"), appo = uaData.apps[value],
+			value = e.dataTransfer.getData('text');
 		let result = ['',''], baseUA = $(false,"textarea").value,
 		    space = (baseUA.slice(-1)==' ');
 		e.preventDefault();
@@ -487,17 +484,13 @@ function uaCode() {
 	
 	function openWin(id) {
 		let win = $(false,id);
-		if (win.classList.contains(uaData.styles.none)) {
-			_(win,true);
-			winActiv(win);
-		} else {
-			_(win,false);
-		}
+        win.classList.toggle(uaData.styles.none);
+		if (!win.classList.contains(uaData.styles.none)) winActiv(win);
 	}
 	
 	function topwin(e) {
 		let btn = e.target, win = btn.parentNode.parentNode;
-		_(win,(win.classList.contains(uaData.styles.topwin)),uaData.styles.topwin);
+		win.classList.toggle(uaData.styles.topwin);
 		btn.style.backgroundColor = (win.classList.contains(uaData.styles.topwin)) ?
 			__('theme-color-top-enable') : __('theme-color-top');
 	}
@@ -519,7 +512,7 @@ function uaCode() {
 	}
 	
 	function filterResume(nclass) {
-		lah.forEach( ele => { _(ele,true,nclass); });
+		lah.forEach( ele => _(ele,true,nclass));
 		scanForHead();
 		_(ntx,!scanAll());
 	}
@@ -554,11 +547,7 @@ function uaCode() {
 		$(true,`.T${clas}`).forEach( tag => _(tag,selected) );
 		if (uaData.tagtext[clas]) {
 			uaData.tagtext[clas].forEach( id => {
-				if (selected) {
-					uaData.count[id]++;
-				} else {
-					uaData.count[id]--;
-				}
+				(selected) ? uaData.count[id]++ : uaData.count[id]--;
 			});
 		}
 		const item = Object.keys(uaData.count).filter(obj => uaData.count[obj]!==0);
@@ -631,9 +620,9 @@ function uaCode() {
 						checked: false
 					});
 					if (flag==="third") {
-						box.addEventListener('change', e => {
-							_($(false,`#${sbox.id}l`),box.checked);
-						});
+						box.addEventListener('change', e =>
+							_($(false,`#${sbox.id}l`),box.checked)
+						);
 					}
 					lab.appendChild(box);
 					lab.appendChild(makeFlagDiv(flag,true,false));
