@@ -1111,16 +1111,16 @@ template {
 				<div id="modeopt">
 					<div>
 						<label for="gen" tabindex="0">
-							<input id="gen" type="radio" name="mode" value="gen" class="orig-box" checked="checked"/><strong>生成</strong>
+							<input id="gen" type="radio" name="mode" value="gen" class="orig-box" checked="checked" /><strong>生成</strong>
 						</label>
 						<label for="add" tabindex="0">
-							<input id="add" type="radio" name="mode" value="add" class="orig-box"/><strong>追加</strong>
+							<input id="add" type="radio" name="mode" value="add" class="orig-box" /><strong>追加</strong>
 						</label>
 					</div>
 					<div class="btnGrp">
-                        <div id='btnDark' class="circle">
-                          <div id='mask' class="circle"></div>
-                        </div>
+						<div id='btnDark' class="circle">
+							<div id='mask' class="circle"></div>
+						</div>
 						<button type="button" id="openClass">标签筛选</button>
 						<button type="button" id="openUA">UA 窗口</button>
 					</div>
@@ -1129,7 +1129,7 @@ template {
 		</div>
 		<div id="searchbox">
 			<label for="search" class="invilab">在此输入搜索 APP ...</label>
-			<input id="search" name="search" type="text" placeholder="在此输入搜索 APP ..."/>
+			<input id="search" name="search" type="text" placeholder="在此输入搜索 APP ..." />
 		</div>
 		<div id="app">
 			<form id="app_container">
@@ -1188,111 +1188,127 @@ template {
 			</div>
 			<div id="addtype">
 				<label tabindex="0">
-					<input id="Raapp" type="radio" name="atype" value="aapp" class="orig-box" checked="checked"/><strong>APP</strong>
+					<input id="Raapp" type="radio" name="atype" value="aapp" class="orig-box" checked="checked" /><strong>APP</strong>
 				</label>
 				<label tabindex="0">
-					<input id="Rqapp" type="radio" name="atype" value="qapp" class="orig-box"/><strong>快应用</strong>
+					<input id="Rqapp" type="radio" name="atype" value="qapp" class="orig-box" /><strong>快应用</strong>
 				</label>
 				<label tabindex="0">
-					<input id="Ratag" type="radio" name="atype" value="atag" class="orig-box"/><strong>标签</strong>
+					<input id="Ratag" type="radio" name="atype" value="atag" class="orig-box" /><strong>标签</strong>
 				</label>
 				<label tabindex="0">
-					<input id="Rasty" type="radio" name="atype" value="asty" class="orig-box"/><strong>设置</strong>
+					<input id="Rasty" type="radio" name="atype" value="asty" class="orig-box" /><strong>设置</strong>
 				</label>
 			</div>
 			<div id="addlayer">
 				<div id="addtable">
 					<form id="aappt" class="atab">
-						<label id="akeyl"><strong>标识</strong>
-							<input id="akey" type="text" name="aapp" class="key" placeholder="首字母对应名称拼音首字母"/>
+						<label id="akeyl">
+							<strong>标识</strong>
+							<input id="akey" type="text" name="aapp" class="key" placeholder="首字母对应名称拼音首字母" />
 						</label>
-						<label id="asell" class="none"><strong>标识</strong>
+						<label id="asell" class="none">
+							<strong>标识</strong>
 							<select id="asel" class="msel">
 								<option selected hidden disabled value="">请选择要修改的项目...</option>
 							</select>
 						</label>
-						<label><strong>名称</strong>
-							<input id="atext" type="text" name="aapp" placeholder="显示名称，最好是 APP 名称"/>
+						<label>
+							<strong>名称</strong>
+							<input id="atext" type="text" name="aapp" placeholder="显示名称，最好是 APP 名称" />
 						</label>
 						<div id="apre">
 							<p>前置</p>
 							<label tabindex="0">
-								<input id="apret" type="radio" name="apre" value="true" class="orig-box"/>
+								<input id="apret" type="radio" name="apre" value="true" class="orig-box" />
 								<span class="new-style new-radio"></span>是
 							</label>
 							<label tabindex="0">
-								<input id="apref" type="radio" name="apre" value="false" class="orig-box" checked="checked"/>
+								<input id="apref" type="radio" name="apre" value="false" class="orig-box" checked="checked" />
 								<span class="new-style new-radio"></span>否
 							</label>
 							<label tabindex="0">
-								<input id="apreb" type="radio" name="apre" value="both" class="orig-box"/>
+								<input id="apreb" type="radio" name="apre" value="both" class="orig-box" />
 								<span class="new-style new-radio"></span>前后都有
 							</label>
 						</div>
 						<div id="afol">
 							<p>无缝</p>
 							<label tabindex="0">
-								<input id="afolt" type="radio" name="afol" value="true" class="orig-box"/>
+								<input id="afolt" type="radio" name="afol" value="true" class="orig-box" />
 								<span class="new-style new-radio"></span>是
 							</label>
 							<label tabindex="0">
-								<input id="afolf" type="radio" name="afol" value="false" class="orig-box" checked="checked"/>
+								<input id="afolf" type="radio" name="afol" value="false" class="orig-box" checked="checked" />
 								<span class="new-style new-radio"></span>否
 							</label>
 						</div>
-						<label class="acont1"><strong>关键字</strong>
-							<input id="acont1" type="text" name="acont1"/>
+						<label class="acont1">
+							<strong>关键字</strong>
+							<input id="acont1" type="text" name="acont1" />
 						</label>
-						<label class="acont2 none"><strong>前置关键字</strong>
-							<input id="acont2a" type="text" name="acont2"/>
+						<label class="acont2 none">
+							<strong>前置关键字</strong>
+							<input id="acont2a" type="text" name="acont2" />
 						</label>
-						<label class="acont2 none"><strong>后置关键字</strong>
-							<input id="acont2b" type="text" name="acont2"/>
+						<label class="acont2 none">
+							<strong>后置关键字</strong>
+							<input id="acont2b" type="text" name="acont2" />
 						</label>
 						<div id="acls">
 							<div id="aclsbox" class="classBox"></div>
 							<div id="aclsboxt" class="classPart">
-								<label id="aclsboxl" class="none"><strong>自定义标签</strong>
-									<input id="athirdt" type="text" name="athird"/>
+								<label id="aclsboxl" class="none">
+									<strong>自定义标签</strong>
+									<input id="athirdt" type="text" name="athird" />
 								</label>
 							</div>
 						</div>
 					</form>
 					<form id="qappt" class="atab none">
-						<label id="qkeyl"><strong>标识</strong>
-							<input id="qkey" type="text" name="qapp" class="key" placeholder="首字母对应名称拼音首字母"/>
+						<label id="qkeyl">
+							<strong>标识</strong>
+							<input id="qkey" type="text" name="qapp" class="key" placeholder="首字母对应名称拼音首字母" />
 						</label>
-						<label id="qsell" class="none"><strong>标识</strong>
+						<label id="qsell" class="none">
+							<strong>标识</strong>
 							<select id="qsel" class="msel">
 								<option selected hidden disabled value="">请选择要修改的项目...</option>
 							</select>
 						</label>
-						<label><strong>名称</strong>
-							<input id="qtext" type="text" name="qapp" placeholder="显示名称，最好是快应用名称"/>
+						<label>
+							<strong>名称</strong>
+							<input id="qtext" type="text" name="qapp" placeholder="显示名称，最好是快应用名称" />
 						</label>
-						<label><strong>平台</strong>
-							<input id="qcont1" type="text" name="qcont"/>
+						<label>
+							<strong>平台</strong>
+							<input id="qcont1" type="text" name="qcont" />
 						</label>
-						<label><strong>来自</strong>
-							<input id="qcont2" type="text" name="qcont"/>
+						<label>
+							<strong>来自</strong>
+							<input id="qcont2" type="text" name="qcont" />
 						</label>
-						<label><strong>应用</strong>
-							<input id="qcont3" type="text" name="qcont"/>
+						<label>
+							<strong>应用</strong>
+							<input id="qcont3" type="text" name="qcont" />
 						</label>
 						<div id="qcls">
 							<div id="qclsbox" class="classBox"></div>
 							<div id="qclsboxt" class="classPart">
-								<label id="qclsboxl" class="none"><strong>自定义标签</strong>
-									<input id="qthirdt" type="text" name="qthird"/>
+								<label id="qclsboxl" class="none">
+									<strong>自定义标签</strong>
+									<input id="qthirdt" type="text" name="qthird" />
 								</label>
 							</div>
 						</div>
 					</form>
 					<form id="atagt" class="atab none">
-						<label id="tkeyl"><strong>标识</strong>
-							<input id="tkey" type="text" name="atag" class="key" placeholder="数字和英文字母"/>
+						<label id="tkeyl">
+							<strong>标识</strong>
+							<input id="tkey" type="text" name="atag" class="key" placeholder="数字和英文字母" />
 						</label>
-						<label id="tsell" class="none"><strong>标识</strong>
+						<label id="tsell" class="none">
+							<strong>标识</strong>
 							<select id="tsel" class="msel">
 								<option selected hidden disabled value="">请选择要修改的项目...</option>
 							</select>
@@ -1302,15 +1318,17 @@ template {
 							<div id="tkds">
 								<div id="tclsbox" class="flag"></div>
 								<span>
-									<input id="ttext" type="text" name="atag" placeholder="标签名"/>
+									<input id="ttext" type="text" name="atag" placeholder="标签名" />
 								</span>
 							</div>
 						</div>
-						<label><strong>背景</strong>
-							<input id="tbgc" type="color" name="atag" value="#000000"/>
+						<label>
+							<strong>背景</strong>
+							<input id="tbgc" type="color" name="atag" value="#000000" />
 						</label>
-						<label><strong>文字</strong>
-							<input id="tfgc" type="color" name="atag" value="#ffffff"/>
+						<label>
+							<strong>文字</strong>
+							<input id="tfgc" type="color" name="atag" value="#ffffff" />
 						</label>
 					</form>
 				</div>
@@ -1319,7 +1337,7 @@ template {
 					<button type="button" id="aclear">清空表单</button>
 					<button type="button" id="anew">管理</button>
 					<button type="button" id="adel">删除</button>
-				</div>                                                                                                                                                                    
+				</div>
 				<div id="addsave">
 					<label for="stordata" class="invilab">复制到这里就可以导入啦</label>
 					<textarea id="stordata" placeholder="复制到这里就可以导入啦"></textarea>
@@ -1369,171 +1387,122 @@ template {
 		<div id="load">
 			<p id="loadstr">正在加载...</p>
 			<p id="browstr">
-				这个页面至少需要:<br/>
-				Chrome 60<br/>
-				Edge 79<br/>
-				Firefox 52<br/>
-				Safari 11<br/>
-				Opera 47<br/>
-				不支持 Internet Explorer !<br/><br/>
-				当前浏览器的 UA:<br/>
+				这个页面至少需要:<br />
+				Chrome 60<br />
+				Edge 79<br />
+				Firefox 52<br />
+				Safari 11<br />
+				Opera 47<br />
+				不支持 Internet Explorer !<br /><br />
+				当前浏览器的 UA:<br />
 				<code>
-                  <script>document.write(navigator.userAgent)</script>
-                </code>
+					<script>document.write(navigator.userAgent)</script>
+				</code>
 			</p>
 		</div>
 		<noscript><strong>亲，打开 JavaScript 才能工作哟！</strong></noscript>
 		<script>
-		const uaCode = (() => {
-			let lab,cas,lah,ntx,loc,pos=[0,0];
-			function $(all,sel) {
-				return (all) ? document.querySelectorAll(sel) : document.querySelector(sel);
-			}
-			
-			function $_(name) {
-				const list = $(true,`input[name="${name}"]:checked`);
-				return list.length === 1 && list[0].type === "radio" ? list[0] : list;
-			}
-			
-			function _(ele,del,nclass = "none") {
-				return (del) ?
-				ele.classList.remove(nclass) :
-				ele.classList.add(nclass);
-			}
-			
-			function __(prop) {
-				return getComputedStyle(document.all[0]).getPropertyValue('--' + prop);
-			}
-			
-			function getUpperHead(word) {
-				const temp = word.slice(0,1).toUpperCase();
-				return /^[A-Z]$/u.test(temp) ? temp : uaData.设置.数字记号;
-			}
-			
-			function scanAll() {
-				for (let ele of lah) {
-					if (window.getComputedStyle(ele).display!=="none") {
-						return true;
-					}
-				};
-			}
-			
-			function scanForHead() {
-				let found;
-				cas.forEach( ele => {
-					found = false;
-					for (let la of lab) {
-						if (getUpperHead(la.id) === ele.innerHTML && getComputedStyle(la).display !== "none") {
-							found = true;
-							break;
+			const uaCode = (() => {
+				let lab, cas, lah, ntx, loc, pos = [0, 0];
+				function $(all, sel) {
+					return (all) ? document.querySelectorAll(sel) : document.querySelector(sel);
+				}
+
+				function $_(name) {
+					const list = $(true, `input[name="${name}"]:checked`);
+					return list.length === 1 && list[0].type === "radio" ? list[0] : list;
+				}
+
+				function _(ele, del, nclass = "none") {
+					return (del) ?
+						ele.classList.remove(nclass) :
+						ele.classList.add(nclass);
+				}
+
+				function __(prop) {
+					return getComputedStyle(document.all[0]).getPropertyValue('--' + prop);
+				}
+
+				function getUpperHead(word) {
+					const temp = word.slice(0, 1).toUpperCase();
+					return /^[A-Z]$/u.test(temp) ? temp : uaData.设置.数字记号;
+				}
+
+				function scanAll() {
+					for (let ele of lah) {
+						if (window.getComputedStyle(ele).display !== "none") {
+							return true;
 						}
 					};
-					_(ele,found);
-				});
-			}
-			
-			function tagConv(clas,fro,to) {
-				if (clas.slice(0,1)==="_") {
-					return (to) ? clas.slice(1) : "third" ;
-				} else if (fro===to) {
-					return clas;
-				} else {
-					return (fro) ? uaData.tagfind.get(clas) : uaData.flag[clas][0];
 				}
-			}
-			
-			function toast(text,time = 3) {
-				if (window.mbrowser && window.mbrowser.showToast) {
-					window.mbrowser.showToast(text);
-				} else if (window.via && window.via.toast) {
-					window.via.toast(text);
-				} else if (window._obj) {
-					window._obj.toast(text);
-				} else if (window.H5EXT) {
-					window.H5EXT.cmd(99,text);
-				} else if (window.meta) {
-					window.meta.toast(text,time,null);
-				} else if (window.mx_browser_obj && window.mx_browser_obj.showtip) {
-					window.mx_browser_obj.showtip(text);
-				} else if (window.JSInterface && window.JSInterface.syslog) {
-					window.JSInterface.syslog(text);
-				} else if (window.plugin) {
-					window.plugin.makeToast(text);
-				} else if (window.mdhtml) {
-					window.mdhtml.mdts(text);
-				} else {
-					$(false,"#toast").innerHTML = text;
-					$(false,"#toast").style.cssText = `display: block;animation: toast ${time}s ease;-webkit-animation: toast ${time}s ease;`;
-				}
-			}
-			
-			function spaceChecked(e) {
-				switch (e.code) {
-					case "Space":
-					case "Enter":
-						e.target.control.click();
-						break;
-					default:
-						return;
-				}
-			}
-			
-			function insertUA(e) {
-				const win = $(false,"#ua"),
-					value = e.dataTransfer.getData('text'),
-					appo = uaData.apps[value];
-				let result = ['',''], baseUA = $(false,"textarea").value,
-				    space = (baseUA.slice(-1)==' ');
-				e.preventDefault();
-				if (typeof appo.content === "object") {
-					if (appo.content.qBasic) {
-						appo.content = `${appo.content.qBasic} ${appo.content.qString} (${JSON.stringify({
-							packageName: appo.content.qFrom,
-							type: "url",
-							extra: {
-								scene: "recommend"
+
+				function scanForHead() {
+					let found;
+					cas.forEach(ele => {
+						found = false;
+						for (let la of lab) {
+							if (getUpperHead(la.id) === ele.innerHTML && getComputedStyle(la).display !== "none") {
+								found = true;
+								break;
 							}
-						})})`;
+						};
+						_(ele, found);
+					});
+				}
+
+				function tagConv(clas, fro, to) {
+					if (clas.slice(0, 1) === "_") {
+						return (to) ? clas.slice(1) : "third";
+					} else if (fro === to) {
+						return clas;
+					} else {
+						return (fro) ? uaData.tagfind.get(clas) : uaData.flag[clas][0];
 					}
 				}
-				if (appo.prefix) {
-					if (appo.followed) {
-						result[0] = appo.content;
+
+				function toast(text, time = 3) {
+					if (window.mbrowser && window.mbrowser.showToast) {
+						window.mbrowser.showToast(text);
+					} else if (window.via && window.via.toast) {
+						window.via.toast(text);
+					} else if (window._obj) {
+						window._obj.toast(text);
+					} else if (window.H5EXT) {
+						window.H5EXT.cmd(99, text);
+					} else if (window.meta) {
+						window.meta.toast(text, time, null);
+					} else if (window.mx_browser_obj && window.mx_browser_obj.showtip) {
+						window.mx_browser_obj.showtip(text);
+					} else if (window.JSInterface && window.JSInterface.syslog) {
+						window.JSInterface.syslog(text);
+					} else if (window.plugin) {
+						window.plugin.makeToast(text);
+					} else if (window.mdhtml) {
+						window.mdhtml.mdts(text);
 					} else {
-						result[0] = `${appo.content} `;
-					}
-				} else if (appo.content instanceof Array) {
-					if (appo.followed) {
-						result[0] = appo.content[0] ;
-						result[1] = appo.content[1];
-					} else {
-						result[0] = `${appo.content[0]} `;
-						result[1] = `${appo.content[1]} `;
-					}
-				} else {
-					if (appo.followed) {
-						result[1] = appo.content;
-					} else {
-						result[1] = `${appo.content} `;
+						$(false, "#toast").innerHTML = text;
+						$(false, "#toast").style.cssText = `display: block;animation: toast ${time}s ease;-webkit-animation: toast ${time}s ease;`;
 					}
 				}
-				if (appo.followed && !appo.prefix && space) baseUA = baseUA.slice(0,-1);
-				$(false,"textarea").value = result[0] + baseUA + result[1];
-				issuesCheck();
-				winActiv(win);
-			}
-			
-			function genUA() {
-				const baseUA = $_("mode").value === "add" ? 
-							$(false,"textarea").value :
-							uaData.base[$_("base").value].content,
-					midSpace = /.+\s.+/u, win = $(false,"#ua");
-				let prefixUA = "",
-					preFollowUA = "",
-					suffixUA = " ",
-					sufFollowUA = "";
-				$_("app").forEach( app => {
-					const appo = uaData.apps[app.value];
+
+				function spaceChecked(e) {
+					switch (e.code) {
+						case "Space":
+						case "Enter":
+							e.target.control.click();
+							break;
+						default:
+							return;
+					}
+				}
+
+				function insertUA(e) {
+					const win = $(false, "#ua"),
+						value = e.dataTransfer.getData('text'),
+						appo = uaData.apps[value];
+					let result = ['', ''], baseUA = $(false, "textarea").value,
+						space = (baseUA.slice(-1) == ' ');
+					e.preventDefault();
 					if (typeof appo.content === "object") {
 						if (appo.content.qBasic) {
 							appo.content = `${appo.content.qBasic} ${appo.content.qString} (${JSON.stringify({
@@ -1547,1099 +1516,1148 @@ template {
 					}
 					if (appo.prefix) {
 						if (appo.followed) {
-							preFollowUA = midSpace.test(appo.content) ?
-											appo.content + preFollowUA :
-											preFollowUA + appo.content ;
+							result[0] = appo.content;
 						} else {
-							prefixUA = `${appo.content} ${prefixUA}`;
+							result[0] = `${appo.content} `;
 						}
 					} else if (appo.content instanceof Array) {
 						if (appo.followed) {
-							preFollowUA = midSpace.test(appo.content[0]) ?
-											appo.content[0] + preFollowUA :
-											preFollowUA + appo.content[0] ;
-							sufFollowUA = midSpace.test(appo.content[1]) ?
-											sufFollowUA + appo.content[1] :
-											appo.content[1] + sufFollowUA ;
+							result[0] = appo.content[0];
+							result[1] = appo.content[1];
 						} else {
-							prefixUA = `${appo.content[0]} ${prefixUA}`;
-							suffixUA += `${appo.content[1]} `;
+							result[0] = `${appo.content[0]} `;
+							result[1] = `${appo.content[1]} `;
 						}
 					} else {
 						if (appo.followed) {
-							sufFollowUA = midSpace.test(appo.content) ?
-											sufFollowUA + appo.content :
-											appo.content + sufFollowUA ;
+							result[1] = appo.content;
 						} else {
-							suffixUA += `${appo.content} `;
+							result[1] = `${appo.content} `;
 						}
 					}
-				});
-				$(false,"textarea").value = prefixUA + preFollowUA + baseUA + sufFollowUA + suffixUA;
-				issuesCheck();
-				_(win,true);
-				winActiv(win);
-			}
-			
-			function makeIssue(issue,head) {
-				let p = document.createElement('p');
-				p.className = "issue";
-				p.id = (head) ? 'issueHead' : '';
-				p.innerHTML = issue;
-				return p;
-			}
-			
-			function issuesCheck() {
-				const ua = $(false,"textarea").value, ibox = $(false,'#issues'),
-					issue = [
-								[ // #1 百度 页面 确认框
-									( ua.includes('baiduboxapp/') && (
-									(/\(.*Android.*\)/.test(ua) &&
-									/Android[^\)]*\)+?/.exec(ua)[0].includes(' ') &&
-									!/Android[^\s]+;?[^\s]+[\w]+.*\)+?/u.test(ua)) ||
-									(!/ (lite|info|pro|mission) baiduboxapp/.test(ua) &&
-									/baiduboxapp\/\d*/.test(ua)))),
-									'此 UA 可能会导致 百度部分页面 加载时弹出 确认/取消 对话框'
-                                ],[ // #1+ 百度 APP
-                                    ua.includes('baiduboxapp/'),
-                                    '任何使用百度 APP 的 UA，<br>都有可能出现以下情况: <br>\n\
-                                    1. 新闻 / 资讯里的 百家号 文章 无法打开<br>\n\
-                                    2. " Ta 在百度 " 里的动态无法打开<br>\n\
-                                    3. 搜索结果中，笔记 频道内容为空<br>\n\
-                                    4. 搜索结果可能会变得非常少'
-								],[ // #2 城通 下载按钮 失效
-									ua.includes('baidu'),
-									'此 UA 可能会导致大部分 城通网盘 下载按钮 失效'
-								],[ // #3 iPhone 下载 APP 跳到 AppStore
-									( ua.includes('iPhone') && ua.includes('AppleWebKit') ),
-									'此 UA 可能会导致 百度搜索 下载 APP 跳转到苹果的 AppStore'
-								],[ // #4 腾讯视频 页面 确认框
-									( ua.includes('Android') && ua.includes('qqnews') ),
-									'此 UA 可能会导致 腾讯视频播放页面 加载时弹出 确认/取消 对话框'
-								],[ // #5 蓝奏云 mtt: 确认框
-									( /\(.*Android.*\)/.test(ua) && ua.includes('MQQBrowser/') &&  ( ver = /MQQBrowser\/\d*/.exec(ua)[0].replace('MQQBrowser/',''), ver >= 5 )),
-									'此 UA 可能会导致 蓝奏云部分页面 加载广告时弹出 确认/取消 对话框'
-								],[ // #6 淘宝 windvine 确认框
-									( ua.includes('Android') && /WindVane\/\d+\.\d+\.\d+/.test(ua) && ( ver = /WindVane\/\d+/.exec(ua)[0].replace('WindVane/',''), ver >= 1 )),
-									'此 UA 可能会导致 淘宝部分页面 加载时弹出 确认/取消 对话框'
-								],[ // #7 知乎电脑版
-									( ua.includes('Android') && !ua.includes('Mobile') ),
-									'此 UA 可能会导致 知乎 显示电脑版页面'
-								]
-							];
-				let count = 0, hasHead = false;
-				$(false,'#issues').innerHTML = '';
-				issue.forEach( i => {
-					if (i[0]) {
-						count++;
-						if (!hasHead) {
-							ibox.appendChild(makeIssue('',true));
-							hasHead = true;
-						}
-						ibox.appendChild(document.createElement('hr'));
-						ibox.appendChild(makeIssue(i[1],false));
-					};
-				});
-				if (count>0) {
-					$(false,'#issueHead').innerHTML = `检测到 ${count} 个问题 :`
-				};
-			}
-			
-			function makeFlagDiv(clas,box,chinese) {
-				const flag = document.createElement("strong");
-				flag.className = "flag";
-				flag.innerHTML = tagConv(clas,chinese,true);
-				clas = tagConv(clas,chinese,false);
-				if (!box) { _(flag,false,`T${clas}`); }
-				flag.style.cssText = `background-color:${uaData.flag[clas][1]};color:${uaData.flag[clas][2]}`;
-				return flag;
-			}
-			
-			function makeHeadandLink(first) {
-				const head = document.createElement("div");
-				Object.assign(head,{
-					id: `i${first}`,
-					innerHTML: first,
-					className: "CaseHead"
-				});
-				if(!uaData.touch) {
-					const jump = document.createElement("a");
-					Object.assign(jump,{
-						href: `#i${first}`,
-						innerHTML: first
-					});
-					$(false,"#ajump").appendChild(jump);
-				} else {
-					uaData.index += first;
+					if (appo.followed && !appo.prefix && space) baseUA = baseUA.slice(0, -1);
+					$(false, "textarea").value = result[0] + baseUA + result[1];
+					issuesCheck();
+					winActiv(win);
 				}
-				return head;
-			}
-			
-			function pushTagText(cls,app) {
-				if (!uaData.tagtext[cls]) { uaData.tagtext[cls] = []; }
-				uaData.tagtext[cls].push(app);
-			}
-			
-			function parseClassinItem(lab,app) {
-				let count = 0;
-				if (uaData.apps[app].class.length===0) {
-					pushTagText("no_tag",app);
-					lab.className = "no_tag";
-					return 1;
-				} else {
-					uaData.apps[app].class.forEach( cls => {
-						if (cls.slice(0,1)==="_" || uaData.tagfind.has(cls)) {
-							count += 1;
-							lab.appendChild(makeFlagDiv(cls,false,true));
-							cls = tagConv(cls,true,false);
-							pushTagText(cls,app);
-							_(lab,false,cls);
-						} else {
-							toast(`项目 "${app}" 被指定了不存在的标签 "${cls}" ...`);
-							uaData.stor.apps[app].class.splice(
-								uaData.stor.apps[app].class.findIndex( v => v === cls ),1
-							);
-							loc.setItem(uaData.storKey,JSON.stringify(uaData.stor));
-							window.location.reload();
-						}
-					});
-					return count;
-				}
-			}
-			
-			function newBox(type) {
-				const box = document.createElement("span");
-				box.className = `new-style new-${type}`;
-				return box;
-			}
-			
-			function makeItem() {
-				let ofirst = "Z",cont = $(false,"#app_container");
-				Object.keys(uaData.apps).sort().forEach( app => {
-					uaData.text.set(app, uaData.apps[app].text);
-					const lab = document.createElement("label"),
-						box = document.createElement("input"),
-						text = document.createElement("span"),
-						first = getUpperHead(app);
-					Object.assign(lab, {
-						id: app,
-						tabIndex: 0,
-						draggable: true
-					});
-					text.innerHTML = uaData.apps[app].text;
-					lab.appendChild(text);
-					uaData.count[app] = parseClassinItem(lab,app);
-					Object.assign(box, {
-						type: "checkbox",
-						name: "app",
-						value: app,
-						className: "orig-box",
-						tabIndex: -1
-					});
-					lab.appendChild(box);
-					lab.appendChild(newBox("check"));
-					if (first!==ofirst) {
-						cont.appendChild(makeHeadandLink(first));
-						ofirst = first;
-					}
-					cont.appendChild(lab);
-				});
-				if (uaData.touch) {
-					uaData.indexSidebar1 = new IndexSidebar({
-						mounted: document.querySelector('#app')
-					});
-				} else {
-					_($(false,'#ajump'),true);
-					_(cont,!1,'fixed');
-				};
-			}
-			
-			function makeFlaginBox() {
-				Object.keys(uaData.flag).forEach( flag => {
-					const lab = document.createElement("label"),
-						box = document.createElement("input");
-					lab.id = `L${flag}`;
-					lab.tabIndex = 0;
-					Object.assign(box, {
-						type: "checkbox",
-						name: "flag",
-						id: `B${flag}`,
-						value: flag,
-						checked: true
-					});
-					box.addEventListener('change', e => tagClick(e.target.parentNode.id));
-					lab.appendChild(box);
-					lab.appendChild(makeFlagDiv(flag,true,false));
-					$(false,"#classBox").appendChild(lab);
-				});
-			}
-			
-			function makeBaseRadio() {
-				Object.keys(uaData.base).forEach( (base,i) => {
-					const lab = document.createElement("label"),
-						box = document.createElement("input"),
-						bob = document.createElement("strong");
-					lab.for = base;
-					lab.tabIndex = 0;
-					Object.assign(box, {
-						type: "radio",
-						name: "base",
-						id: base,
-						value: base,
-						className: "orig-box",
-						tabIndex: -1,
-						checked: (uaData.设置.基础默认==i+1)
-					});
-					bob.innerHTML = uaData.base[base].text;
-					lab.appendChild(box);
-					lab.appendChild(bob);
-					$(false,"#baseopt").appendChild(lab);
-				});
-			}
-			
-			function winActiv(awin) {
-				let wing = $(true,".win");
-				wing.forEach( win => {
-					if (win.style.zIndex>awin.style.zIndex) {
-						win.style.zIndex--;
-					}
-				});
-				awin.style.zIndex = wing.length + 1;
-			}
-			
-			function dndWin() {
-				let wing = $(true,".win"), unlock = () => document.onmousemove = null;
-				wing.forEach( (win,i) => win.style.zIndex = i + 2 );
-				if (uaData.touch) {
-					wing.forEach( win => {
-						win.addEventListener('touchstart', e => {
-							if (e.target.nodeName!=="TEXTAREA" &&
-								e.target.type!=="text" &&
-								!$(false,'#issues').contains(e.target)) {
-								pos = [
-								(e.touches[0].clientX - win.offsetLeft),
-								(e.touches[0].clientY - win.offsetTop)
-								];
-							}
-							winActiv(win);
-						},{ passive: true });
-						win.addEventListener('touchmove', e => {
-							if (e.target.nodeName!=="TEXTAREA" &&
-								e.target.type!=="text" &&
-								!$(false,'#issues').contains(e.target)) {
-								win.style.left = (e.touches[0].clientX - pos[0]) + 'px';
-								win.style.top = (e.touches[0].clientY - pos[1]) + 'px';
-							}
-							win.style.position = (
-								parseInt(getComputedStyle(win)['right']) < 0 || 
-								parseInt(getComputedStyle(win)['left']) < 0 ||
-								parseInt(getComputedStyle(win)['bottom']) < 0) ?
-							'fixed' : 'absolute' ;
-						},{ passive: true });
-					});
-				} else {
-					wing.forEach( win => {
-						win.addEventListener('mousedown', e => {
-							pos = [
-							(e.clientX - win.offsetLeft),
-							(e.clientY - win.offsetTop)
-							];
-							winActiv(win);
-							if(e.target.nodeName!=="TEXTAREA" &&
-							e.target.type!=="text" &&
-							e.target.nodeName!=="SELECT" &&
-							e.target.className!=="flag") {
-								document.onmousemove = e => {
-									win.style.left = (e.clientX - pos[0]) + 'px';
-									win.style.top = (e.clientY - pos[1]) + 'px';
-								};
-							};
-							document.removeEventListener('mouseup', unlock);
-							document.addEventListener('mouseup', unlock);
-						});
-					});
-				}
-			}
-			
-			function openWin(id) {
-				let win = $(false,id);
-				win.classList.toggle('none');
-				if (!win.classList.contains('none')) winActiv(win);
-			}
-			
-			function topwin(e) {
-				let btn = e.target, win = btn.parentNode.parentNode;
-				win.classList.toggle('topwin');
-				btn.style.backgroundColor = (win.classList.contains('topwin')) ?
-					__('theme-color-top-enable') : __('theme-color-top');
-			}
-			
-			function filterExec(item,nclass) {
-				let found;
-				lab.forEach( ele => {
-					found = false;
-					for (let val of item) {
-						if (val===ele.id) {
-							found = true;
-							break;
-						}
-					}
-					_(ele,found,nclass);
-				});
-				scanForHead();
-				_(ntx,!scanAll());
-			}
-			
-			function filterResume(nclass) {
-				lah.forEach( ele => _(ele,true,nclass));
-				scanForHead();
-				_(ntx,!scanAll());
-			}
-			
-			function fltAppUA(e) {
-				let word = e.target.value;
-				if (word==="") {
-					filterResume("none");
-				} else {
-					const item = [];
-					for (let [k,v] of uaData.text) {
-						v.toLowerCase().includes(word.toLowerCase()) && item.push(k);
-					}
-					filterExec(item,"none");
-				}
-			}
-			
-			function fltAppUASelected(e) {
-				let btn = e.target;
-				if (btn.innerHTML==="列出已选") {
-					const item = [];
-					$_("app").forEach( ele => item.push(ele.value));
-					filterExec(item,"sel_none");
-					btn.innerHTML = "列出全部";
-				} else {
-					filterResume("sel_none");
-					btn.innerHTML = "列出已选";
-				}
-			}
-			
-			function fltAppUATag(clas,selected) {
-				$(true,`.T${clas}`).forEach( tag => _(tag,selected) );
-				if (uaData.tagtext[clas]) {
-					uaData.tagtext[clas].forEach( id => {
-						(selected) ? uaData.count[id]++ : uaData.count[id]--;
-					});
-				}
-				const item = Object.keys(uaData.count).filter(obj => uaData.count[obj]!==0);
-				filterExec(item,"tag_none");
-			}
-			
-			function tagClick(id) {
-				const box = $(false,`#${id} input`),
-					flag = $(false,`#${id} .flag`);
-				fltAppUATag(id.slice(1),box.checked);
-				$(false,'#openClass').style.backgroundColor = ($(true,'#classBox input:not(:checked)').length===0) ? '' : __('tag-filtered');
-			}
-			
-			/* "添加" 窗口表单 相关 */
-			
-			function aform_tType(type) {
-				return (type.slice(1)==="app") ? type.slice(0,1) : "t";
-			}
-			
-			function aform_switchModify() {
-				const type = aform_tType($_("atype").value),
-					sel = $(false,`#${type}sell`),
-					key = $(false,`#${type}keyl`),
-					btn = $(false,'#anew'),
-					ok = $(false,'#aok'),
-					mod = (btn.innerHTML==="管理");
-				_(key,!mod);
-				_(sel,mod);
-				btn.innerHTML = (mod) ? "添加" : "管理";
-				ok.innerHTML = (mod) ? "确定" : "加入";
-				aform_Clear();
-			}
-			
-			function aform_switchCard() {
-				const val = $_("atype").value,set = (val==="asty");
-				_($(false,'#setlayer'),set);
-				_($(false,'#addlayer'),!set);
-				if (!set) {
-					$(true,".atab").forEach( tab => {
-						if (tab.id===`${val}t`) {
-							_(tab,true);
-							$(false,'#anew').innerHTML = "添加";
-							aform_switchModify();
-						} else {
-							_(tab,false);
-						}
-					});
-				}
-			}
-			
-			function aform_switchBoth() {
-				const val = ($_("apre").value==="both");
-				$(true,".acont2").forEach( input => _(input,val) );
-				_($(false,".acont1"),!val);
-			}
-			
-			function aform_makeFlaginBox() {
-				$(true,".classBox").forEach( sbox => {
-					Object.keys(uaData.flag).forEach( flag => {
-						if (flag!=="qapp" && flag!=="no_tag") {
-							const lab = document.createElement("label"),
-								box = document.createElement("input");
-							lab.id = `${getUpperHead(sbox.id)}${flag}`;
-							lab.tabIndex = 0;
-							Object.assign(box, {
-								type: "checkbox",
-								name: "sflag",
-								id: `${sbox.id.slice(0,1)}${flag}`,
-								value: flag,
-								checked: false
-							});
-							if (flag==="third") {
-								box.addEventListener('change', e =>
-									_($(false,`#${sbox.id}l`),box.checked)
-								);
-							}
-							lab.appendChild(box);
-							lab.appendChild(makeFlagDiv(flag,true,false));
-							sbox.appendChild(lab);
-						}
-					});
-				});
-			}
-			
-			function aform_updateFlagPreview() {
-				const box = $(false,'#tclsbox'),
-					txt = $(false,'#ttext').value;
-				box.innerHTML = txt;
-				_(box,txt!=="");
-				box.style.cssText =
-				`background-color:${$(false,'#tbgc').value};color:${$(false,'#tfgc').value}`;
-			}
-			
-			function aform_Clear() {
-				$(true,'#addtable input[type="text"], #tkds').forEach( i => {
-					i.style.removeProperty('border-color');
-				});
-				_($(false,`#aclsboxl`),false);
-				_($(false,`#qclsboxl`),false);
-				$(true,'#addtable form').forEach( f => f.reset() );
-				aform_updateFlagPreview();
-				aform_switchBoth();
-			}
-			
-			function aform_Check(type) {
-				let a = true;
-				$(true,`#${type}t input[type="text"]`).forEach( i => {
-					i.style.removeProperty('border-color');
-					if (getComputedStyle(i).display!=="none" &&
-						getComputedStyle(i.parentNode).display!=="none" &&
-						i.value==="") {
-						if (i.id==="ttext") {
-							$(false,'#tkds').style.borderColor = __('input-check-null');
-						} else {
-							i.style.borderColor = __('input-check-null');
-						}
-						a = false;
-					}
-				});
-				return (a && $(false,'#anew').innerHTML==="管理") ? aform_KeyCheck(true) : a ;
-			}
-			
-			function aform_KeyCheck(show) {
-				const type = aform_tType($_('atype').value), test = /^\w+$/u;
-				let inp = $(false,`#${type}key`), key = inp.value, bor = inp,
-					src = (type==="t") ? 'flag' : 'apps';
-				if (type==='t' && key.slice(0,1)==="_") {
-					bor.style.borderColor = __('input-check-err');
-					if(show){ toast('"_" 开头用于自定义标签'); }
-					return false;
-				}
-				if (key in uaData[src]||key in uaData.stor[src]) {
-					bor.style.borderColor = __('input-check-err');
-					if(show){ toast('标识重复'); }
-					return false;
-				}
-				if (key==="") {
-					bor.style.removeProperty('border-color');
-					return false;
-				} else if (!test.test(key)) {
-					bor.style.borderColor = __('input-check-err');
-					if(show){ toast('输入错误'); }
-					return false;
-				} else {
-					bor.style.borderColor = __('input-check-ok');
-					return true;
-				}
-			}
-			
-			function aform_Add() {
-				const atyp = $_("atype").value;
-				let key,cont,obj,typr;
-				if (!aform_Check(atyp)) { return; }
-				typr = aform_tType(atyp);
-				key = ($(false,'#anew').innerHTML==="管理") ?
-					$(false,`#${typr}key`).value :
-					$(false,`#${typr}sel`).value ;
-				if (key==="" && $(false,'#anew').innerHTML==="添加") {
-					toast("请选择需要修改的项目");
-					return;
-				}
-				switch (typr) {
-					case "a":
-						cont = ($_("apre").value!=="both") ?  
-							$(false,"#acont1").value : [
-							$(false,"#acont2a").value,
-							$(false,"#acont2b").value ];
-						break;
-					case "q":
-						cont = {
-							qBasic: $(false,"#qcont1").value,
-							qFrom: $(false,"#qcont2").value,
-							qString: $(false,"#qcont3").value,
-						};
-						break;
-				}
-				if (atyp==="atag") {
-					obj = [
-						$(false,'#ttext').value,
-						$(false,'#tbgc').value,
-						$(false,'#tfgc').value
-					]
-					Object.assign(uaData.stor.flag, { [`${key}`]: obj });
-				} else {
-					obj = {
-						text: $(false,`#${typr}text`).value,
-						prefix: (atyp==="qapp"||$_("apre").value==="both") ? false :
-								($_("apre").value==='true'),
-						followed: (atyp==="qapp") ? false : ($_("afol").value==='true'),
-						content: (atyp==="qapp") ? {
-							平台:cont.qBasic,
-							来自:cont.qFrom,
-							应用:cont.qString
-						} : cont,
-						class: []
-					}
-					
-					$_("sflag").forEach( inp => {
-						if(inp.id.slice(1)==="third") {
-							obj.class.push("_" + $(false,`#${typr}thirdt`).value);
-						} else {
-							obj.class.push(tagConv(inp.id.slice(1),false,true));
-						}
-					});
-					
-					if (atyp==="qapp") {
-						obj.class.push("快应用");
-					}
-					
-					Object.assign(uaData.stor.apps, {
-						[`${key}`]: {
-							名称: obj.text,
-							前置: (obj.prefix) ? "是" : "不是",
-							无缝: (obj.followed) ? "是" : "不是",
-							标签: obj.class,
-							内容: obj.content
-						}
-					});
-				}
-				if ($(false,'#anew').innerHTML==="管理") {
-					$(false,`#${typr}sel`).insertBefore(
-						new Option((atyp==="atag") ?
-							`${obj[0]} (${key})` : `${obj.text} (${key})`,
-						key), $(false,`#${typr}sel`)[1]
-					);
-					aform_Clear();
-				} else {
-					$(false,`#${typr}sel option[value="${key}"]`).innerHTML = (atyp==="atag") ?
-						`${obj[0]} (${key})` :`${obj.text} (${key})`;
-					aform_Clear();
-				}
-				$(false,'#ssave').style.backgroundColor = __('data-need-save');
-				if ($(false,'#aok').innerHTML==="加入") {
-					toast('加入成功');
-				} else {
-					toast('修改成功');
-				}
-			}
-			
-			function aform_Modify() {
-				const type = aform_tType($_("atype").value),
-					item = $(false,`#${type}sel`).value;
-				let obj,cobj,cont,chk;
-				function tagParse(tags) {
-					let ccls = [];
-					tags.forEach( ct => {
-						ccls.push((ct.slice(0,1)==="_") ? ct : uaData.tagfind.get(ct));
-					});
-					return ccls;
-				}
-				switch (type) {
-					case "t" :
-						obj = (uaData.stor.flag[item]) ? uaData.stor.flag[item] : uaData.flag[item];
-						break;
-					default:
-						if (uaData.stor.apps[item]) {
-							cobj = uaData.stor.apps[item];
-							if (typeof cobj["内容"] === "object") {
-								if (cobj["内容"] instanceof Array) {
-									cont = [cobj["内容"][0],cobj["内容"][1]];
-								} else {
-									cont = {
-										qBasic: cobj["内容"]["平台"],
-										qFrom: cobj["内容"]["来自"],
-										qString: cobj["内容"]["应用"]
-									}
-								}
-							} else {
-								cont = cobj["内容"];
-							}
-							obj = {
-								text: cobj["名称"],
-								prefix: (cobj["前置"]==="是") ? true : false,
-								followed: (cobj["无缝"]==="是") ? true : false,
-								class: tagParse(cobj["标签"]),
-								content: cont
-							}
-						} else {
-							obj = JSON.parse(JSON.stringify(uaData.apps[item]));
-							obj.class = tagParse(obj.class);
-						}
-						break;
-				}
-				
-				function clsSet(obj,type) {
-					$(true,`#${type}clsbox input`).forEach( c => { c.checked = false; });
-					_($(false,`#${type}clsboxl`),false);
-					obj.class.forEach( cls => {
-						if (cls!=="qapp") {
-							if (cls.slice(0,1)==="_") {
-								$(false,`#${type.toUpperCase()}third input`).checked = true;
-								_($(false,`#${type}clsboxl`),true);
-								$(false,`#${type}thirdt`).value = cls.slice(1);
-							} else {
-								$(false,`#${type.toUpperCase()}${cls}  input`).checked = true;
-							}
-						}
-					});
-				}
-				
-				switch (type) {
-					case "a" :
-						$(false,"#atext").value = obj.text;
-						if (obj.content instanceof Array) {
-							$(false,"#apreb").checked = true;
-							aform_switchBoth();
-							$(false,"#acont2a").value = obj.content[0];
-							$(false,"#acont2b").value = obj.content[1];
-						} else {
-							chk = (obj.prefix) ? $(false,"#apret") : $(false,"#apref");
-							chk.checked = true;
-							aform_switchBoth();
-							$(false,"#acont1").value = obj.content;
-						}
-						chk = (obj.followed) ? $(false,"#afolt") : $(false,"#afolf");
-						chk.checked = true;
-						clsSet(obj,type);
-						break;
-					case "q" :
-						$(false,"#qtext").value = obj.text;
-						$(false,"#qcont1").value = obj.content.qBasic;
-						$(false,"#qcont2").value = obj.content.qFrom;
-						$(false,"#qcont3").value = obj.content.qString;
-						clsSet(obj,type);
-						break;
-					case "t" :
-						$(false,"#ttext").value = obj[0];
-						$(false,"#tbgc").value = obj[1];
-						$(false,"#tfgc").value = obj[2];
-						aform_updateFlagPreview();
-						break;
-				}
-			}
-			
-			function aform_Delete() {
-				let type = aform_tType($_("atype").value),
-					sel = $(false,`#${type}sel`),
-					val = sel.value,
-					opt = $(false,`#${type}sel option[value="${val}"]`),
-					item = (type==='t') ? uaData.stor.flag[val] : uaData.stor.apps[val];
-				if ($(false,'#anew').innerHTML==="添加") {
-					if (val) {
-						if (item) {
-							switch (type) {
-								case "t" :
-									delete uaData.stor.flag[val];
-									break;
-								default:
-									delete uaData.stor.apps[val];
-									break;
-							}
-							sel.removeChild(opt);
-							aform_Clear();
-							$(false,'#ssave').style.backgroundColor = __('data-need-save');
-							toast('删除成功');
-						} else {
-							toast('不能删除自带项目');
-						}
-					} else {
-						toast('没有选择项目');
-					}
-				} else {
-					toast('只能在管理模式下删除项目');
-				}
-			}
-		
-			/* localStorage 相关 */
-			
-			function lsb_initOption() {
-				let sel,opt;
-				if (Object.keys(uaData.stor).length!==0) {
-					if (uaData.stor.apps) {
-						Object.keys(uaData.stor.apps).forEach( app => {
-							opt = new Option(`${uaData.stor.apps[app].名称} (${app})`,app);
-							sel = (uaData.stor.apps[app].内容.来自) ?
-								$(false,'#qsel') : $(false,'#asel');
-							if (sel.length===1) {
-								sel.appendChild(opt);
-							} else {
-								sel.insertBefore(opt,sel[1]);
-							}
-						});
-					}
-					if (uaData.stor.flag) {
-						Object.keys(uaData.stor.flag).forEach( tag => {
-							opt = new Option(`${uaData.stor.flag[tag][0]} (${tag})`,tag);
-							sel = $(false,'#tsel');
-							if (sel.length===1) {
-								sel.appendChild(opt);
-							} else {
-								sel.insertBefore(opt,sel[1]);
-							}
-						});
-					}
-				}
-				Object.keys(uaData.apps).sort().forEach( app => {
-					if (!uaData.stor.apps[app]) {
-						sel = (uaData.apps[app].content.qFrom) ?
-							$(false,'#qsel') : $(false,'#asel');
-						sel.appendChild(new Option(`* ${uaData.apps[app].text} (${app})`,app));
-					}
-				});
-				Object.keys(uaData.flag).sort().forEach( tag => {
-					if (!uaData.stor.flag[tag]) {
-						$(false,'#tsel').appendChild(
-							new Option(`* ${uaData.flag[tag][0]} (${tag})`,tag));
-					}
-				});
-			}
-			
-			function lsb_save() {
-				if (Object.keys(uaData.stor.apps).length!==0 ||
-					Object.keys(uaData.stor.flag).length!==0) {
-					loc.setItem(uaData.storKey,JSON.stringify(uaData.stor));
-				} else {
-					window.localStorage.removeItem(uaData.storKey);
-				}
-				$(false,'#ssave').style.backgroundColor = '';
-				toast('保存成功，下次刷新生效');
-			}
 
-			function lsb_export() {
-				if (loc.hasOwnProperty(uaData.storKey)) {
-					$(false,"#stordata").value = loc.getItem(uaData.storKey);
-				} else {
-					toast('没有自定义数据');
-				}
-			}
-			
-			function lsb_import() {
-				if ($(false,"#stordata").value!=="") {
-					try {
-						const data = JSON.parse($(false,"#stordata").value);
-						if (loc.hasOwnProperty(uaData.storKey)) {
-							let odata = JSON.parse(loc.getItem(uaData.storKey));
-							Object.keys(data).forEach( k => {
-								if (odata[k]) {
-									Object.assign(odata[k],data[k]);
-								} else {
-									odata[k] = data[k];
-								}
-							});
-							loc.setItem(uaData.storKey,JSON.stringify(odata));
-						} else {
-							loc.setItem(uaData.storKey,JSON.stringify(data));
+				function genUA() {
+					const baseUA = $_("mode").value === "add" ?
+						$(false, "textarea").value :
+						uaData.base[$_("base").value].content,
+						midSpace = /.+\s.+/u, win = $(false, "#ua");
+					let prefixUA = "",
+						preFollowUA = "",
+						suffixUA = " ",
+						sufFollowUA = "";
+					$_("app").forEach(app => {
+						const appo = uaData.apps[app.value];
+						if (typeof appo.content === "object") {
+							if (appo.content.qBasic) {
+								appo.content = `${appo.content.qBasic} ${appo.content.qString} (${JSON.stringify({
+									packageName: appo.content.qFrom,
+									type: "url",
+									extra: {
+										scene: "recommend"
+									}
+								})})`;
+							}
 						}
-						$(false,"#stordata").value = "";
-						toast('导入成功');
-					} catch(e) {
-						if (e instanceof SyntaxError) {
-							toast('导入失败:格式不正确');
+						if (appo.prefix) {
+							if (appo.followed) {
+								preFollowUA = midSpace.test(appo.content) ?
+									appo.content + preFollowUA :
+									preFollowUA + appo.content;
+							} else {
+								prefixUA = `${appo.content} ${prefixUA}`;
+							}
+						} else if (appo.content instanceof Array) {
+							if (appo.followed) {
+								preFollowUA = midSpace.test(appo.content[0]) ?
+									appo.content[0] + preFollowUA :
+									preFollowUA + appo.content[0];
+								sufFollowUA = midSpace.test(appo.content[1]) ?
+									sufFollowUA + appo.content[1] :
+									appo.content[1] + sufFollowUA;
+							} else {
+								prefixUA = `${appo.content[0]} ${prefixUA}`;
+								suffixUA += `${appo.content[1]} `;
+							}
 						} else {
-							toast(`导入失败:${e}`);
+							if (appo.followed) {
+								sufFollowUA = midSpace.test(appo.content) ?
+									sufFollowUA + appo.content :
+									appo.content + sufFollowUA;
+							} else {
+								suffixUA += `${appo.content} `;
+							}
 						}
-					}
-				} else {
-					toast('没有输入数据');
+					});
+					$(false, "textarea").value = prefixUA + preFollowUA + baseUA + sufFollowUA + suffixUA;
+					issuesCheck();
+					_(win, true);
+					winActiv(win);
 				}
-			}
-			
-			function lss_save() {
-				let obj = {}, thm = {
-					light: [
-						Object.values($(false,'#myLight').sheet.cssRules)[0].cssText,
-						$(false,'#stylight').value
-					],
-					dark: [
-						Object.values($(false,'#myDark').sheet.cssRules)[0].cssRules[0].cssText,
-						$(false,'#stydark').value
-					]
+
+				function makeIssue(issue, head) {
+					let p = document.createElement('p');
+					p.className = "issue";
+					p.id = (head) ? 'issueHead' : '';
+					p.innerHTML = issue;
+					return p;
 				}
-				Object.keys(thm).forEach( th => {
-					if (thm[th][1]!=='' && thm[th][0]!==thm[th][1]) {
-						Object.assign(obj, { [th]: (th==='dark') ? `@media (prefers-color-scheme: dark) {\n${thm[th][1]}\n}` : thm[th][1] });
-					}
-				})
-				if (obj!=={}) {
-					loc.setItem(uaData.styleKey,JSON.stringify(obj));
-					toast('保存成功，下次刷新生效');
-				} else {
-					toast('内容没修改，不用保存');
+
+				function issuesCheck() {
+					const ua = $(false, "textarea").value, ibox = $(false, '#issues'),
+						issue = [
+							[ // #1 百度 页面 确认框
+								(ua.includes('baiduboxapp/') && (
+									(/\(.*Android.*\)/.test(ua) &&
+										/Android[^\)]*\)+?/.exec(ua)[0].includes(' ') &&
+										!/Android[^\s]+;?[^\s]+[\w]+.*\)+?/u.test(ua)) ||
+									(!/ (lite|info|pro|mission) baiduboxapp/.test(ua) &&
+										/baiduboxapp\/\d*/.test(ua)))),
+								'此 UA 可能会导致 百度部分页面 加载时弹出 确认/取消 对话框'
+							], [ // #1+ 百度 APP
+								ua.includes('baiduboxapp/'),
+								'任何使用百度 APP 的 UA，<br>都有可能出现以下情况: <br>\n\
+											1. 新闻 / 资讯里的 百家号 文章 无法打开<br>\n\
+											2. " Ta 在百度 " 里的动态无法打开<br>\n\
+											3. 搜索结果中，笔记 频道内容为空<br>\n\
+											4. 搜索结果可能会变得非常少'
+							], [ // #2 城通 下载按钮 失效
+								ua.includes('baidu'),
+								'此 UA 可能会导致大部分 城通网盘 下载按钮 失效'
+							], [ // #3 iPhone 下载 APP 跳到 AppStore
+								(ua.includes('iPhone') && ua.includes('AppleWebKit')),
+								'此 UA 可能会导致 百度搜索 下载 APP 跳转到苹果的 AppStore'
+							], [ // #4 腾讯视频 页面 确认框
+								(ua.includes('Android') && ua.includes('qqnews')),
+								'此 UA 可能会导致 腾讯视频播放页面 加载时弹出 确认/取消 对话框'
+							], [ // #5 蓝奏云 mtt: 确认框
+								(/\(.*Android.*\)/.test(ua) && ua.includes('MQQBrowser/') && (ver = /MQQBrowser\/\d*/.exec(ua)[0].replace('MQQBrowser/', ''), ver >= 5)),
+								'此 UA 可能会导致 蓝奏云部分页面 加载广告时弹出 确认/取消 对话框'
+							], [ // #6 淘宝 windvine 确认框
+								(ua.includes('Android') && /WindVane\/\d+\.\d+\.\d+/.test(ua) && (ver = /WindVane\/\d+/.exec(ua)[0].replace('WindVane/', ''), ver >= 1)),
+								'此 UA 可能会导致 淘宝部分页面 加载时弹出 确认/取消 对话框'
+							], [ // #7 知乎电脑版
+								(ua.includes('Android') && !ua.includes('Mobile')),
+								'此 UA 可能会导致 知乎 显示电脑版页面'
+							]
+						];
+					let count = 0, hasHead = false;
+					$(false, '#issues').innerHTML = '';
+					issue.forEach(i => {
+						if (i[0]) {
+							count++;
+							if (!hasHead) {
+								ibox.appendChild(makeIssue('', true));
+								hasHead = true;
+							}
+							ibox.appendChild(document.createElement('hr'));
+							ibox.appendChild(makeIssue(i[1], false));
+						};
+					});
+					if (count > 0) {
+						$(false, '#issueHead').innerHTML = `检测到 ${count} 个问题 :`
+					};
 				}
-			}
-			
-			function swOpr() {
-				let opt = uaCode.$(false,'#swopt'),
-					stat = uaCode.$(false,'#swstat'),
-					btn = uaCode.$(false,'#swreg'),
-					swer = navigator.serviceWorker;
-				swer.getRegistrations().then( regs => {
-					if (regs.length>=1) {
-						regs[0].unregister();
-						opt.classList.remove('inst');
-						stat.innerHTML = '未安装';
-						btn.innerHTML = '安装服务';
+
+				function makeFlagDiv(clas, box, chinese) {
+					const flag = document.createElement("strong");
+					flag.className = "flag";
+					flag.innerHTML = tagConv(clas, chinese, true);
+					clas = tagConv(clas, chinese, false);
+					if (!box) { _(flag, false, `T${clas}`); }
+					flag.style.cssText = `background-color:${uaData.flag[clas][1]};color:${uaData.flag[clas][2]}`;
+					return flag;
+				}
+
+				function makeHeadandLink(first) {
+					const head = document.createElement("div");
+					Object.assign(head, {
+						id: `i${first}`,
+						innerHTML: first,
+						className: "CaseHead"
+					});
+					if (!uaData.touch) {
+						const jump = document.createElement("a");
+						Object.assign(jump, {
+							href: `#i${first}`,
+							innerHTML: first
+						});
+						$(false, "#ajump").appendChild(jump);
 					} else {
-						swer.register('svcWorker.js').then( reg => {
-							if (reg.installing) {
-								stat.innerHTML = '正在安装，刷新后生效';
-							} else if (reg.waiting) {
-								stat.innerHTML = '等待安装';
-							} else if (reg.active) {
-								stat.innerHTML = '已安装';
+						uaData.index += first;
+					}
+					return head;
+				}
+
+				function pushTagText(cls, app) {
+					if (!uaData.tagtext[cls]) { uaData.tagtext[cls] = []; }
+					uaData.tagtext[cls].push(app);
+				}
+
+				function parseClassinItem(lab, app) {
+					let count = 0;
+					if (uaData.apps[app].class.length === 0) {
+						pushTagText("no_tag", app);
+						lab.className = "no_tag";
+						return 1;
+					} else {
+						uaData.apps[app].class.forEach(cls => {
+							if (cls.slice(0, 1) === "_" || uaData.tagfind.has(cls)) {
+								count += 1;
+								lab.appendChild(makeFlagDiv(cls, false, true));
+								cls = tagConv(cls, true, false);
+								pushTagText(cls, app);
+								_(lab, false, cls);
+							} else {
+								toast(`项目 "${app}" 被指定了不存在的标签 "${cls}" ...`);
+								uaData.stor.apps[app].class.splice(
+									uaData.stor.apps[app].class.findIndex(v => v === cls), 1
+								);
+								loc.setItem(uaData.storKey, JSON.stringify(uaData.stor));
+								window.location.reload();
 							}
 						});
-						opt.classList.add('inst');
-						btn.innerHTML = '卸载服务';
+						return count;
 					}
-				});
-			}
-			
-			function cacheScan() {
-				caches.keys().then( vers => { $(false,"#swlen").innerHTML = vers.length });
-			}
-			
-			function previewUpdate() {
-				let view = $(false,"#addprvw"), show,
-					type = aform_tType($_("atype").value),
-					spanGen = function(text,cls){
-						let span = document.createElement('span');
-						(cls) && (_(span,!1,cls));
-						span.innerText = text;
-						return span;
-					};
-				(view.childElementCount!==0) && (view.innerHTML='');
-				if (type==='a') {
-					let pre, base, suf;
-					if ($_("apre").value==='both') {
-						pre = $(false,"#acont2a").value;
-						suf = $(false,"#acont2b").value;
-					} else {
-						($_("apre").value==='true') ?
-							pre = $(false,"#acont1").value :
-							suf = $(false,"#acont1").value;
-					}
-					pre = ($_("afol").value!=='true' && pre) ? pre + ' ' : pre;
-					suf = ($_("afol").value!=='true' && suf) ? ' ' + suf : suf;
-					if ($(false,"#atbs").checked) {
-						base = uaData.base.tbs.content;
-					} else if ($(false,"#ashort").checked) {
-						base = uaData.base.short.content;
-					} else if ($(false,"#apc").checked || $(false,"#aspider").checked) {
-						base = '';
-					} else {
-						base = uaData.base.std.content;
-					}
-					(pre) && view.appendChild(spanGen(pre,'keycont'));
-					view.appendChild(spanGen(base,'basecont'));
-					(suf) && view.appendChild(spanGen(suf,'keycont'));
-				} else {
-					view.appendChild(spanGen($(false,"#qcont1").value+' ','qapplat'));
-					view.appendChild(spanGen($(false,"#qcont3").value+' ','qapappl'));
-					view.innerHTML += '({"packageName":"';
-					view.appendChild(spanGen($(false,"#qcont2").value,'qapfrom'));
-					view.innerHTML += '","type":"url","extra":{"scene":"recommend"}})';
 				}
-				if((aform_tType($_("atype").value)==='a' &&
-					$_("apre").value==='both' &&
-					$(false,"#acont2a").value==='' &&
-					$(false,"#acont2b").value==='') || (
-					aform_tType($_("atype").value)==='a' &&
-					$_("apre").value!=='both' &&
-					$(false,"#acont1").value==='') || (
-					aform_tType($_("atype").value)==='q' &&
-					$(false,"#qcont1").value==='' &&
-					$(false,"#qcont2").value==='' &&
-					$(false,"#qcont3").value==='') ||
-					aform_tType($_("atype").value)==='t') {
+
+				function newBox(type) {
+					const box = document.createElement("span");
+					box.className = `new-style new-${type}`;
+					return box;
+				}
+
+				function makeItem() {
+					let ofirst = "Z", cont = $(false, "#app_container");
+					Object.keys(uaData.apps).sort().forEach(app => {
+						uaData.text.set(app, uaData.apps[app].text);
+						const lab = document.createElement("label"),
+							box = document.createElement("input"),
+							text = document.createElement("span"),
+							first = getUpperHead(app);
+						Object.assign(lab, {
+							id: app,
+							tabIndex: 0,
+							draggable: true
+						});
+						text.innerHTML = uaData.apps[app].text;
+						lab.appendChild(text);
+						uaData.count[app] = parseClassinItem(lab, app);
+						Object.assign(box, {
+							type: "checkbox",
+							name: "app",
+							value: app,
+							className: "orig-box",
+							tabIndex: -1
+						});
+						lab.appendChild(box);
+						lab.appendChild(newBox("check"));
+						if (first !== ofirst) {
+							cont.appendChild(makeHeadandLink(first));
+							ofirst = first;
+						}
+						cont.appendChild(lab);
+					});
+					if (uaData.touch) {
+						uaData.indexSidebar1 = new IndexSidebar({
+							mounted: document.querySelector('#app')
+						});
+					} else {
+						_($(false, '#ajump'), true);
+						_(cont, !1, 'fixed');
+					};
+				}
+
+				function makeFlaginBox() {
+					Object.keys(uaData.flag).forEach(flag => {
+						const lab = document.createElement("label"),
+							box = document.createElement("input");
+						lab.id = `L${flag}`;
+						lab.tabIndex = 0;
+						Object.assign(box, {
+							type: "checkbox",
+							name: "flag",
+							id: `B${flag}`,
+							value: flag,
+							checked: true
+						});
+						box.addEventListener('change', e => tagClick(e.target.parentNode.id));
+						lab.appendChild(box);
+						lab.appendChild(makeFlagDiv(flag, true, false));
+						$(false, "#classBox").appendChild(lab);
+					});
+				}
+
+				function makeBaseRadio() {
+					Object.keys(uaData.base).forEach((base, i) => {
+						const lab = document.createElement("label"),
+							box = document.createElement("input"),
+							bob = document.createElement("strong");
+						lab.for = base;
+						lab.tabIndex = 0;
+						Object.assign(box, {
+							type: "radio",
+							name: "base",
+							id: base,
+							value: base,
+							className: "orig-box",
+							tabIndex: -1,
+							checked: (uaData.设置.基础默认 == i + 1)
+						});
+						bob.innerHTML = uaData.base[base].text;
+						lab.appendChild(box);
+						lab.appendChild(bob);
+						$(false, "#baseopt").appendChild(lab);
+					});
+				}
+
+				function winActiv(awin) {
+					let wing = $(true, ".win");
+					wing.forEach(win => {
+						if (win.style.zIndex > awin.style.zIndex) {
+							win.style.zIndex--;
+						}
+					});
+					awin.style.zIndex = wing.length + 1;
+				}
+
+				function dndWin() {
+					let wing = $(true, ".win"), unlock = () => document.onmousemove = null;
+					wing.forEach((win, i) => win.style.zIndex = i + 2);
+					if (uaData.touch) {
+						wing.forEach(win => {
+							win.addEventListener('touchstart', e => {
+								if (e.target.nodeName !== "TEXTAREA" &&
+									e.target.type !== "text" &&
+									!$(false, '#issues').contains(e.target)) {
+									pos = [
+										(e.touches[0].clientX - win.offsetLeft),
+										(e.touches[0].clientY - win.offsetTop)
+									];
+								}
+								winActiv(win);
+							}, { passive: true });
+							win.addEventListener('touchmove', e => {
+								if (e.target.nodeName !== "TEXTAREA" &&
+									e.target.type !== "text" &&
+									!$(false, '#issues').contains(e.target)) {
+									win.style.left = (e.touches[0].clientX - pos[0]) + 'px';
+									win.style.top = (e.touches[0].clientY - pos[1]) + 'px';
+								}
+								win.style.position = (
+									parseInt(getComputedStyle(win)['right']) < 0 ||
+									parseInt(getComputedStyle(win)['left']) < 0 ||
+									parseInt(getComputedStyle(win)['bottom']) < 0) ?
+									'fixed' : 'absolute';
+							}, { passive: true });
+						});
+					} else {
+						wing.forEach(win => {
+							win.addEventListener('mousedown', e => {
+								pos = [
+									(e.clientX - win.offsetLeft),
+									(e.clientY - win.offsetTop)
+								];
+								winActiv(win);
+								if (e.target.nodeName !== "TEXTAREA" &&
+									e.target.type !== "text" &&
+									e.target.nodeName !== "SELECT" &&
+									e.target.className !== "flag") {
+									document.onmousemove = e => {
+										win.style.left = (e.clientX - pos[0]) + 'px';
+										win.style.top = (e.clientY - pos[1]) + 'px';
+									};
+								};
+								document.removeEventListener('mouseup', unlock);
+								document.addEventListener('mouseup', unlock);
+							});
+						});
+					}
+				}
+
+				function openWin(id) {
+					let win = $(false, id);
+					win.classList.toggle('none');
+					if (!win.classList.contains('none')) winActiv(win);
+				}
+
+				function topwin(e) {
+					let btn = e.target, win = btn.parentNode.parentNode;
+					win.classList.toggle('topwin');
+					btn.style.backgroundColor = (win.classList.contains('topwin')) ?
+						__('theme-color-top-enable') : __('theme-color-top');
+				}
+
+				function filterExec(item, nclass) {
+					let found;
+					lab.forEach(ele => {
+						found = false;
+						for (let val of item) {
+							if (val === ele.id) {
+								found = true;
+								break;
+							}
+						}
+						_(ele, found, nclass);
+					});
+					scanForHead();
+					_(ntx, !scanAll());
+				}
+
+				function filterResume(nclass) {
+					lah.forEach(ele => _(ele, true, nclass));
+					scanForHead();
+					_(ntx, !scanAll());
+				}
+
+				function fltAppUA(e) {
+					let word = e.target.value;
+					if (word === "") {
+						filterResume("none");
+					} else {
+						const item = [];
+						for (let [k, v] of uaData.text) {
+							v.toLowerCase().includes(word.toLowerCase()) && item.push(k);
+						}
+						filterExec(item, "none");
+					}
+				}
+
+				function fltAppUASelected(e) {
+					let btn = e.target;
+					if (btn.innerHTML === "列出已选") {
+						const item = [];
+						$_("app").forEach(ele => item.push(ele.value));
+						filterExec(item, "sel_none");
+						btn.innerHTML = "列出全部";
+					} else {
+						filterResume("sel_none");
+						btn.innerHTML = "列出已选";
+					}
+				}
+
+				function fltAppUATag(clas, selected) {
+					$(true, `.T${clas}`).forEach(tag => _(tag, selected));
+					if (uaData.tagtext[clas]) {
+						uaData.tagtext[clas].forEach(id => {
+							(selected) ? uaData.count[id]++ : uaData.count[id]--;
+						});
+					}
+					const item = Object.keys(uaData.count).filter(obj => uaData.count[obj] !== 0);
+					filterExec(item, "tag_none");
+				}
+
+				function tagClick(id) {
+					const box = $(false, `#${id} input`),
+						flag = $(false, `#${id} .flag`);
+					fltAppUATag(id.slice(1), box.checked);
+					$(false, '#openClass').style.backgroundColor = ($(true, '#classBox input:not(:checked)').length === 0) ? '' : __('tag-filtered');
+				}
+
+				/* "添加" 窗口表单 相关 */
+
+				function aform_tType(type) {
+					return (type.slice(1) === "app") ? type.slice(0, 1) : "t";
+				}
+
+				function aform_switchModify() {
+					const type = aform_tType($_("atype").value),
+						sel = $(false, `#${type}sell`),
+						key = $(false, `#${type}keyl`),
+						btn = $(false, '#anew'),
+						ok = $(false, '#aok'),
+						mod = (btn.innerHTML === "管理");
+					_(key, !mod);
+					_(sel, mod);
+					btn.innerHTML = (mod) ? "添加" : "管理";
+					ok.innerHTML = (mod) ? "确定" : "加入";
+					aform_Clear();
+				}
+
+				function aform_switchCard() {
+					const val = $_("atype").value, set = (val === "asty");
+					_($(false, '#setlayer'), set);
+					_($(false, '#addlayer'), !set);
+					if (!set) {
+						$(true, ".atab").forEach(tab => {
+							if (tab.id === `${val}t`) {
+								_(tab, true);
+								$(false, '#anew').innerHTML = "添加";
+								aform_switchModify();
+							} else {
+								_(tab, false);
+							}
+						});
+					}
+				}
+
+				function aform_switchBoth() {
+					const val = ($_("apre").value === "both");
+					$(true, ".acont2").forEach(input => _(input, val));
+					_($(false, ".acont1"), !val);
+				}
+
+				function aform_makeFlaginBox() {
+					$(true, ".classBox").forEach(sbox => {
+						Object.keys(uaData.flag).forEach(flag => {
+							if (flag !== "qapp" && flag !== "no_tag") {
+								const lab = document.createElement("label"),
+									box = document.createElement("input");
+								lab.id = `${getUpperHead(sbox.id)}${flag}`;
+								lab.tabIndex = 0;
+								Object.assign(box, {
+									type: "checkbox",
+									name: "sflag",
+									id: `${sbox.id.slice(0, 1)}${flag}`,
+									value: flag,
+									checked: false
+								});
+								if (flag === "third") {
+									box.addEventListener('change', e =>
+										_($(false, `#${sbox.id}l`), box.checked)
+									);
+								}
+								lab.appendChild(box);
+								lab.appendChild(makeFlagDiv(flag, true, false));
+								sbox.appendChild(lab);
+							}
+						});
+					});
+				}
+
+				function aform_updateFlagPreview() {
+					const box = $(false, '#tclsbox'),
+						txt = $(false, '#ttext').value;
+					box.innerHTML = txt;
+					_(box, txt !== "");
+					box.style.cssText =
+						`background-color:${$(false, '#tbgc').value};color:${$(false, '#tfgc').value}`;
+				}
+
+				function aform_Clear() {
+					$(true, '#addtable input[type="text"], #tkds').forEach(i => {
+						i.style.removeProperty('border-color');
+					});
+					_($(false, `#aclsboxl`), false);
+					_($(false, `#qclsboxl`), false);
+					$(true, '#addtable form').forEach(f => f.reset());
+					aform_updateFlagPreview();
+					aform_switchBoth();
+				}
+
+				function aform_Check(type) {
+					let a = true;
+					$(true, `#${type}t input[type="text"]`).forEach(i => {
+						i.style.removeProperty('border-color');
+						if (getComputedStyle(i).display !== "none" &&
+							getComputedStyle(i.parentNode).display !== "none" &&
+							i.value === "") {
+							if (i.id === "ttext") {
+								$(false, '#tkds').style.borderColor = __('input-check-null');
+							} else {
+								i.style.borderColor = __('input-check-null');
+							}
+							a = false;
+						}
+					});
+					return (a && $(false, '#anew').innerHTML === "管理") ? aform_KeyCheck(true) : a;
+				}
+
+				function aform_KeyCheck(show) {
+					const type = aform_tType($_('atype').value), test = /^\w+$/u;
+					let inp = $(false, `#${type}key`), key = inp.value, bor = inp,
+						src = (type === "t") ? 'flag' : 'apps';
+					if (type === 't' && key.slice(0, 1) === "_") {
+						bor.style.borderColor = __('input-check-err');
+						if (show) { toast('"_" 开头用于自定义标签'); }
+						return false;
+					}
+					if (key in uaData[src] || key in uaData.stor[src]) {
+						bor.style.borderColor = __('input-check-err');
+						if (show) { toast('标识重复'); }
+						return false;
+					}
+					if (key === "") {
+						bor.style.removeProperty('border-color');
+						return false;
+					} else if (!test.test(key)) {
+						bor.style.borderColor = __('input-check-err');
+						if (show) { toast('输入错误'); }
+						return false;
+					} else {
+						bor.style.borderColor = __('input-check-ok');
+						return true;
+					}
+				}
+
+				function aform_Add() {
+					const atyp = $_("atype").value;
+					let key, cont, obj, typr;
+					if (!aform_Check(atyp)) { return; }
+					typr = aform_tType(atyp);
+					key = ($(false, '#anew').innerHTML === "管理") ?
+						$(false, `#${typr}key`).value :
+						$(false, `#${typr}sel`).value;
+					if (key === "" && $(false, '#anew').innerHTML === "添加") {
+						toast("请选择需要修改的项目");
+						return;
+					}
+					switch (typr) {
+						case "a":
+							cont = ($_("apre").value !== "both") ?
+								$(false, "#acont1").value : [
+									$(false, "#acont2a").value,
+									$(false, "#acont2b").value];
+							break;
+						case "q":
+							cont = {
+								qBasic: $(false, "#qcont1").value,
+								qFrom: $(false, "#qcont2").value,
+								qString: $(false, "#qcont3").value,
+							};
+							break;
+					}
+					if (atyp === "atag") {
+						obj = [
+							$(false, '#ttext').value,
+							$(false, '#tbgc').value,
+							$(false, '#tfgc').value
+						]
+						Object.assign(uaData.stor.flag, { [`${key}`]: obj });
+					} else {
+						obj = {
+							text: $(false, `#${typr}text`).value,
+							prefix: (atyp === "qapp" || $_("apre").value === "both") ? false :
+								($_("apre").value === 'true'),
+							followed: (atyp === "qapp") ? false : ($_("afol").value === 'true'),
+							content: (atyp === "qapp") ? {
+								平台: cont.qBasic,
+								来自: cont.qFrom,
+								应用: cont.qString
+							} : cont,
+							class: []
+						}
+
+						$_("sflag").forEach(inp => {
+							if (inp.id.slice(1) === "third") {
+								obj.class.push("_" + $(false, `#${typr}thirdt`).value);
+							} else {
+								obj.class.push(tagConv(inp.id.slice(1), false, true));
+							}
+						});
+
+						if (atyp === "qapp") {
+							obj.class.push("快应用");
+						}
+
+						Object.assign(uaData.stor.apps, {
+							[`${key}`]: {
+								名称: obj.text,
+								前置: (obj.prefix) ? "是" : "不是",
+								无缝: (obj.followed) ? "是" : "不是",
+								标签: obj.class,
+								内容: obj.content
+							}
+						});
+					}
+					if ($(false, '#anew').innerHTML === "管理") {
+						$(false, `#${typr}sel`).insertBefore(
+							new Option((atyp === "atag") ?
+								`${obj[0]} (${key})` : `${obj.text} (${key})`,
+								key), $(false, `#${typr}sel`)[1]
+						);
+						aform_Clear();
+					} else {
+						$(false, `#${typr}sel option[value="${key}"]`).innerHTML = (atyp === "atag") ?
+							`${obj[0]} (${key})` : `${obj.text} (${key})`;
+						aform_Clear();
+					}
+					$(false, '#ssave').style.backgroundColor = __('data-need-save');
+					if ($(false, '#aok').innerHTML === "加入") {
+						toast('加入成功');
+					} else {
+						toast('修改成功');
+					}
+				}
+
+				function aform_Modify() {
+					const type = aform_tType($_("atype").value),
+						item = $(false, `#${type}sel`).value;
+					let obj, cobj, cont, chk;
+					function tagParse(tags) {
+						let ccls = [];
+						tags.forEach(ct => {
+							ccls.push((ct.slice(0, 1) === "_") ? ct : uaData.tagfind.get(ct));
+						});
+						return ccls;
+					}
+					switch (type) {
+						case "t":
+							obj = (uaData.stor.flag[item]) ? uaData.stor.flag[item] : uaData.flag[item];
+							break;
+						default:
+							if (uaData.stor.apps[item]) {
+								cobj = uaData.stor.apps[item];
+								if (typeof cobj["内容"] === "object") {
+									if (cobj["内容"] instanceof Array) {
+										cont = [cobj["内容"][0], cobj["内容"][1]];
+									} else {
+										cont = {
+											qBasic: cobj["内容"]["平台"],
+											qFrom: cobj["内容"]["来自"],
+											qString: cobj["内容"]["应用"]
+										}
+									}
+								} else {
+									cont = cobj["内容"];
+								}
+								obj = {
+									text: cobj["名称"],
+									prefix: (cobj["前置"] === "是") ? true : false,
+									followed: (cobj["无缝"] === "是") ? true : false,
+									class: tagParse(cobj["标签"]),
+									content: cont
+								}
+							} else {
+								obj = JSON.parse(JSON.stringify(uaData.apps[item]));
+								obj.class = tagParse(obj.class);
+							}
+							break;
+					}
+
+					function clsSet(obj, type) {
+						$(true, `#${type}clsbox input`).forEach(c => { c.checked = false; });
+						_($(false, `#${type}clsboxl`), false);
+						obj.class.forEach(cls => {
+							if (cls !== "qapp") {
+								if (cls.slice(0, 1) === "_") {
+									$(false, `#${type.toUpperCase()}third input`).checked = true;
+									_($(false, `#${type}clsboxl`), true);
+									$(false, `#${type}thirdt`).value = cls.slice(1);
+								} else {
+									$(false, `#${type.toUpperCase()}${cls}  input`).checked = true;
+								}
+							}
+						});
+					}
+
+					switch (type) {
+						case "a":
+							$(false, "#atext").value = obj.text;
+							if (obj.content instanceof Array) {
+								$(false, "#apreb").checked = true;
+								aform_switchBoth();
+								$(false, "#acont2a").value = obj.content[0];
+								$(false, "#acont2b").value = obj.content[1];
+							} else {
+								chk = (obj.prefix) ? $(false, "#apret") : $(false, "#apref");
+								chk.checked = true;
+								aform_switchBoth();
+								$(false, "#acont1").value = obj.content;
+							}
+							chk = (obj.followed) ? $(false, "#afolt") : $(false, "#afolf");
+							chk.checked = true;
+							clsSet(obj, type);
+							break;
+						case "q":
+							$(false, "#qtext").value = obj.text;
+							$(false, "#qcont1").value = obj.content.qBasic;
+							$(false, "#qcont2").value = obj.content.qFrom;
+							$(false, "#qcont3").value = obj.content.qString;
+							clsSet(obj, type);
+							break;
+						case "t":
+							$(false, "#ttext").value = obj[0];
+							$(false, "#tbgc").value = obj[1];
+							$(false, "#tfgc").value = obj[2];
+							aform_updateFlagPreview();
+							break;
+					}
+				}
+
+				function aform_Delete() {
+					let type = aform_tType($_("atype").value),
+						sel = $(false, `#${type}sel`),
+						val = sel.value,
+						opt = $(false, `#${type}sel option[value="${val}"]`),
+						item = (type === 't') ? uaData.stor.flag[val] : uaData.stor.apps[val];
+					if ($(false, '#anew').innerHTML === "添加") {
+						if (val) {
+							if (item) {
+								switch (type) {
+									case "t":
+										delete uaData.stor.flag[val];
+										break;
+									default:
+										delete uaData.stor.apps[val];
+										break;
+								}
+								sel.removeChild(opt);
+								aform_Clear();
+								$(false, '#ssave').style.backgroundColor = __('data-need-save');
+								toast('删除成功');
+							} else {
+								toast('不能删除自带项目');
+							}
+						} else {
+							toast('没有选择项目');
+						}
+					} else {
+						toast('只能在管理模式下删除项目');
+					}
+				}
+
+				/* localStorage 相关 */
+
+				function lsb_initOption() {
+					let sel, opt;
+					if (Object.keys(uaData.stor).length !== 0) {
+						if (uaData.stor.apps) {
+							Object.keys(uaData.stor.apps).forEach(app => {
+								opt = new Option(`${uaData.stor.apps[app].名称} (${app})`, app);
+								sel = (uaData.stor.apps[app].内容.来自) ?
+									$(false, '#qsel') : $(false, '#asel');
+								if (sel.length === 1) {
+									sel.appendChild(opt);
+								} else {
+									sel.insertBefore(opt, sel[1]);
+								}
+							});
+						}
+						if (uaData.stor.flag) {
+							Object.keys(uaData.stor.flag).forEach(tag => {
+								opt = new Option(`${uaData.stor.flag[tag][0]} (${tag})`, tag);
+								sel = $(false, '#tsel');
+								if (sel.length === 1) {
+									sel.appendChild(opt);
+								} else {
+									sel.insertBefore(opt, sel[1]);
+								}
+							});
+						}
+					}
+					Object.keys(uaData.apps).sort().forEach(app => {
+						if (!uaData.stor.apps[app]) {
+							sel = (uaData.apps[app].content.qFrom) ?
+								$(false, '#qsel') : $(false, '#asel');
+							sel.appendChild(new Option(`* ${uaData.apps[app].text} (${app})`, app));
+						}
+					});
+					Object.keys(uaData.flag).sort().forEach(tag => {
+						if (!uaData.stor.flag[tag]) {
+							$(false, '#tsel').appendChild(
+								new Option(`* ${uaData.flag[tag][0]} (${tag})`, tag));
+						}
+					});
+				}
+
+				function lsb_save() {
+					if (Object.keys(uaData.stor.apps).length !== 0 ||
+						Object.keys(uaData.stor.flag).length !== 0) {
+						loc.setItem(uaData.storKey, JSON.stringify(uaData.stor));
+					} else {
+						window.localStorage.removeItem(uaData.storKey);
+					}
+					$(false, '#ssave').style.backgroundColor = '';
+					toast('保存成功，下次刷新生效');
+				}
+
+				function lsb_export() {
+					if (loc.hasOwnProperty(uaData.storKey)) {
+						$(false, "#stordata").value = loc.getItem(uaData.storKey);
+					} else {
+						toast('没有自定义数据');
+					}
+				}
+
+				function lsb_import() {
+					if ($(false, "#stordata").value !== "") {
+						try {
+							const data = JSON.parse($(false, "#stordata").value);
+							if (loc.hasOwnProperty(uaData.storKey)) {
+								let odata = JSON.parse(loc.getItem(uaData.storKey));
+								Object.keys(data).forEach(k => {
+									if (odata[k]) {
+										Object.assign(odata[k], data[k]);
+									} else {
+										odata[k] = data[k];
+									}
+								});
+								loc.setItem(uaData.storKey, JSON.stringify(odata));
+							} else {
+								loc.setItem(uaData.storKey, JSON.stringify(data));
+							}
+							$(false, "#stordata").value = "";
+							toast('导入成功');
+						} catch (e) {
+							if (e instanceof SyntaxError) {
+								toast('导入失败:格式不正确');
+							} else {
+								toast(`导入失败:${e}`);
+							}
+						}
+					} else {
+						toast('没有输入数据');
+					}
+				}
+
+				function lss_save() {
+					let obj = {}, thm = {
+						light: [
+							Object.values($(false, '#myLight').sheet.cssRules)[0].cssText,
+							$(false, '#stylight').value
+						],
+						dark: [
+							Object.values($(false, '#myDark').sheet.cssRules)[0].cssRules[0].cssText,
+							$(false, '#stydark').value
+						]
+					}
+					Object.keys(thm).forEach(th => {
+						if (thm[th][1] !== '' && thm[th][0] !== thm[th][1]) {
+							Object.assign(obj, { [th]: (th === 'dark') ? `@media (prefers-color-scheme: dark) {\n${thm[th][1]}\n}` : thm[th][1] });
+						}
+					})
+					if (obj !== {}) {
+						loc.setItem(uaData.styleKey, JSON.stringify(obj));
+						toast('保存成功，下次刷新生效');
+					} else {
+						toast('内容没修改，不用保存');
+					}
+				}
+
+				function swOpr() {
+					let opt = uaCode.$(false, '#swopt'),
+						stat = uaCode.$(false, '#swstat'),
+						btn = uaCode.$(false, '#swreg'),
+						swer = navigator.serviceWorker;
+					swer.getRegistrations().then(regs => {
+						if (regs.length >= 1) {
+							regs[0].unregister();
+							opt.classList.remove('inst');
+							stat.innerHTML = '未安装';
+							btn.innerHTML = '安装服务';
+						} else {
+							swer.register('svcWorker.js').then(reg => {
+								if (reg.installing) {
+									stat.innerHTML = '正在安装，刷新后生效';
+								} else if (reg.waiting) {
+									stat.innerHTML = '等待安装';
+								} else if (reg.active) {
+									stat.innerHTML = '已安装';
+								}
+							});
+							opt.classList.add('inst');
+							btn.innerHTML = '卸载服务';
+						}
+					});
+				}
+
+				function cacheScan() {
+					caches.keys().then(vers => { $(false, "#swlen").innerHTML = vers.length });
+				}
+
+				function previewUpdate() {
+					let view = $(false, "#addprvw"), show,
+						type = aform_tType($_("atype").value),
+						spanGen = function (text, cls) {
+							let span = document.createElement('span');
+							(cls) && (_(span, !1, cls));
+							span.innerText = text;
+							return span;
+						};
+					(view.childElementCount !== 0) && (view.innerHTML = '');
+					if (type === 'a') {
+						let pre, base, suf;
+						if ($_("apre").value === 'both') {
+							pre = $(false, "#acont2a").value;
+							suf = $(false, "#acont2b").value;
+						} else {
+							($_("apre").value === 'true') ?
+								pre = $(false, "#acont1").value :
+								suf = $(false, "#acont1").value;
+						}
+						pre = ($_("afol").value !== 'true' && pre) ? pre + ' ' : pre;
+						suf = ($_("afol").value !== 'true' && suf) ? ' ' + suf : suf;
+						if ($(false, "#atbs").checked) {
+							base = uaData.base.tbs.content;
+						} else if ($(false, "#ashort").checked) {
+							base = uaData.base.short.content;
+						} else if ($(false, "#apc").checked || $(false, "#aspider").checked) {
+							base = '';
+						} else {
+							base = uaData.base.std.content;
+						}
+						(pre) && view.appendChild(spanGen(pre, 'keycont'));
+						view.appendChild(spanGen(base, 'basecont'));
+						(suf) && view.appendChild(spanGen(suf, 'keycont'));
+					} else {
+						view.appendChild(spanGen($(false, "#qcont1").value + ' ', 'qapplat'));
+						view.appendChild(spanGen($(false, "#qcont3").value + ' ', 'qapappl'));
+						view.innerHTML += '({"packageName":"';
+						view.appendChild(spanGen($(false, "#qcont2").value, 'qapfrom'));
+						view.innerHTML += '","type":"url","extra":{"scene":"recommend"}})';
+					}
+					if ((aform_tType($_("atype").value) === 'a' &&
+						$_("apre").value === 'both' &&
+						$(false, "#acont2a").value === '' &&
+						$(false, "#acont2b").value === '') || (
+							aform_tType($_("atype").value) === 'a' &&
+							$_("apre").value !== 'both' &&
+							$(false, "#acont1").value === '') || (
+							aform_tType($_("atype").value) === 'q' &&
+							$(false, "#qcont1").value === '' &&
+							$(false, "#qcont2").value === '' &&
+							$(false, "#qcont3").value === '') ||
+						aform_tType($_("atype").value) === 't') {
 						show = false;
 					} else {
 						show = true;
 					}
-				_(view,show);
-				_($(false,"#nullprvw"),!show);
-			}
-			
-			function injSty(ad,dark) {
-				if (ad.nodeName==='STYLE') {
-					ad.innerHTML = dark;
-				} else if (ad.nodeName==='LINK' && ad.rel==="stylesheet") {
-					ad.href = (dark=='') ? '#' : 'data:text/css;base64,' + btoa(dark);
+					_(view, show);
+					_($(false, "#nullprvw"), !show);
 				}
-			}
-			
-			function updBtnDark() {
-			  _($(!1,'#btnDark'),!uaData.dark,'dark');
-			}
-			
-			function addEvent() {
-				function ee(el,ev,fn) { el.addEventListener(ev,fn); }
-				$(true,'[type="radio"],[type="checkbox"]').forEach( e => {
-					ee(e.parentNode,'keydown', spaceChecked);
-					ee(e.parentNode,'dragstart', e => {
-						e.dataTransfer.setData('text',e.target.id);
-						let dragger = document.querySelector('#dragger');
-						dragger.innerHTML = e.target.querySelector('span').innerHTML;
-						// FIXME: Firefox 有偏移问题
-						if (e.dataTransfer.mozCursor) {
-							e.dataTransfer.setDragImage(dragger, -50, -100);
-						} else {
-							e.dataTransfer.setDragImage(dragger, 0, 0);
-						}
-					});
-				});
-				ee($(false,'#openClass'),'click',openWin.bind(this,'#class'));
-				ee($(false,'#openUA'),'click',openWin.bind(this,'#ua'));
-				ee($(false,'#search'),'input', fltAppUA.bind(this));
-				ee($(false,'#btnHelp'),'click',()=>{window.location.href='https://gitee.com/lemon399/user-agent-share-page/blob/master/README.md'});
-				ee($(false,'#btnCSel'),'click',()=>{$(!1,'#app_container').reset()});
-				ee($(false,'#openNew'),'click',openWin.bind(this,'#addui'));
-				ee($(false,'#btnSlst'),'click',fltAppUASelected.bind(this));
-				ee($(false,'#btnGen'),'click',genUA);
-				$(true,'.close').forEach( c => ee(c,'click',e => {
-					e.target.parentNode.parentNode.classList.add('none');
-					if (e.target.parentNode.parentNode.id=='addui' &&
-						getComputedStyle($(!1,'#prvui')).display=='block') {
-							$(!1,'#prvui').classList.add('none');
-					};
-				}));
-				$(true,'.topbutton').forEach( c => ee(c,'click',topwin.bind(this)));
-				ee($(false,'.prev'),'click',openWin.bind(this,'#prvui'));
-				ee($(false,'#useragent'),'input',issuesCheck);
-				ee($(false,'#btnClUA'),'click',()=>{$(false,'#useragent').value = '';issuesCheck();});
-				ee($(false,'#btnCpUA'),'click',()=>{$(false,'#useragent').select();document.execCommand('copy');});
-				ee($(false,'#btnTgAl'),'click',()=>{$(true,'#classBox input:not(:checked)').forEach( b => { b.checked = true; tagClick(b.parentNode.id);});});
-				ee($(false,'#btnTgRv'),'click',()=>{$(true,'#classBox input').forEach( b => { b.checked = (!b.checked); tagClick(b.parentNode.id);});});
-				$(true,'#addtype input').forEach( e => ee(e,'change', aform_switchCard));
-				$(true,'#addtype input').forEach( e => ee(e,'change', previewUpdate));
-				$(true,'.key').forEach( e => ee(e,'input',aform_KeyCheck.bind(this,false)));
-				$(true,'.msel').forEach( e => ee(e,'change',aform_Modify));
-				$(true,'#aappt .msel,#qappt .msel').forEach( e => ee(e,'change',previewUpdate));
-				$(true,'#apre input').forEach( e => ee(e,'change', aform_switchBoth));
-				ee($(false,'#ttext'),'input', aform_updateFlagPreview);
-				$(true,'#tbgc,#tfgc').forEach( e => ee(e,'change', aform_updateFlagPreview));
-				ee($(false,'#aok'),'click',aform_Add);
-				ee($(false,'#aclear'),'click',aform_Clear);
-				ee($(false,'#anew'),'click',aform_switchModify);
-				ee($(false,'#adel'),'click',aform_Delete);
-				ee($(false,'#ssave'),'click',lsb_save);
-				ee($(false,'#scopy'),'click',()=>{$(false,'#stordata').select();document.execCommand('copy');});
-				ee($(false,'#sdele'),'click',()=>{$(false,'#stordata').value = '';});
-				ee($(false,'#simp'),'click',lsb_import);
-				ee($(false,'#sexp'),'click',lsb_export);
-				ee($(false,'#sclr'),'click',()=>{window.localStorage.removeItem(uaData.storKey);toast('清空啦')});
-				ee($(false,'#stysave'),'click',lss_save);
-				ee($(false,'#styclr'),'click',()=>{window.localStorage.removeItem(uaData.styleKey);toast('清空啦，刷新后恢复默认主题')});
-				ee($(false,'#swreg'),'click',swOpr);
-				ee($(false,'#swclr'),'click',()=>{ caches.keys().then( vers => vers.map( i => caches.delete(i) )); cacheScan()});
-				$(true,'#acont1,#acont2a,#acont2b,#qcont1,#qcont2,#qcont3').forEach( e => ee(e,'input',previewUpdate));
-				$(true,'#apre input,#afol input').forEach( e => ee(e,'change', previewUpdate));
-				$(true,'#atbs,#ashort,#apc,#aspider').forEach( e => ee(e,'change',previewUpdate));
-				ee($(false,'#toast'),'animationend',e=>{e.target.style.display = "none";});
-				ee($(false,'#toast'),'webkitAnimationEnd',e=>{e.target.style.display = "none";});
-				ee($(false,"#app_container"),'keydown',e=>{if (e.code==="Space") e.preventDefault();});
-				ee($(false,"textarea"),'drop',insertUA.bind(this));
-			}
-			
-			function init(){
-				let finish = function(){_($(false,"#load"),false)};
-				if (uaData.设置.基础默认 > Object.keys(uaData.base).length) uaData.设置.基础默认 = 1;
-				$(false,'#loadstr').innerHTML = '正在构建 ...';
-				lsb_initOption();
-				makeItem();
-				makeFlaginBox();
-				aform_makeFlaginBox();
-				makeBaseRadio();
-				addEvent();
-				dndWin();
-				$(false,'#loadstr').innerHTML = '正在初始化 ...';
-				$(false,"#Raapp").checked = true;
-				$(false,"#stordata").value = '';
-				aform_Clear();
-				$(false,"#search").value = '';
-				$(false,"#version").innerHTML = `版本:${uaData.版本.描述}_${uaData.版本.详细} 总数:${Object.keys(uaData.apps).length}`;
-				if (window.location.host.match('gitee.io')) {
-					$(false,"#version").innerHTML += ' <i>由 Gitee 提供代码和网页托管服务</i>';
-				}
-				$(false,'#loadstr').innerHTML = '加载完成';
-				$(false,"#load").style.opacity = '0%';
-				setTimeout(finish,1000);
-				lab = $(true,"#app_container label"),
-				cas = $(true,"#app_container .CaseHead"),
-				lah = $(true,"#app_container > label,.CaseHead"),
-				ntx = $(false,"#nulltext");
-				loc = window.localStorage;
-			};
 
-			return {
-				init: init,
-				$: $,
-				toast: toast,
-				injSty: injSty,
-				dark: updBtnDark
-			}
-		})();
+				function injSty(ad, dark) {
+					if (ad.nodeName === 'STYLE') {
+						ad.innerHTML = dark;
+					} else if (ad.nodeName === 'LINK' && ad.rel === "stylesheet") {
+						ad.href = (dark == '') ? '#' : 'data:text/css;base64,' + btoa(dark);
+					}
+				}
+
+				function updBtnDark() {
+					_($(!1, '#btnDark'), !uaData.dark, 'dark');
+				}
+
+				function addEvent() {
+					function ee(el, ev, fn) { el.addEventListener(ev, fn); }
+					$(true, '[type="radio"],[type="checkbox"]').forEach(e => {
+						ee(e.parentNode, 'keydown', spaceChecked);
+						ee(e.parentNode, 'dragstart', e => {
+							e.dataTransfer.setData('text', e.target.id);
+							let dragger = document.querySelector('#dragger');
+							dragger.innerHTML = e.target.querySelector('span').innerHTML;
+							// FIXME: Firefox 有偏移问题
+							if (e.dataTransfer.mozCursor) {
+								e.dataTransfer.setDragImage(dragger, -50, -100);
+							} else {
+								e.dataTransfer.setDragImage(dragger, 0, 0);
+							}
+						});
+					});
+					ee($(false, '#openClass'), 'click', openWin.bind(this, '#class'));
+					ee($(false, '#openUA'), 'click', openWin.bind(this, '#ua'));
+					ee($(false, '#search'), 'input', fltAppUA.bind(this));
+					ee($(false, '#btnHelp'), 'click', () => { window.location.href = 'https://gitee.com/lemon399/user-agent-share-page/blob/master/README.md' });
+					ee($(false, '#btnCSel'), 'click', () => { $(!1, '#app_container').reset() });
+					ee($(false, '#openNew'), 'click', openWin.bind(this, '#addui'));
+					ee($(false, '#btnSlst'), 'click', fltAppUASelected.bind(this));
+					ee($(false, '#btnGen'), 'click', genUA);
+					$(true, '.close').forEach(c => ee(c, 'click', e => {
+						e.target.parentNode.parentNode.classList.add('none');
+						if (e.target.parentNode.parentNode.id == 'addui' &&
+							getComputedStyle($(!1, '#prvui')).display == 'block') {
+							$(!1, '#prvui').classList.add('none');
+						};
+					}));
+					$(true, '.topbutton').forEach(c => ee(c, 'click', topwin.bind(this)));
+					ee($(false, '.prev'), 'click', openWin.bind(this, '#prvui'));
+					ee($(false, '#useragent'), 'input', issuesCheck);
+					ee($(false, '#btnClUA'), 'click', () => { $(false, '#useragent').value = ''; issuesCheck(); });
+					ee($(false, '#btnCpUA'), 'click', () => { $(false, '#useragent').select(); document.execCommand('copy'); });
+					ee($(false, '#btnTgAl'), 'click', () => { $(true, '#classBox input:not(:checked)').forEach(b => { b.checked = true; tagClick(b.parentNode.id); }); });
+					ee($(false, '#btnTgRv'), 'click', () => { $(true, '#classBox input').forEach(b => { b.checked = (!b.checked); tagClick(b.parentNode.id); }); });
+					$(true, '#addtype input').forEach(e => ee(e, 'change', aform_switchCard));
+					$(true, '#addtype input').forEach(e => ee(e, 'change', previewUpdate));
+					$(true, '.key').forEach(e => ee(e, 'input', aform_KeyCheck.bind(this, false)));
+					$(true, '.msel').forEach(e => ee(e, 'change', aform_Modify));
+					$(true, '#aappt .msel,#qappt .msel').forEach(e => ee(e, 'change', previewUpdate));
+					$(true, '#apre input').forEach(e => ee(e, 'change', aform_switchBoth));
+					ee($(false, '#ttext'), 'input', aform_updateFlagPreview);
+					$(true, '#tbgc,#tfgc').forEach(e => ee(e, 'change', aform_updateFlagPreview));
+					ee($(false, '#aok'), 'click', aform_Add);
+					ee($(false, '#aclear'), 'click', aform_Clear);
+					ee($(false, '#anew'), 'click', aform_switchModify);
+					ee($(false, '#adel'), 'click', aform_Delete);
+					ee($(false, '#ssave'), 'click', lsb_save);
+					ee($(false, '#scopy'), 'click', () => { $(false, '#stordata').select(); document.execCommand('copy'); });
+					ee($(false, '#sdele'), 'click', () => { $(false, '#stordata').value = ''; });
+					ee($(false, '#simp'), 'click', lsb_import);
+					ee($(false, '#sexp'), 'click', lsb_export);
+					ee($(false, '#sclr'), 'click', () => { window.localStorage.removeItem(uaData.storKey); toast('清空啦') });
+					ee($(false, '#stysave'), 'click', lss_save);
+					ee($(false, '#styclr'), 'click', () => { window.localStorage.removeItem(uaData.styleKey); toast('清空啦，刷新后恢复默认主题') });
+					ee($(false, '#swreg'), 'click', swOpr);
+					ee($(false, '#swclr'), 'click', () => { caches.keys().then(vers => vers.map(i => caches.delete(i))); cacheScan() });
+					$(true, '#acont1,#acont2a,#acont2b,#qcont1,#qcont2,#qcont3').forEach(e => ee(e, 'input', previewUpdate));
+					$(true, '#apre input,#afol input').forEach(e => ee(e, 'change', previewUpdate));
+					$(true, '#atbs,#ashort,#apc,#aspider').forEach(e => ee(e, 'change', previewUpdate));
+					ee($(false, '#toast'), 'animationend', e => { e.target.style.display = "none"; });
+					ee($(false, '#toast'), 'webkitAnimationEnd', e => { e.target.style.display = "none"; });
+					ee($(false, "#app_container"), 'keydown', e => { if (e.code === "Space") e.preventDefault(); });
+					ee($(false, "textarea"), 'drop', insertUA.bind(this));
+				}
+
+				function init() {
+					let finish = function () { _($(false, "#load"), false) };
+					if (uaData.设置.基础默认 > Object.keys(uaData.base).length) uaData.设置.基础默认 = 1;
+					$(false, '#loadstr').innerHTML = '正在构建 ...';
+					lsb_initOption();
+					makeItem();
+					makeFlaginBox();
+					aform_makeFlaginBox();
+					makeBaseRadio();
+					addEvent();
+					dndWin();
+					$(false, '#loadstr').innerHTML = '正在初始化 ...';
+					$(false, "#Raapp").checked = true;
+					$(false, "#stordata").value = '';
+					aform_Clear();
+					$(false, "#search").value = '';
+					$(false, "#version").innerHTML = `版本:${uaData.版本.描述}_${uaData.版本.详细} 总数:${Object.keys(uaData.apps).length}`;
+					if (window.location.host.match('gitee.io')) {
+						$(false, "#version").innerHTML += ' <i>由 Gitee 提供代码和网页托管服务</i>';
+					}
+					$(false, '#loadstr').innerHTML = '加载完成';
+					$(false, "#load").style.opacity = '0%';
+					setTimeout(finish, 1000);
+					lab = $(true, "#app_container label"),
+						cas = $(true, "#app_container .CaseHead"),
+						lah = $(true, "#app_container > label,.CaseHead"),
+						ntx = $(false, "#nulltext");
+					loc = window.localStorage;
+				};
+
+				return {
+					init: init,
+					$: $,
+					toast: toast,
+					injSty: injSty,
+					dark: updBtnDark
+				}
+			})();
 		</script>
 		<script>
-			window.onerror = function(e,a,l) {
+			window.onerror = function (e, a, l) {
 				alert(`错误: ${e}\n地址: ${a}\n行数: ${l}`);
 			}
 
-			function 加入(box,obj) {
+			function 加入(box, obj) {
 				switch (box) {
 					case "标签":
-						Object.assign(uaData.flag,obj);
-						Object.keys(obj).forEach( key => uaData.tagfind.set(obj[key][0], key) );
+						Object.assign(uaData.flag, obj);
+						Object.keys(obj).forEach(key => uaData.tagfind.set(obj[key][0], key));
 						break;
 					case "APP":
-						Object.keys(obj).forEach( key => {
+						Object.keys(obj).forEach(key => {
 							let cont;
 							if (typeof obj[key]["内容"] === "object") {
 								if (obj[key]["内容"] instanceof Array) {
-									cont = [obj[key]["内容"][0],obj[key]["内容"][1]];
+									cont = [obj[key]["内容"][0], obj[key]["内容"][1]];
 								} else {
 									cont = {
 										qBasic: obj[key]["内容"]["平台"],
@@ -2650,11 +2668,11 @@ template {
 							} else {
 								cont = obj[key]["内容"];
 							}
-							Object.assign(uaData.apps,{
+							Object.assign(uaData.apps, {
 								[key]: {
 									text: obj[key]["名称"],
-									prefix: (obj[key]["前置"]==="是") ? true : false,
-									followed: (obj[key]["无缝"]==="是") ? true : false,
+									prefix: (obj[key]["前置"] === "是") ? true : false,
+									followed: (obj[key]["无缝"] === "是") ? true : false,
 									class: obj[key]["标签"],
 									content: cont
 								}
@@ -2662,9 +2680,9 @@ template {
 						});
 						break;
 					case "基础":
-						Object.keys(obj).forEach( key => {
-							if (key!=="默认项") {
-								Object.assign(uaData.base,{
+						Object.keys(obj).forEach(key => {
+							if (key !== "默认项") {
+								Object.assign(uaData.base, {
 									[key]: {
 										text: obj[key]["名称"],
 										content: obj[key]["内容"]
@@ -2674,22 +2692,22 @@ template {
 						});
 						break;
 					case "数据":
-						obj.forEach( js => uaData.jslist.push(js) );
+						obj.forEach(js => uaData.jslist.push(js));
 						break;
 				}
 			}
-			(()=>{
+			(() => {
 				let para = new URLSearchParams(location.search), flo;
-				if (parseInt(para.get('base'))>0)
+				if (parseInt(para.get('base')) > 0)
 					uaData.设置.基础默认 = parseInt(para.get('base'));
-				if (parseInt(para.get('dark'))>=0 && parseInt(para.get('dark'))<=2)
+				if (parseInt(para.get('dark')) >= 0 && parseInt(para.get('dark')) <= 2)
 					uaData.设置.暗色主题 = parseInt(para.get('dark'));
 				if (para.get('flag')) {
-					flo = para.get('flag').replace(/[A-Z]+/,'').slice(0,1);
+					flo = para.get('flag').replace(/[A-Z]+/, '').slice(0, 1);
 					if (flo) uaData.设置.数字记号 = flo;
 				}
 			})();
-			(()=>{
+			(() => {
 				const stor = window.localStorage;
 				let myl = document.getElementById('myLight'),
 					syl = document.getElementById('stylight'),
@@ -2697,7 +2715,7 @@ template {
 					syd = document.getElementById('stydark');
 				syl.value = '';
 				syd.value = '';
-				if(stor.hasOwnProperty(uaData.styleKey)) {
+				if (stor.hasOwnProperty(uaData.styleKey)) {
 					try {
 						let data = JSON.parse(stor.getItem(uaData.styleKey));
 						if (data.light) {
@@ -2712,7 +2730,7 @@ template {
 						} else {
 							syd.value = Object.values(myd.sheet.cssRules)[0].cssRules[0].cssText;
 						}
-					} catch(e) {
+					} catch (e) {
 						alert(`存储数据异常，将会被清空...\n 内容:${stor.getItem(uaData.styleKey)}`);
 						stor.removeItem(uaData.styleKey);
 					}
@@ -2721,189 +2739,184 @@ template {
 					syd.value = Object.values(myd.sheet.cssRules)[0].cssRules[0].cssText;
 				}
 			})();
-			(()=>{
-				let dark = Object.values(uaCode.$(!1,'#myDark').sheet.cssRules)[0].cssRules[0].cssText,
-				light = Object.values(uaCode.$(!1,'#myLight').sheet.cssRules)[0].cssText,
-				force = (uaData.设置.暗色主题===0) ? light : dark,
-				btnDark = uaCode.$(!1,'#btnDark'),
-				impSty = uaCode.$(!1,'#myImportant'),
-				night = [
-					"via_inject_css_night",
-					"metaNight",
-					"yjbrowser_night_mode_style",
-					"yjbrowser_night_mode_style2",
-					"360browser_night_mode_style",
-					"360browser_night_mode_style2",
-					"mixiaba_css_id",
-					"x_style_element_id",
-					"x_link_element_id",
-					"alook_theme",
-					"miui_mini_night_mode",
-					"preucbrowser_sheet_theme",
-					"bnightThme",
-					"sq_root_css"
-				], observer = new MutationObserver( (mus,obs) => {
-					for (let mu of mus) {
-						if (mu.addedNodes.length>0) {
-							mu.addedNodes.forEach( ad => {
-								if (night.includes(ad.id)) {
-								  uaCode.injSty(ad,force);
-                                  uaData.dark = true;
-                                  uaCode.dark();
-                                }
-							})
+			(() => {
+				let dark = Object.values(uaCode.$(!1, '#myDark').sheet.cssRules)[0].cssRules[0].cssText,
+					light = Object.values(uaCode.$(!1, '#myLight').sheet.cssRules)[0].cssText,
+					force = (uaData.设置.暗色主题 === 0) ? light : dark,
+					btnDark = uaCode.$(!1, '#btnDark'),
+					impSty = uaCode.$(!1, '#myImportant'),
+					night = [
+						"via_inject_css_night",
+						"metaNight",
+						"yjbrowser_night_mode_style",
+						"yjbrowser_night_mode_style2",
+						"360browser_night_mode_style",
+						"360browser_night_mode_style2",
+						"mixiaba_css_id",
+						"x_style_element_id",
+						"x_link_element_id",
+						"alook_theme",
+						"miui_mini_night_mode",
+						"preucbrowser_sheet_theme",
+						"bnightThme",
+						"sq_root_css"
+					], observer = new MutationObserver((mus, obs) => {
+						for (let mu of mus) {
+							if (mu.addedNodes.length > 0) {
+								mu.addedNodes.forEach(ad => {
+									if (night.includes(ad.id)) {
+										uaCode.injSty(ad, force);
+										uaData.dark = true;
+										uaCode.dark();
+									}
+								})
+							}
+							if (mu.removedNodes.length > 0) {
+								mu.removedNodes.forEach(ad => {
+									if (night.includes(ad.id)) {
+										if (uaData.设置.暗色主题 === 2) {
+											impSty.innerHTML = '';
+										}
+										uaData.dark = uaData.osdark.matches;
+										uaCode.dark();
+									}
+								})
+							}
 						}
-                        if (mu.removedNodes.length>0) {
-                          mu.removedNodes.forEach( ad => {
-                            if (night.includes(ad.id)) {
-                              if (uaData.设置.暗色主题===2) {
-                                impSty.innerHTML = '';
-                              }
-                              uaData.dark = uaData.osdark.matches;
-                              uaCode.dark();
-                            }
-                          })
-                        }
-					}
-				}), opt = { childList: true, subtree: false };
+					}), opt = { childList: true, subtree: false };
 
-				
+
 				function patchStyle(css) {
-                  night.forEach( id => {
-					let ad = document.getElementById(id);
-					if (ad) {
-					  uaCode.injSty(ad,css);
-					  uaCode.dark();
-					}
-                  });
-                }
-				
+					night.forEach(id => {
+						let ad = document.getElementById(id);
+						if (ad) {
+							uaCode.injSty(ad, css);
+							uaCode.dark();
+						}
+					});
+				}
+
 				btnDark.onclick = () => {
-                  impSty.innerHTML = (uaData.dark) ? light : dark;
-                  patchStyle((uaData.dark) ? light : dark);
-                  uaData.dark = !uaData.dark;
-                  uaCode.dark();
+					impSty.innerHTML = (uaData.dark) ? light : dark;
+					patchStyle((uaData.dark) ? light : dark);
+					uaData.dark = !uaData.dark;
+					uaCode.dark();
 				}
 
 				uaData.osdark.onchange = e => {
-				  if (uaData.设置.暗色主题===2) {
-                    impSty.innerHTML = '';
-                  }
-                  uaData.dark = e.matches;
-                  uaCode.dark();
-                }
-                
-				if (uaData.设置.暗色主题<2) {
-                  patchStyle(force);
-                  impSty.innerHTML = force;
-                }
+					if (uaData.设置.暗色主题 === 2) {
+						impSty.innerHTML = '';
+					}
+					uaData.dark = e.matches;
+					uaCode.dark();
+				}
 
-                switch (uaData.设置.暗色主题) {
-                  case 0:
-                    uaData.dark = false;
-                    break;
-                  case 1:
-                    uaData.dark = true;
-                    break;
-                  default:
-                    uaData.dark = uaData.osdark.matches;
-                }
-                uaCode.dark();
-				observer.observe(document.documentElement,opt);
-				observer.observe(document.head,opt);
+				if (uaData.设置.暗色主题 < 2) {
+					patchStyle(force);
+					impSty.innerHTML = force;
+				}
+
+				switch (uaData.设置.暗色主题) {
+					case 0:
+						uaData.dark = false;
+						break;
+					case 1:
+						uaData.dark = true;
+						break;
+					default:
+						uaData.dark = uaData.osdark.matches;
+				}
+				uaCode.dark();
+				observer.observe(document.documentElement, opt);
+				observer.observe(document.head, opt);
 			})();
 		</script>
 		<script src="数据列表.js"></script>
 		<script>
-			uaData.load = new Promise( (resolve,reject) => {
-				uaCode.$(false,'#loadstr').innerHTML = (uaData.jslist.length===0) ?
+			uaData.load = new Promise((resolve, reject) => {
+				uaCode.$(false, '#loadstr').innerHTML = (uaData.jslist.length === 0) ?
 					'数据列表加载失败 !' : '正在加载基本数据 ...';
-				uaData.jslist.forEach( js => {
-					let script=document.createElement('script');
+				uaData.jslist.forEach(js => {
+					let script = document.createElement('script');
 					script.async = false;
 					script.src = js;
 					script.onerror = e => {
-						uaCode.$(false,'#loadstr').innerHTML = '数据加载失败 !';
+						uaCode.$(false, '#loadstr').innerHTML = '数据加载失败 !';
 						uaCode.toast(js + " 加载失败");
 						window.stop();
 					};
 					script.onload = e => {
-						uaData.jslist.splice(uaData.jslist.findIndex( v => v === js ),1);
-						if (uaData.jslist.length===0) { resolve(); }
+						uaData.jslist.splice(uaData.jslist.findIndex(v => v === js), 1);
+						if (uaData.jslist.length === 0) { resolve(); }
 					}
 					document.querySelector("head").appendChild(script);
 				});
-			}).then( () => {
+			}).then(() => {
 				const stor = window.localStorage;
-				uaCode.$(false,'#loadstr').innerHTML = '正在加载自定义数据 ...';
+				uaCode.$(false, '#loadstr').innerHTML = '正在加载自定义数据 ...';
 				if (stor.hasOwnProperty(uaData.storKey)) {
 					try {
 						let data = JSON.parse(stor.getItem(uaData.storKey));
 						if (data.apps) {
-							Object.assign(uaData.stor.apps,data.apps);
-							加入("APP",data.apps);
+							Object.assign(uaData.stor.apps, data.apps);
+							加入("APP", data.apps);
 						}
 						if (data.flag) {
-							Object.assign(uaData.stor.flag,data.flag);
-							加入("标签",data.flag);
+							Object.assign(uaData.stor.flag, data.flag);
+							加入("标签", data.flag);
 						}
-					} catch(e) {
+					} catch (e) {
 						alert(`存储数据异常，将会被清空...\n 内容:${stor.getItem(uaData.storKey)}`);
 						stor.removeItem(uaData.storKey);
 					}
 				}
 			}
-		).then(uaCode.init);
-		(()=>{
-			if ('serviceWorker' in navigator && window.location.href.slice(0,5)==="https") {
-				let opt = uaCode.$(false,'#swopt'),
-					stat = uaCode.$(false,'#swstat'),
-					btn = uaCode.$(false,'#swreg');
-				opt.classList.remove('none');
-				navigator.serviceWorker.getRegistrations().then( regs => {
-					if (regs.length===1) {
-						caches.keys().then( vers => {
-							vers.filter( ver => ver.slice(0,2)==='D_' || ver.slice(0,2)==='I_' ).map( i => {
-								if (parseInt(i.slice(2)) !== uaData.版本.详细) {
-									uaCode.toast('更新离线缓存...');
-									caches.delete(i);
-								}
-							})
-						});
-						if (regs[0].installing) {
-							stat.innerHTML = '正在安装';
-						} else if (regs[0].waiting) {
-							stat.innerHTML = '等待安装';
-						} else if (regs[0].active) {
-							stat.innerHTML = '已安装';
+			).then(uaCode.init);
+			(() => {
+				if ('serviceWorker' in navigator && window.location.href.slice(0, 5) === "https") {
+					let opt = uaCode.$(false, '#swopt'),
+						stat = uaCode.$(false, '#swstat'),
+						btn = uaCode.$(false, '#swreg');
+					opt.classList.remove('none');
+					navigator.serviceWorker.getRegistrations().then(regs => {
+						if (regs.length === 1) {
+							caches.keys().then(vers => {
+								vers.filter(ver => ver.slice(0, 2) === 'D_' || ver.slice(0, 2) === 'I_').map(i => {
+									if (parseInt(i.slice(2)) !== uaData.版本.详细) {
+										uaCode.toast('更新离线缓存...');
+										caches.delete(i);
+									}
+								})
+							});
+							if (regs[0].installing) {
+								stat.innerHTML = '正在安装';
+							} else if (regs[0].waiting) {
+								stat.innerHTML = '等待安装';
+							} else if (regs[0].active) {
+								stat.innerHTML = '已安装';
+							}
+							opt.classList.add('inst');
+							btn.innerHTML = '卸载服务';
+						} else {
+							opt.classList.remove('inst');
+							stat.innerHTML = '未安装';
+							btn.innerHTML = '安装服务';
 						}
-						opt.classList.add('inst');
-						btn.innerHTML = '卸载服务';
-					} else {
-						opt.classList.remove('inst');
-						stat.innerHTML = '未安装';
-						btn.innerHTML = '安装服务';
-					}
-					caches.keys().then( vers => { uaCode.$(false,"#swlen").innerHTML = vers.length });
-				})
-			}
-		})();
+						caches.keys().then(vers => { uaCode.$(false, "#swlen").innerHTML = vers.length });
+					})
+				}
+			})();
 		</script>
-	</body>
-    
-    <head>
-    <style>
-        .center {
-            text-align: center;
-            padding-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-
-<div class="center">
-    <a href="https://github.com/ffyuhf/user-agent-beifen/discussions">超链接文本</a>
+		<div style="text-align:center">
+			<font size="5">
+	<a href="https://github.com/ffyuhf/user-agent-beifen/discussions" style="text-align:center;color:black">
+		反馈问题
+	</a>
+			<a href="https://github.com/ffyuhf/user-agent-beifen" style="text-align:center;color:palegreen">
+	项目地址
+</a></font>
 </div>
-
 </body>
+
+
 </html>
